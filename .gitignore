@@ -3,3 +3,5 @@ media/catalog/*
 app/etc/local.xml
 *.*~
 .htaccess
+downloader/.cache/
+downloader/*.cfg
