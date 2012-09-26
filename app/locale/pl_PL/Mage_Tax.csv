@@ -81,6 +81,7 @@
 "Product Tax Class Information","Informacje o klasie podatku dla produktów"
 "Product Tax Classes","Klasy podatku produktu"
 "Rate","Stawka"
+"Rate Percent","Stawka procentowa"
 "Reset","Resetuj"
 "Sales","Sprzedaże"
 "Save Class","Zapisz klasę"
@@ -116,3 +117,5 @@
 "You cannot delete this tax class as it is used for %d products.","Nie możesz usunąć tej klasy podatku ponieważ jest używana do %s produktów."
 "You cannot delete this tax class as it is used in Tax Rules. You have to delete the rules it is used in first.","Nie możesz usunąć tej klasy podatku ponieważ jest używana w regułach podatków. Musisz najpierw usunąć regułę, w której jest zawarta."
 "Zip/Post Code","Kod pocztowy"
+"Zip/Post is Range","Zakres kodów"
+"'*' - matches any; 'xyz*' - matches any that begins on 'xyz' and not longer than %d.","'*' - dopasowuje dowolny; 'xyz*' - dopasowuje dowolny zaczynający się od 'xyz' i nie dłuższy niż %d."
