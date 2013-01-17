@@ -6,3 +6,5 @@ app/etc/local.xml
 downloader/.cache/
 downloader/*.cfg
 .directory
+php_errors.log
+*.kdev4
