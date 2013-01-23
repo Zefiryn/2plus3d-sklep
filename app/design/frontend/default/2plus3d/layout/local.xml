@@ -2,11 +2,16 @@
 <layout version="0.1.0">
   <default>
     <reference name="head">
-      <action method="addExternalItem">
-        <type>external_js</type>
-        <name>http://webfonts.creativecloud.com/lato:n7,n4,n9,n3:all.js</name>
-        <params/>
-      </action>
+      <action method="addExternalItem"><type>external_js</type><name>http://webfonts.creativecloud.com/lato:n7,n4,n9,n3:all.js</name><params/></action>
+      <action method="addItem"><type>skin_css</type><path>css/local.css</path></action>
+    </reference>
+    <reference name="header">
+      <remove name="top.search" />
+      <remove name="top.links" />
+    </reference>
+    <reference name="footer">
+      <remove nam="store_switcher" />
+      <remove name="footer_links" />
     </reference>
     <reference name="left">
       <remove name="catalog.compare.sidebar" />
@@ -14,4 +19,8 @@
       <remove name="paypal.partner.right.logo" />
     </reference>
   </default>
+  
+  <cms_index_index translate="label">
+    <remove name="cms.wrapper" />
+  </cms_index_index>
 </layout>
