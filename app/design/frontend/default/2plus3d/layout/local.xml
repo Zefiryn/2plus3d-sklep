@@ -64,4 +64,17 @@
   <cms_index_index translate="label">
     <remove name="cms.wrapper" />
   </cms_index_index>
+  
+  <customer_account_login>
+    <reference name="head">
+      <action method="setForcedTitle" translate="title"><title>Login</title></action>
+    </reference>
+    <reference name="customer_form_login">
+      <block type="customer/form_register" name="customer_login_form_register" template="customer/form/register.phtml">
+        <block type="page/html_wrapper" name="customer.login.form.register.fields.before" as="form_fields_before" translate="label">
+          <label>Form Fields Before</label>
+        </block>
+      </block>
+    </reference>
+  </customer_account_login>
 </layout>
