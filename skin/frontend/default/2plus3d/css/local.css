@@ -1,29 +1,21 @@
 body {background: #fff;}
 .header-container {background: #4F7790;border: 0px;height: 110px;}
-.header {width: 990px;padding: 0px;}
-.header h1.logo {margin-top: 20px;margin-left: 3px;}
+.header {width: 980px;padding: 0px;}
+.header h1.logo {margin-top: 21px;}
+.header h1.logo .logo {margin:0px;}
 
 .nav-container {
-  background: -webkit-gradient(linear, center top, center bottom, from(#2D2D2D),color-stop(60%, #1D1D1D));
-  background: -webkit-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
-  background: -moz-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
-  background: -ms-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
-  background: -o-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
-  background: linear-gradient(to bottom,#2D2D2D ,#1D1D1D 60%);
-  -pie-background: linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
+  background: #000;
+  /*  background: -webkit-gradient(linear, center top, center bottom, from(#2D2D2D),color-stop(60%, #1D1D1D));
+   *  background: -webkit-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
+   *  background: -moz-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
+   *  background: -ms-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
+   *  background: -o-linear-gradient(top,#2D2D2D ,#1D1D1D 60%);
+   *  background: linear-gradient(to bottom,#2D2D2D ,#1D1D1D 60%);
+   *  -pie-background: linear-gradient(top,#2D2D2D ,#1D1D1D 60%);*/
   border-color: #000000;  
 }
-#menu {text-align: left;width:970px; margin: 0px auto;overflow: hidden;position: relative;}
-#menu li {display: block;min-height: 25px;float: left;}
-#menu li.menuItem {width: auto;padding: 0px 14px;text-align: center;font-family: lato, sans-serif;font-weight: 700;font-size: 14px;line-height: 25px;border-right: 1px solid #fff;}
-#menu li.menuItem.first {border-left: 1px solid #fff;}
-#menu li.menuItem a {color: #fff;text-decoration: none;}
-#menu li.menuItem.current {background: #fff;}
-#menu li.menuItem.current a {color: #000;}
-#menu li.menuItem:hover {background: #4D4D4D}
-#menu li.menuItem.current:hover {background: #fff;}
-#menu li.login-link {position: absolute;right: 0px;line-height: 25px;}
-#menu li.login-link a {color: #fff;font-family: lato, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;}
+#menu {text-align: left;width:979px; margin: 0px auto;overflow: hidden;position: relative;}
 
 .main-container {background: #fff;}
 .main {background: #fff;width: 970px;padding: 51px 25px;}
@@ -67,7 +59,7 @@ button.button span span, a.button span span {}
 .registered-users .form-list .input-box  input {height: 20px; border: 1px solid #000;}
 .registered-users .buttons-set {background: none;border: 0px;padding-left: 110px;text-align: left;}
 .registered-users .buttons-set button.button {float: none; display: block;}
-.registered-users .password-forgot {display: block;margin-top: 20px;color: #7f7f7f;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;}
+.registered-users .password-forgot {display: inline-block;margin-top: 20px;color: #7f7f7f;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;}
 #remember-me-box  .input-box {margin-left: 110px;width: auto;float: left;margin-right: 5px;}
 #remember-me-box  label {float: left;width: 200px;text-transform: none;height: auto;line-height: 16px;color: #7F7F7F;}
 

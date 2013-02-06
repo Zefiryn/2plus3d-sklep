@@ -1,0 +1,2 @@
+<?php $item = $this->getMenuItem();?>
+<?php echo $this->createBlock("site/preview_{$item->getPreview()}")->setMenuItem($item)->toHtml();

@@ -2,25 +2,38 @@
 /**
  * Top menu for store
  *
- * @see Mage_Page_Block_Html_Topmenu
+ * @see DpTD_Menu_Block_Html_Topmenu
  */
 ?>
+<?php $menu = $this->getMainMenu();?>
 <div class="nav-container">
   <ul id="menu">
-    <li class="menuItem first">
-      <a href="http://2plus3d.pl/artykuly">Artykuły</a>
-    </li>
+    <?php foreach($menu as $position => $items):?>
+    <?php $mItem = $items['element']; $smItems = isset($items['sublevel']) ? $items['sublevel'] : null;?>
     <li class="menuItem">
-      <a href="http://2plus3d.pl/kalendarium">Kalendarium</a>
+      <a href="#" class="link"><?php echo $this->__($mItem->getTitle());?></a>
+      <?php if ((count($smItems) > 0) || $mItem->getPreview() != null):?>
+      <a href="#" class="submenuToggler slideButton" id="submenuToggler_13"></a>
+      <?php endif;?>
     </li>
-    <li class="menuItem">
-      <a href="http://2plus3d.pl/o-kwartalniku">Kwartalnik</a>
-    </li>
-    <li class="menuItem current">
-      <a href="http://sklep.2plus3d.pl">Księgarnia</a>
-    </li>
-    <li class="login-link">
-      <a href="<?php echo $this->helper('customer')->getLoginUrl();?>"><?php echo $this->__('Log in to the bookshop');?></a>
-    </li>
+    <?php endforeach;?>
   </ul>
+</div>
+<div class="submenu-container" id="submenu">
+<?php foreach($menu as $position => $items):?>
+  <?php $mItem = $items['element']; $smItems = isset($items['sublevel']) ? $items['sublevel'] : null;?>
+  <?php if ((count($smItems) > 0) || $mItem->getPreview() != null):?>
+    <div id="submenu_<?php echo $mItem->getId(); ?>" class="<?php echo $mItem->getType();?>Submenu submenu slideDescription">
+      <div class="submenu-wrapper">
+        <div class="spacer"></div>
+        <?php if (count($smItems) > 0):?>
+          <?php echo $this->getLayout()->getBlock('site.children')->setCollection($smItems)->setMenuItem($mItem)->toHtml();?>
+        <?php endif;?>
+        <?php if ($mItem->getPreview() != null):?>
+          <?php echo $this->getLayout()->createBlock("site/preview_{$mItem->getPreview()}")->setMenuItem($mItem)->toHtml();?>
+        <?php endif;?>
+      </div>
+    </div>
+  <?php endif;?>
+<?php endforeach;?>
 </div>

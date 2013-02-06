@@ -1,0 +1,106 @@
+#menu, #rightMenu {
+  display: block;
+  list-style: none;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid #7e7e7e;
+  min-width: 100px;
+}
+
+#menu a {
+  font-family: "Droid Serif Pro", "Lucida Grande", Geneva, Arial, Verdana, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: white;
+}
+
+#menu li, .submenu .items li, #rightMenu li {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+.submenu .items li {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#menu li {
+  position: relative;
+  height: 25px;
+  border-right: 1px solid #7e7e7e;
+}
+
+#menu li a.link, #rightMenu li.login, #rightMenu li a.atom {
+  display: block;
+  float: left;
+  height: 21px;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#menu li a.submenuToggler, #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {
+  display: block;
+  float: left;
+  height: 25px;
+  width: 20px;
+  background-image: url("../images/dropDownArrow.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {
+  cursor: move;
+  width: 15px;
+  background-position: left center;
+  background-image: url("../images/dot.png");
+}
+
+#menu li a.selected {
+  background-image: url("../images/dropDownArrowUp.png");
+}
+
+#menu li a.selected, #menu li a.submenuToggler:hover {
+  background-color: #3b3b3b;
+}
+
+#submenu .hidden {display: none !important;}
+#submenu {display: block;font-family: 'Lucida Grande', Geneva, Arial, Verdana, sans-serif;font-size: 12px;padding-bottom: 25px;width: 980px;margin: 0px auto;}
+#submenu .submenu {border-bottom: 1px solid #000;display: block;font-size: 12px;height: auto;overflow: visible;position: relative;top: 0px;width: 980px;z-index: 2;}
+#submenu .submenu .submenu-wrapper {display: block;font-size: 12px;height: auto;width: 980px;}
+#submenu .submenu-wrapper .spacer {height: 25px;width: 100%;border-bottom: 1px solid black;}
+#submenu .submenu-wrapper .preview {clear: both;display: block;font-size: 12px;height: 155px;width: 980px;}
+#submenu .submenu-wrapper .carousel {display: block;font-size: 12px;height: 150px;position: relative;width: 980px;}
+#submenu .carousel > a.control {position: absolute;top: 0;display: block;height: 100%;width: 41px;background-repeat: no-repeat;padding: 0;}
+#submenu .carousel > a.previous {left: -21px;background-image: url("../images/carousel_left.png");background-position: center left;}
+#submenu .carousel > a.next {right: -21px;background-image: url("../images/carousel_right.png");background-position: center right;}
+#submenu .IssuesPreview .carousel > a.control {background-position: 0px 50px;width: 21px;}
+#submenu .IssuesPreview .carousel > a.control.next {background-position: 6px 50px;width: 19px;right: -19px;}
+
+#submenu .IssuesPreview .carousel .wrapper {display: block;float: left;font-size: 12px;height: 150px;left: 0px;overflow: hidden;position: absolute;top: 0px;width: 980px;}
+#submenu .IssuesPreview .carousel .wrapper > ul {display: block;font-size: 12px;height: 160px;list-style-type: none;margin: 0px;padding: 0px;position: absolute;right: -12px;}
+#submenu .IssuesPreview .carousel .wrapper > ul li.issue{display: block;float: left;font-size: 12px;height: 150px;list-style-type: none;margin: 0px 12px;padding: 10px 0px 0px 0px;text-align: center;width: 76px;}
+
+li.issue a {color: #919191;font-size: 10px;}
+li.issue strong {font-style: normal;font-size: 14px;color: black;}
+li.issue span{display: block;margin-top: -2px;}
+li.issue .cover {display: block;width: 75px;height: 98px;background-color: #7F7F7F;margin: 4px 0px 3px 4px;}
+li.issue .cover img {border: 1px solid #E5E5E5;margin-left: -4px;margin-top: -4px;}
+
+
+#submenu .eventsSubmenu .carousel {background-color: black;color: white;height: 140px;}
+#submenu .eventsSubmenu .carousel .wrapper {position: absolute;width: 940px;min-width: 940px;left: 20px;top: 0;height: 100%;float: left;overflow: hidden;}
+#submenu .eventsSubmenu .carousel ul {list-style: none;padding: 0;margin: 0;width: 10000px;margin-left: -20px;text-align: left;}
+#submenu .eventsSubmenu .carousel ul li.day {float: left;width: 450px;height: 80px;margin-left: 20px;margin-right: 20px;}
+#submenu .eventsSubmenu .carousel ul li.day h2 {font-size: 14px;padding-top: 10px;padding-bottom: 10px;margin: 0;margin-bottom: 15px;border-bottom: 1px dashed #a3a3a3;text-align: left;}
+#submenu .eventsSubmenu .carousel ul li.day ul {height: 60px;width: 450px;margin: 0;padding: 0px; list-style: none;}
+#submenu .eventsSubmenu .carousel ul li.day ul li.event {line-height: 20px;height: auto;width: 100%;float: none;margin: 0;padding-left: 8px;}
+#submenu .eventsSubmenu .carousel ul li.day ul li.event a {color: white;}
+#submenu .eventsSubmenu .carousel ul li.day ul li.event .bullet {display: block;position: relative;float: left;top: 5px;left: -8px;width: 7px;height: 9px;background-color: #527d97;background-image: url("../images/bullet_on_black.png");background-position: center;background-repeat: no-repeat;}
+#submenu .eventsSubmenu .carousel ul li.day ul li .location {color: grey;}
+
+.indicator {position: absolute;top: 50%;left: 50%;height: 100px;width: 100px;margin-left: -50px;margin-top: -50px;background-color: black;-moz-border-radius: 1em;-webkit-border-radius: 1em;border-radius: 1em;border-radius: 1em;opacity:0.7;filter:alpha(opacity=70);}
+.indicator.white {background-color: white;}
+.indicator img {position: absolute;top: 50%;left: 50%;height: 32px;width: 32px;margin-left: -16px;margin-top: -16px;}

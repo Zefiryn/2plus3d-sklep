@@ -1,0 +1,33 @@
+<div id="preview_<?php echo $this->getMenuItem()->getId()?>" class="preview IssuesPreview">
+  <script type="text/javascript" charset="utf-8">
+    var issuesCarousel<?php echo $this->getMenuItem()->getId();?> = {};
+  </script>
+  <div id="issuesCarousel_<?php echo $this->getMenuItem()->getId()?>" class="carousel">
+    <a href="#" class="control previous"></a>
+    <div class="wrapper">
+      <ul style="width: <?php echo $this->getCollection()->count()*100+5?>px">
+        <?php foreach($this->getCollection() as $issue):?>
+        <li class="issue">
+          <a href="#" class="cover"><img src="<?php echo $issue->getCoverImage()->getUrl('mini')?>" width="74" height="98" /></a>
+          <a href="#">
+            <strong><?php echo $issue->getNumber();?></strong>
+            <span><?php echo $issue->getQuarterlyNumber()?></span>
+          </a>
+        </li>
+        <?php endforeach;?>
+      </ul>
+    </div>
+    <a href="#" class="control next"></a>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    var tmp<?php echo $this->getMenuItem()->getId();?> = issuesCarousel<?php echo $this->getMenuItem()->getId();?>;
+    var issuesCarousel<?php echo $this->getMenuItem()->getId();?> = new Nibynic.Carousel('issuesCarousel_<?php echo $this->getMenuItem()->getId()?>', {
+      moveBy: 400,
+      generalMargin: 12,
+      positionLeft: true
+    })
+    
+    issuesCarousel<?php echo $this->getMenuItem()->getId();?>.firstItemId = tmp<?php echo $this->getMenuItem()->getId();?>.firstItemId;
+  </script>
+</div>

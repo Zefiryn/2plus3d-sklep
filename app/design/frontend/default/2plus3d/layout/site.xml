@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <default>
+    <reference name="head">
+      <action method="addItem"><type>skin_css</type><name>css/menu.css</name></action>
+      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/carousel.js</name><params/></action>
+      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/indicator.js</name><params/></action>
+    </reference>
+    <reference name="header">
+      <remove name="top.menu" />
+      <block type="site/html_topmenu" name="site.topmenu" as="topMenu" template="page/html/topmenu.phtml">
+        <block type="site/html_topmenu" name="site.children" as="menu_children" template="page/html/children_menu.phtml" />
+      </block>
+    </reference>  
+  </default>
+</layout>

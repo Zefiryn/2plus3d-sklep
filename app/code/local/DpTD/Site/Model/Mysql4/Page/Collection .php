@@ -1,0 +1,10 @@
+<?php
+ 
+class DpTD_Site_Model_Mysql4_Page_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract
+{
+    public function _construct()
+    {
+        //parent::__construct();
+        $this->_init('site/page');
+    }
+}
