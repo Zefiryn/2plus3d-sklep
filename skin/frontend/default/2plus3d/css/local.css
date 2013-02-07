@@ -32,16 +32,6 @@ body {background: #fff;}
 .block .block-content .links li {display: block;}
 .block .block-content .links li a {text-decoration: none;}
 
-.footer-container {border:0px;background-color: #2D2D2D;color: #fff;font-family: lato, sans-serif;font-size: 12px;}
-.footer {width: 970px;margin: 0 auto;padding: 20px 25px 10px 25px;}
-.footer-container .left {width: 740px;}
-.footer-container .left ul {display: block;float: left;margin-right: 35px;}
-.footer-container .left ul li {display: block;color: #fff;text-align: left;font-size: 12px;border: 0px;background: transparent url('../images/sprites.png') no-repeat 0px 6px;padding-left: 10px;line-height: 16px;}
-.footer-container .left ul li.label {font-family: lato, sans-serif;font-size: 14px; font-weight: 900;background: none;padding: 0px;line-height: 19px;}
-.footer-container .right {text-align: left;}
-.footer-container ul.creators {margin-top: 16px;margin-bottom: 15px;overflow: hidden;display: block;}
-.footer-container ul.creators li {display:block;background: none;}
-
 a:link, a:visited, a:active {text-decoration: none;}
 a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #ED1C24;padding: 0px 18px;min-width: 100px;}

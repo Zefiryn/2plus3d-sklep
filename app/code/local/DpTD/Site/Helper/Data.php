@@ -5,6 +5,17 @@ class DpTD_Site_Helper_Data extends Mage_Core_Helper_Abstract {
   //@todo move this to the settings
   protected $_siteBaseUrl = 'http://2plus3d.pl/';
 
+  protected $_menuUrl = array(
+    'types' => array('articles' => 'artykuly', 'events' => 'kalendarium', 'issues' => 'kwartalnik', 'sitemap' => 'mapa'),
+    'models' => array('issues' => 'number', 'events' => array())
+  );
+
+  protected $_typeModels = array(
+    'pages' => 'site/page',
+    'issues' => 'site/issue',
+    'events' => 'site/event',
+  );
+
   public function getSiteBaseUrl() {
     return $this->_siteBaseUrl;
   }
@@ -93,4 +104,47 @@ class DpTD_Site_Helper_Data extends Mage_Core_Helper_Abstract {
         return $string;
     } 
   } 
+
+  public function menuItemUrl($params)
+  {
+    $item = isset($params['item']) ? $params['item'] : null;
+
+    if ($item == null) {
+       if (isset($params['type'])) {        
+        $url = $this->_menuUrl['types'][$params['type']];
+        if (isset($params['arg'])){
+          $urlParams = $this->_menuUrl['models'][$params['type']];
+          $urlParams = is_array($urlParams) ? $urlParams : array($urlParams);
+          foreach($urlParams as $attribute) {
+            $url .= "/".$params['arg']->getData($attribute);
+          }
+        }
+       }
+       else {
+        return null;
+       }
+    }
+    else {
+      $parameters = $item->getParametersArray();
+      if (count($parameters) == 0) {
+        $url = isset($this->_menuUrl['types'][$item->getType()]) ? $this->_menuUrl['types'][$item->getType()] : null;
+      }
+      else {
+        $model = Mage::getModel($this->_typeModels[$item->getType()]);
+        if (isset($parameters['action'])) {
+          switch ($parameters['action']) {
+            case 'show' :
+              $url = $model->load($parameters['id'])->getPermalink();
+            break;
+          }
+        }
+      }
+    }
+    if ($url) {
+      return $this->getSiteBaseUrl() . $url;
+    }
+    else {
+      return null;
+    }
+  }
 }

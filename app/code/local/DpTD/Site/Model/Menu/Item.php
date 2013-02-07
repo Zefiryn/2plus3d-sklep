@@ -30,6 +30,7 @@ class DpTD_Site_Model_Menu_Item extends Mage_Core_Model_Abstract {
     'events'    => array('title' => 'Kalendarium'),
     'sitemap'   => array('title' => 'Mapa serwisu')
   );
+  protected $_parameters;
 
   public function _construct()
   {
@@ -63,7 +64,7 @@ class DpTD_Site_Model_Menu_Item extends Mage_Core_Model_Abstract {
     $collection = $this->getCollection()
                         ->addFieldToFilter('container', array('eq' => 'footer'))
                         ->addFieldToFilter('published', array('eq' => 1))
-                        ->setOrder('parent_id, posiion', 'ASC');
+                        ->setOrder('parent_id, position', 'ASC');
     $menu = array();
     $level_position = array();
     foreach($collection as $item) {
@@ -79,6 +80,36 @@ class DpTD_Site_Model_Menu_Item extends Mage_Core_Model_Abstract {
       }
     }
     return $menu;
+  }
+
+  public function getParameters()
+  {
+    if($this->_parameters == null) {
+      if($this->getId() == null) {
+        $this->_parameters = array();
+      } 
+      else {
+        $menuItemParameters = Mage::getModel('site/menu_item_parameter')->getCollection();
+        $menuItemParameters->addFieldToFilter('menu_item_id', array('eq' => $this->getId()));
+        
+        foreach($menuItemParameters as $row) {          
+          $this->_parameters[$row->getName()] = $row;
+        }
+      }
+    }
+    
+    return $this->_parameters;
+  }
+  
+  public function getParametersArray()
+  {
+    $parameters = array();
+    if (count($this->getParameters()) > 0) {
+      foreach($this->getParameters() as $key => $row) {
+        $parameters[$key] = $row->getValue();
+      }
+    }
+    return $parameters;
   }
 
 }

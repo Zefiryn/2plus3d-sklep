@@ -1,14 +1,19 @@
 <?php $_helper = $this->helper('site');?>
-<script type="text/javascript" charset="utf-8">
-  var eventsCarousel = {}
-</script>
 <div id="eventsCarousel" class="carousel">
   <a href="#" class="control previous"></a>
   <div class="wrapper">
     <ul>
-      <?php foreach($this->getCollection() as $day):?>
+      <?php $dayIdx = 1; foreach($this->getCollection() as $day):?>
+        <?php 
+          if ($dayIdx == 1) {$firstId = $day['date'];}
+          if ($dayIdx == $this->getCollectionCount()) {$lastId = $day['date'];}
+          $dayIdx++;
+          $url = $_helper->menuItemUrl(array('type' => 'events'))."/start_date:{$day['date']}/end_date:{$day['date']}";
+        ?>
         <li id="day_<?php echo $day['date'];?>" class="day<?php if ($this->getFullWidth()):?> fullwidth<?php endif;?>">
-          <h2><a href="#"><?php echo $_helper->ago($day['date'],1,3); ?></a></h2>
+          <h2>
+            <a href="<?php echo $url;?>"><?php echo $_helper->ago($day['date'],1,3); ?></a>
+          </h2>
           <ul>
             <?php $idx = 0;foreach($day['events'] as $event):?>
               <?php if ($idx == 3):?>
@@ -17,7 +22,7 @@
               <?php if ($idx < 6):?>
                 <?php $date = $event->getDateByTime($day['date']);?>
                 <li class="event">
-                  <a href="#!event:<?php echo $event->getId();?>" title="<?php echo $event->getTitle();?>">
+                  <a href="<?php echo $url;?>#!event:<?php echo $event->getId();?>" title="<?php echo $event->getTitle();?>">
                     <span class="bullet"></span>
                     <?php echo $_helper->truncate($event->getTitle(), 35);?>&nbsp;
                     (<?php if($date) {echo $date->getCaption();}else{ echo "dodane dzisiaj";}?>)&nbsp;
@@ -26,7 +31,7 @@
                 </li>
               <?php endif;?>
             <?php $idx++;endforeach;?>
-          </ul>          
+          </ul>
         </li>
       <?php endforeach;?>
     </ul>
@@ -35,7 +40,6 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-  var tmp = eventsCarousel;
   var eventsCarousel = new Nibynic.Carousel('eventsCarousel', { 
     sourceUrl: 'http://2plus3d.pl/kalendarium/items',
     firstItemParamName: 'nextDay',
@@ -46,6 +50,6 @@
     },
     margin: 40
   });
-  eventsCarousel.firstItemId = tmp.firstItemId;
-  eventsCarousel.lastItemId = tmp.lastItemId;
+  eventsCarousel.firstItemId = '<?php echo $firstId;?>';
+  eventsCarousel.lastItemId = '<?php echo $lastId;?>';
 </script>

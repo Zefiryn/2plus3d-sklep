@@ -3,6 +3,7 @@
 class DpTD_Site_Block_Preview_Events extends Mage_Core_Block_Template {
 
   protected $_events;
+  protected $_collectionCount;
 
   protected function _construct() {
     parent::_construct();
@@ -45,7 +46,17 @@ class DpTD_Site_Block_Preview_Events extends Mage_Core_Block_Template {
         $days = array_reverse($days);
       }
       $this->_events = $days;
-    }
+      $this->_collectionCount = count($days);
+      $this->setNextDay(false);
+      $this->setPreviousDay($date);
+    }    
     return $this->_events;
+  }
+
+  public function getCollectionCount() {
+    if ($this->_collectionCount == null) {
+      $this->getCollection();
+    }
+    return $this->_collectionCount;
   }
 }

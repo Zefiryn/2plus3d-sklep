@@ -1,3 +1,4 @@
+<?php $_helper = $this->helper('site');?>
 <div id="preview_<?php echo $this->getMenuItem()->getId()?>" class="preview IssuesPreview">
   <script type="text/javascript" charset="utf-8">
     var issuesCarousel<?php echo $this->getMenuItem()->getId();?> = {};
@@ -8,8 +9,8 @@
       <ul style="width: <?php echo $this->getCollection()->count()*100+5?>px">
         <?php foreach($this->getCollection() as $issue):?>
         <li class="issue">
-          <a href="#" class="cover"><img src="<?php echo $issue->getCoverImage()->getUrl('mini')?>" width="74" height="98" /></a>
-          <a href="#">
+          <a href="<?php echo $_helper->menuItemUrl(array('type' => 'issues', 'arg' => $issue))?>" class="cover"><img src="<?php echo $issue->getCoverImage()->getUrl('mini')?>" width="74" height="98" /></a>
+          <a href="<?php echo $_helper->menuItemUrl(array('type' => 'issues', 'arg' => $issue))?>">
             <strong><?php echo $issue->getNumber();?></strong>
             <span><?php echo $issue->getQuarterlyNumber()?></span>
           </a>

@@ -5,13 +5,14 @@
  * @see DpTD_Menu_Block_Html_Topmenu
  */
 ?>
+<?php $_helper = $this->helper('site');?>
 <?php $menu = $this->getMainMenu();?>
 <div class="nav-container">
   <ul id="menu">
     <?php foreach($menu as $position => $items):?>
     <?php $mItem = $items['element']; $smItems = isset($items['sublevel']) ? $items['sublevel'] : null;?>
     <li class="menuItem">
-      <a href="#" class="link"><?php echo $this->__($mItem->getTitle());?></a>
+      <a href="<?php echo $_helper->menuItemUrl(array('item' => $mItem));?>" class="link"><?php echo $this->__($mItem->getTitle());?></a>
       <?php if ((count($smItems) > 0) || $mItem->getPreview() != null):?>
       <a href="#" class="submenuToggler slideButton" id="submenuToggler_13"></a>
       <?php endif;?>
@@ -34,6 +35,38 @@
         <?php endif;?>
       </div>
     </div>
+    <div class="slidePhoto" style="display:none"></div>
   <?php endif;?>
 <?php endforeach;?>
 </div>
+
+<script type="text/javascript" charset="utf-8">
+  
+  document.observe('dom:loaded', function() {
+    var submenu = new Nibynic.Slides('submenu', 'submenu', 'menu', { 
+      interval: 0,
+      duration: 0.5,
+      queueEffects: true,
+      autoStart: false,
+      allowDeselect: true,
+      rememberLocation: true,
+      hashParamName: 'submenu',
+      effects: {
+        photoInEffect: {
+          from: null,
+          to: null
+        },
+        photoOutEffect: {
+          from: null,
+          to: null
+        },
+        descriptionInEffect: Effect.SlideDown,
+        descriptionOutEffect: Effect.SlideUp
+      }
+    });
+    var selectedSubmenuIndex = Nibynic.LocationHash.getParam('submenu');
+    if(selectedSubmenuIndex) {  
+      submenu.selectSlide(selectedSubmenuIndex, true);
+    }
+  });
+</script>

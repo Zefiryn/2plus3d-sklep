@@ -33,9 +33,12 @@
         <class>DpTD_Site_Model_Mysql4</class>
         <entities>
           <menu_item><table>menu_items</table></menu_item>
+          <menu_item_parameter><table>menu_item_parameters</table></menu_item_parameter>
+          <article><table>articles</table></article>
           <issue><table>issues</table></issue>
           <image><table>images</table></image>
           <event><table>events</table></event>
+          <page><table>pages</table></page>
           <event_date><table>event_dates</table></event_date>
           <city><table>taxonomy</table></city>
         </entities>
@@ -65,6 +68,11 @@
       <site>
         <class>DpTD_Site_Block</class>
       </site>
+      <page>
+        <rewrite>
+          <html_footer>DpTD_Site_Block_Html_Footer</html_footer>
+        </rewrite>
+      </page>
     </blocks>
     <helpers>
       <site>
