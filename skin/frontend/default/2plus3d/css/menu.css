@@ -36,8 +36,10 @@ li.issue .cover img {border: 1px solid #E5E5E5;margin-left: -4px;margin-top: -4p
 #submenu .eventsSubmenu .carousel .wrapper {position: absolute;width: 940px;min-width: 940px;left: 20px;top: 0;height: 100%;float: left;overflow: hidden;}
 #submenu .eventsSubmenu .carousel ul {list-style: none;padding: 0;margin: 0;width: 10000px;margin-left: -20px;text-align: left;}
 #submenu .eventsSubmenu .carousel ul li.day {float: left;width: 450px;height: 80px;margin-left: 20px;margin-right: 20px;}
+#submenu .eventsSubmenu .carousel ul li.day.fullwidth {width: 940px;}
 #submenu .eventsSubmenu .carousel ul li.day h2 {font-size: 14px;padding-top: 10px;padding-bottom: 10px;margin: 0;margin-bottom: 15px;border-bottom: 1px dashed #a3a3a3;text-align: left;}
 #submenu .eventsSubmenu .carousel ul li.day ul {height: 60px;width: 450px;margin: 0;padding: 0px; list-style: none;}
+#submenu .eventsSubmenu .carousel ul li.day ul.right {position: relative;top: -60px;left: 470px;}
 #submenu .eventsSubmenu .carousel ul li.day ul li.event {line-height: 20px;height: auto;width: 100%;float: none;margin: 0;padding-left: 8px;}
 #submenu .eventsSubmenu .carousel ul li.day ul li.event a {color: white;}
 #submenu .eventsSubmenu .carousel ul li.day ul li.event .bullet {display: block;position: relative;float: left;top: 5px;left: -8px;width: 7px;height: 9px;background-color: #527d97;background-image: url("../images/bullet_on_black.png");background-position: center;background-repeat: no-repeat;}
