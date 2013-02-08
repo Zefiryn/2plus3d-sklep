@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <DpTD_Catalog>
+      <version>0.1.0</version>
+    </DpTD_Catalog>
+  </modules>
+  <global>    
+    <blocks>      
+    </blocks>
+    <helpers>      
+    </helpers>
+    <models>
+      <dptd_catalog>
+        <class>DpTD_Catalog_Model</class>
+      </dptd_catalog>
+    </models>
+    <resources>
+      <dptd_catalog_setup>
+        <setup>
+          <module>DpTD_Catalog</module>
+          <class>DpTD_Catalog_Model_Resource_Setup</class>
+        </setup>
+      </dptd_catalog_setup>            
+    </resources>    
+  </global>
+  <adminhtml>
+    <translate>
+      <modules>
+        <DpTD_Catalog>
+          <files>
+            <default>DpTD_Catalog.csv</default>
+          </files>
+        </DpTD_Catalog>
+      </modules>
+    </translate>
+  </adminhtml>
+</config>
