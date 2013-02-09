@@ -1,0 +1,21 @@
+<?php
+/**
+* Category siebar block
+*
+*/
+/** @var $this DpTD_Catalog_Block_Category_Block */
+?>
+<div class="block block-category">
+  <div class="block-title">
+    <strong><span><?php echo $this->__($this->getCategory()->getName()) ?></span></strong>
+  </div>
+  <div class="block-content">
+    <ul class="links products-links">
+    <?php foreach($this->getProductsCollection() as $_product):?>
+      <li>
+        <a href="<?php echo $_product->setCategoryId($this->getCategory()->getId())->getProductUrl();?>"><?php echo $this->htmlEscape($_product->getName()) ?></a>, <?php echo Mage::helper('core')->currency($_product->getFinalPrice(),true,false);?>
+      </li>
+    <?php endforeach;?>
+    </ul>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 "Log in to the bookshop","Zaloguj się do księgarni"
 "My Cart","Koszyk"
+"Cart","Koszyk"
 "You have no items in your shopping cart.","Twój koszyk jest pusty"
 "All rights reserved.","Wszelkie prawa zastrzeżone."
 "Project","Projekt"
@@ -20,3 +21,6 @@
 "hardcover","twarda"
 "paperback","miękka"
 "edited by %s","pod redakcją %s"
+"There is <a href=""%s""><strong>1 item</strong></a> in your cart.","W koszyku znajduje się <a href=""%s""><strong>1 przedmiot</strong></a>"
+"There are <a class=""upto-5"" href=""%s""><strong>%s items</strong></a> in your cart.","W koszyku znajdują się <a href=""%s""><strong>%s przedmioty</strong></a>"
+"There are <a class=""above-5"" href=""%s""><strong>%s items</strong></a> in your cart.","W koszyku znajduje się <a href=""%s""><strong>%s przedmiotów</strong></a>"

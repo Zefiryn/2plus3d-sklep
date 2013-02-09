@@ -94,3 +94,8 @@ button.button span span, a.button span span {}
 .product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 215px;padding: 0px 0px;margin: 5px 0px;}
 .product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 0px;background: #ED1C24;}
 .product-view .product-img-box .btn-cart span span {}
+
+.mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
+.mini-products-list li.odd {background-color: #fff;}
+.mini-products-list li.even {background-color: #fff;}
+.mini-products-list li.last {border-bottom: 0px;}

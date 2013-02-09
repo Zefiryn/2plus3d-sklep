@@ -6,7 +6,12 @@
     </DpTD_Catalog>
   </modules>
   <global>    
-    <blocks>      
+    <blocks>
+      <catalog>
+        <rewrite>
+          <category_block>DpTD_Catalog_Block_Category_Block</category_block>
+        </rewrite>
+      </catalog>
     </blocks>
     <helpers>
       <catalog>

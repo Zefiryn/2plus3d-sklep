@@ -15,6 +15,8 @@
     </reference>
     <reference name="right">
       <remove name="catalog.compare.sidebar" />
+      <remove name="right.reports.product.viewed" />
+      <remove name="right.reports.product.compared" />
       <remove name="right.permanent.callout" />
       <remove name="paypal.partner.right.logo" />
       <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
@@ -30,6 +32,9 @@
             <label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText />
           </action>
         </block>
+      </block>
+      <block type="catalog/category_block" name="right.books.category" after="information_links" template="catalog/sidebar/block.phtml">
+        <action method="setCategoryUrlKey"><name>ksiazki</name></action>
       </block>
     </reference>
   </default>
