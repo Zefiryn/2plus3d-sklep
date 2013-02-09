@@ -10,7 +10,7 @@ class DpTD_Catalog_Block_Category_Block extends Mage_Core_Block_Template {
       $this->_products = Mage::getModel('catalog/product')->getCollection()
                             ->addAttributeToSelect('*')
                             ->addCategoryFilter($this->getCategory())
-                            ->setPageSize(5)
+                            ->setPageSize(5) //@todo add system setting for the number of items
                             ->setCurPage(1);
     }
     return $this->_products;
