@@ -1,0 +1,48 @@
+<?php
+$installer = $this;
+$installer->startSetup();
+$installer->addAttribute('catalog_product', 'author', array(
+    'group'             => 'General',
+    'type'              => 'varchar',
+    'backend'           => '',
+    'frontend'          => '',
+    'label'             => 'Author',
+    'input'             => 'text',
+    'class'             => '',
+    'source'            => '',
+    'global'            => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
+    'visible'           => true,
+    'required'          => false,
+    'user_defined'      => true,
+    'default'           => null,
+    'searchable'        => true,
+    'filterable'        => false,
+    'comparable'        => false,
+    'visible_on_front'  => true,
+    'visible_in_advanced_search' => true,
+    'unique'            => false,
+    'used_in_product_listing' => true,
+));
+$installer->addAttribute('catalog_product', 'redactor', array(
+    'group'             => 'General',
+    'type'              => 'varchar',
+    'backend'           => '',
+    'frontend'          => '',
+    'label'             => 'Redactor',
+    'input'             => 'text',
+    'class'             => '',
+    'source'            => '',
+    'global'            => Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
+    'visible'           => true,
+    'required'          => false,
+    'user_defined'      => true,
+    'default'           => null,
+    'searchable'        => true,
+    'filterable'        => false,
+    'comparable'        => false,
+    'visible_on_front'  => true,
+    'visible_in_advanced_search' => true,
+    'unique'            => false,
+    'used_in_product_listing' => true,
+));
+$installer->endSetup();

@@ -2,13 +2,18 @@
 <config>
   <modules>
     <DpTD_Catalog>
-      <version>0.1.0</version>
+      <version>0.1.1</version>
     </DpTD_Catalog>
   </modules>
   <global>    
     <blocks>      
     </blocks>
-    <helpers>      
+    <helpers>
+      <catalog>
+        <rewrite>
+          <data>DpTD_Catalog_Helper_Data</data>
+        </rewrite>
+      </catalog>
     </helpers>
     <models>
       <dptd_catalog>

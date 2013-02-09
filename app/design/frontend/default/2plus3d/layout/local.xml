@@ -21,40 +21,13 @@
         <action method="setLabel"><label>Informations</label></action>
         <block type="page/template_links" name="information_links" as="links" template="page/template/links.phtml">
           <action method="addLink" translate="label title">
-            <label>Regulations</label>
-            <url>regulamin-sklepu</url>
-            <title>Regulations</title>
-            <prepare>true</prepare>
-            <urlParams />
-            <position>1</position>
-            <liParams/>
-            <aParams />
-            <beforeText />
-            <afterText />
+            <label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText />
           </action>
           <action method="addLink" translate="label title">
-            <label>Payment and Delivery</label>
-            <url>platnosc-i-dostawa</url>
-            <title>Payment and Delivery</title>
-            <prepare>true</prepare>
-            <urlParams />
-            <position>2</position>
-            <liParams/>
-            <aParams />
-            <beforeText />
-            <afterText />
+            <label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><urlParams /><position>2</position><liParams/><aParams /><beforeText /><afterText />
           </action>
           <action method="addLink" translate="label title">
-            <label>Contact</label>
-            <url>kontakt</url>
-            <title>Contact</title>
-            <prepare>true</prepare>
-            <urlParams />
-            <position>3</position>
-            <liParams/>
-            <aParams />
-            <beforeText />
-            <afterText />
+            <label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText />
           </action>
         </block>
       </block>
@@ -77,4 +50,10 @@
       </block>
     </reference>
   </customer_account_login>
+  
+  <catalog_product_view>
+    <reference name="product.info">
+      <block type="catalog/product_view" name="product.book.info" template="catalog/product/view/book-info.phtml" />
+    </reference>
+  </catalog_product_view>
 </layout>

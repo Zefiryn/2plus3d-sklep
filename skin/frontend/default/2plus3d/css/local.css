@@ -1,4 +1,5 @@
 body {background: #fff;}
+a {color: #527d97;}
 .header-container {background: #4F7790;border: 0px;height: 110px;}
 .header {width: 980px;padding: 0px;}
 .header h1.logo {margin-top: 21px;}
@@ -18,9 +19,10 @@ body {background: #fff;}
 #menu {text-align: left;width:979px; margin: 0px auto;overflow: hidden;position: relative;}
 
 .main-container {background: #fff;}
-.main {background: #fff;width: 970px;padding: 51px 25px;}
-.col-main {width: 700px;}
+.main {background: #fff;width: 970px;padding: 0px 25px 50px 25px;}
+.col-main {width: 700px;border-top: 4px solid #000;}
 .col-right {width: 250px;} 
+.breadcrumbs {margin: 10px 0px;}
 
 .sidebar .block {border: 0px;border-top: 4px solid #000;padding: 0px 0px 0px 3px;margin: 0px 0px 55px 0px;}
 
@@ -37,6 +39,9 @@ a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #ED1C24;padding: 0px 18px;min-width: 100px;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
 button.button span span, a.button span span {}
+.cart-table .btn-empty span,
+.cart-table .btn-continue span,
+.cart-table .btn-update span { border-color:#ED1C24; background:#ED1C24; }
 
 /*CUSTOMER LOGIN PAGE*/
 .account-login .content {background: #fff;border: 0px;padding: 15px 0px 0px 0px;min-height: auto;}
@@ -56,3 +61,28 @@ button.button span span, a.button span span {}
 .account-login .new-users {border: 0px;border-top: 4px solid #000;margin-top: 50px;}
 .account-login .new-users h2 {background: none;padding: 0px;color: #000;font-family: lato, sans-serif;font-size: 20px;font-weight: 900;line-height: 28px;border: 0px;text-transform: none;}
 .account-login .new-users .info {color: #7f7f7f;display: block;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;height: 14px;line-height: 14px;}
+
+/*PRODUCT VIEW*/
+.product-view {border: 0px;}
+.product-essential {background: none;padding: 0px;}
+.product-view .product-shop {width: 475px;}
+.product-view .product-shop .product-name {margin: 0px 0px 20px 0px;border-bottom: 1px dashed #000;padding: 0px 0px 15px 0px;}
+.product-view .product-shop .product-name h1 {font-size: 16px;}
+.product-view .product-shop .product-name .author {font-weight: bold;}
+.product-view .product-shop .product-name .author_title {font-style: italic;font-weight: normal;}
+.product-view .product-shop .product-name .editor {font-style: italic;font-weight: normal;}
+.product-view .product-shop .product-name .editr_title {font-weight: bold;}
+.product-view .product-shop .description {line-height: 22px;text-align: justify;}
+.product-view .product-img-box {width: 215px;}
+.product-view .product-img-box .product-image {width: 200px;}
+.product-view .product-img-box .book-info {width: 215px;list-style: none;}
+.product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #000;padding: 0px 0px 10px 0px;font-size: 12px;}
+.product-view .product-img-box .book-info li .label {font-weight: bold;}
+.product-view .product-img-box .price-box {margin: 10px 0px 0px 0px;border-bottom: 1px solid #000;padding: 0px 0px 10px 0px;}
+.product-view .product-img-box .add-to-box {margin: 0px;}
+.product-view .product-img-box .add-to-box .add-to-cart {margin-top: 10px;}
+.product-view .product-img-box .add-to-box .add-to-cart label {}
+.product-view .product-img-box .add-to-box .add-to-cart input {}
+.product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 215px;padding: 0px 0px;margin: 5px 0px;}
+.product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 0px;background: #ED1C24;}
+.product-view .product-img-box .btn-cart span span {}
