@@ -49,7 +49,7 @@
 <?php else:?>
 <tr>
     <td style="<?php echo $this->getStyle() ?>" class="a-right" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->getTotal()->getTitle() ?></strong>
+        <strong><?php echo $this->__('Grand Total') ?></strong>
     </td>
     <td style="<?php echo $this->getStyle() ?>" class="a-right">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></strong>

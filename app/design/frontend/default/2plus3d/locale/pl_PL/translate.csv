@@ -24,3 +24,8 @@
 "There is <a href=""%s""><strong>1 item</strong></a> in your cart.","W koszyku znajduje się <a href=""%s""><strong>1 przedmiot</strong></a>"
 "There are <a class=""upto-5"" href=""%s""><strong>%s items</strong></a> in your cart.","W koszyku znajdują się <a href=""%s""><strong>%s przedmioty</strong></a>"
 "There are <a class=""above-5"" href=""%s""><strong>%s items</strong></a> in your cart.","W koszyku znajduje się <a href=""%s""><strong>%s przedmiotów</strong></a>"
+"qty","egz."
+"Confirmation","Potwierdzenie"
+"Clear Shopping Cart","Usuń wszystko"
+"Grand Total Incl. Tax","Kwota do zapłaty"
+"Grand Total","Kwota do zapłaty"

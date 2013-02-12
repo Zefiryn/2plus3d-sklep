@@ -99,3 +99,21 @@ button.button span span, a.button span span {}
 .mini-products-list li.odd {background-color: #fff;}
 .mini-products-list li.even {background-color: #fff;}
 .mini-products-list li.last {border-bottom: 0px;}
+
+.cart .page-title h1 {font-family: lato, sans-serif;font-size: 20px;font-weight: bold;}
+.data-table {border: 0px;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;}
+.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-size: 13px;font-weight: bold;}
+.data-table thead tr.last th {border-bottom: 2px solid #000 !important;}
+.data-table tfoot {border: 0px;}
+.data-table tfoot tr {background: none !important;}
+.data-table tfoot tr.first td {background: none;}
+.data-table .odd {background: none;}
+.data-table .even {background: none;}
+.data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;}
+.data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #7F7F7F;}
+.data-table tbody td .product-name, .data-table tbody td .product-name a {color: #000;font-size: 13px;}
+
+.cart .totals {float: right;width: auto;background: none;border: 0px;}
+.cart .totals table {border-bottom: 2px solid #000;}
+.cart .totals .checkout-types {font-size: 13px;padding: 15px 0px 5px 0px;text-align: right;}
+button.btn-checkout span span {background-position: 100% 0;padding: 0;}
