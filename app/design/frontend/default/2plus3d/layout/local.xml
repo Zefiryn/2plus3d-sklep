@@ -49,12 +49,20 @@
     </reference>
     <reference name="customer_form_login">
       <block type="customer/form_register" name="customer_login_form_register" template="customer/form/register.phtml">
+      <action method="setShowAddressFields"><value>true</value></action>
         <block type="page/html_wrapper" name="customer.login.form.register.fields.before" as="form_fields_before" translate="label">
           <label>Form Fields Before</label>
         </block>
       </block>
     </reference>
   </customer_account_login>
+  
+  <customer_account_create>
+    <reference name="customer_form_register">
+      <action method="setShowAddressFields"><value>true</value></action>
+    </reference>
+  </customer_account_create>
+  
   
   <catalog_product_view>
     <reference name="product.info">

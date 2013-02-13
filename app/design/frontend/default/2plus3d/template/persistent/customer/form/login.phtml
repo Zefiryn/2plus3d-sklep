@@ -33,21 +33,19 @@
           <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="password-forgot"><?php echo $this->__('Forgot Your Password?') ?></a>
         </div>
       </div>
-    </div>
-    <div class="new-users">
-      <div class="content">
-        <h2><?php echo $this->__('Create an Account') ?></h2>
-        <p class="info"><?php echo $this->__('Fill the form below if you do not have an account.') ?></p>
-        <?php echo $this->getChildHtml('customer_login_form_register');?>
-      </div>
-    </div>
-    <?php if (Mage::helper('checkout')->isContextCheckout()): ?>
-      <input name="context" type="hidden" value="checkout" />
-    <?php endif; ?>
+    </div>    
   </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        var dataForm = new VarienForm('login-form', true);
-    //]]>
-    </script>
+  <script type="text/javascript">
+  //<![CDATA[
+    var loginDataForm = new VarienForm('login-form', true);
+  //]]>
+  </script>
 </div>
+<div class="new-users">
+  <div class="content">
+    <?php echo $this->getChildHtml('customer_login_form_register');?>
+  </div>
+</div>
+<?php if (Mage::helper('checkout')->isContextCheckout()): ?>
+  <input name="context" type="hidden" value="checkout" />
+<?php endif; ?>
