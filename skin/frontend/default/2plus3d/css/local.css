@@ -39,9 +39,9 @@ a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #ED1C24;padding: 0px 18px;min-width: 100px;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
 button.button span span, a.button span span {}
-.cart-table .btn-empty span,
-.cart-table .btn-continue span,
-.cart-table .btn-update span { border-color:#ED1C24; background:#ED1C24; }
+button.button.btn-continue {border-color: #7F7F7F;background-color: #D7D6D6;color: #000;}
+button.button.btn-continue span span {color: #000;font-weight: normal}
+.cart-table .btn-empty span, .cart-table .btn-update span { border-color:#ED1C24; background:#ED1C24; }
 
 .messages {border: 0px;margin: 0px 0px 20px 0px !important;}
 .messages li {border: 0px;padding: 15px 0px 15px 40px !important;}
@@ -56,18 +56,18 @@ button.button span span, a.button span span {}
 .account-login .registered-users h2 {background: none;padding: 0px;color: #000;font-family: lato, sans-serif;font-size: 20px;font-weight: 900;line-height: 28px;border: 0px;text-transform: none;}
 .registered-users .form-list {}
 .registered-users .form-list li {}
-.registered-users .form-list label {float: left;display: block;width: 110px;color: #000;text-transform: lowercase;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif; font-size: 12px;height: 20px;line-height: 20px;}
+.registered-users .form-list label {float: left;display: block;width: 110px;color: #000;text-transform: lowercase;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif; font-size: 12px;height: 20px;line-height: 20px;}
 .registered-users .form-list .input-box {clear: none;float: left;}
 .registered-users .form-list .input-box  input {height: 20px; border: 1px solid #000;}
 .registered-users .buttons-set {background: none;border: 0px;padding-left: 110px;text-align: left;}
 .registered-users .buttons-set button.button {float: none; display: block;}
-.registered-users .password-forgot {display: inline-block;margin-top: 20px;color: #7f7f7f;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;}
+.registered-users .password-forgot {display: inline-block;margin-top: 20px;color: #7f7f7f;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;}
 #remember-me-box  .input-box {margin-left: 110px;width: auto;float: left;margin-right: 5px;}
 #remember-me-box  label {float: left;width: 200px;text-transform: none;height: auto;line-height: 16px;color: #7F7F7F;}
 
 .new-users {border: 0px;border-top: 4px solid #000;margin-top: 50px;}
 .new-users h2 {background: none;padding: 0px;color: #000;font-family: lato, sans-serif;font-size: 20px;font-weight: 900;line-height: 28px;border: 0px;text-transform: none;}
-.new-users .info {color: #7f7f7f;display: block;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;height: 14px;line-height: 14px;}
+.new-users .info {color: #7f7f7f;display: block;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;height: 14px;line-height: 14px;}
 .new-users .account-create {padding-top: 15px;}
 .new-users .account-create .buttons-set button.button {margin-left: 690px}
 
@@ -110,7 +110,7 @@ button.button span span, a.button span span {}
 .mini-products-list li.last {border-bottom: 0px;}
 
 .cart .page-title h1 {font-family: lato, sans-serif;font-size: 20px;font-weight: bold;}
-.data-table {border: 0px;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;}
+.data-table {border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
 .data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-size: 13px;font-weight: bold;}
 .data-table thead tr.last th {border-bottom: 2px solid #000 !important;}
 .data-table tfoot {border: 0px;}
@@ -122,16 +122,17 @@ button.button span span, a.button span span {}
 .data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #7F7F7F;}
 .data-table tbody td .product-name, .data-table tbody td .product-name a {color: #000;font-size: 13px;}
 
-.cart .totals {float: right;width: auto;background: none;border: 0px;}
+.cart .totals {float: right;width: auto;background: none;border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
 .cart .totals table {border-bottom: 2px solid #000;}
 .cart .totals .checkout-types {font-size: 13px;padding: 15px 0px 5px 0px;text-align: right;}
+.cart .totals tfoot th strong, .cart .totals tfoot td strong {font-size: 13px;}
 button.btn-checkout span span {background-position: 100% 0;padding: 0;}
 
 .fieldset {border: 0px;background: none;padding: 20px;margin: 0px;}
 .form-list li {}
 .form-list li.control {margin: 20px 0px;}
 .form-list .field {width: 400px;margin: 5px 0px;}
-.form-list label {color: #7F7F7F;display: block !important;float: left !important;width: 120px;text-transform: lowercase;font-family: 'Lucida Sans', 'Lucida Grande', 'Lucida Sans Unicode', sans-serif;font-size: 12px;height: 20px;line-height: 20px;}
+.form-list label {color: #7F7F7F;display: block !important;float: left !important;width: 120px;text-transform: lowercase;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;height: 20px;line-height: 20px;}
 .form-list label.required em {display: none;}
 .form-list label.required {color:  #000;}
 .form-list li.control label {width: auto;}
