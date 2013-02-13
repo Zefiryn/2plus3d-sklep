@@ -43,6 +43,13 @@ button.button span span, a.button span span {}
 .cart-table .btn-continue span,
 .cart-table .btn-update span { border-color:#ED1C24; background:#ED1C24; }
 
+.messages {border: 0px;margin: 0px 0px 20px 0px !important;}
+.messages li {border: 0px;padding: 15px 0px 15px 40px !important;}
+.success-msg {color: green;background-color: lightgreen; border-color: green;background-image: none;border-left-width: 0px !important;border-right-width: 0px !important;}
+.messages ul {border: 0px !important;}
+.messages li li {position: relative;padding: 0px !important;border: 0px;}
+.error-msg, .success-msg, .note-msg, .notice-msg {font-weight: normal !important;font-size: 12px !important;padding: 0px !important;margin: 0px !important;min-height: auto !important;}
+
 /*CUSTOMER LOGIN PAGE*/
 .account-login .content {background: #fff;border: 0px;padding: 15px 0px 0px 0px;min-height: auto;}
 .account-login .registered-users {border: 0px;}
