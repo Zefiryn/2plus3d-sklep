@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<config>     
+ 
+	<modules>
+		<Clearandfizzy_Reducedcheckout>
+			<version>1.0.0</version>
+		</Clearandfizzy_Reducedcheckout>
+	</modules>
+ 
+    <global>
+ 
+		<!-- maps blocks to the "{{extension}}" namespace (use "extension" for overriding) -->
+        <blocks>
+             <clearandfizzy_reducedcheckout>
+                <class>Clearandfizzy_Reducedcheckout_Block</class>
+             </clearandfizzy_reducedcheckout>
+        </blocks>
+        
+        <models>
+             <clearandfizzy_reducedcheckout>
+                <class>Clearandfizzy_Reducedcheckout_Model</class>
+             </clearandfizzy_reducedcheckout>
+        </models>   
+
+        <helpers>
+             <clearandfizzy_reducedcheckout>
+                <class>Clearandfizzy_Reducedcheckout_Helper</class>
+             </clearandfizzy_reducedcheckout>
+        </helpers>               
+        
+		<events>
+            <controller_action_layout_load_before>
+                <observers>
+                    <checkReducedCheckout>
+                        <class>Clearandfizzy_Reducedcheckout_Model_Observer</class>
+                        <method>checkReducedCheckout</method>
+                    </checkReducedCheckout>
+                </observers>
+            </controller_action_layout_load_before>
+        </events>        
+ 
+    </global>	
+ 
+	<frontend>
+		<routers>
+ 
+			<!-- Sets up the frontend URL we need to hit to run code, needs to be a unique handle (use the extension name a prefix?)-->
+			<clearandfizzy_reducedcheckout> 
+				<use>standard</use>
+				<args>
+					<module>Clearandfizzy_Reducedcheckout</module>
+					<frontName>reducedcheckout</frontName>
+				</args>
+			</clearandfizzy_reducedcheckout>
+ 
+		</routers>
+ 
+        <default>
+            <router>reducedcheckout</router>
+        </default>
+ 
+		<layout>
+			<updates>
+				<clearandfizzy_reducedcheckout>
+					<file>clearandfizzy/reducedcheckout/reducedcheckout.xml</file>	
+				</clearandfizzy_reducedcheckout>
+			</updates>
+		</layout>
+ 
+	</frontend>        
+ 
+</config>

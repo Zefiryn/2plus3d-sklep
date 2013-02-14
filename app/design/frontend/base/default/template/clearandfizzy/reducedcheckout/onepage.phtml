@@ -1,0 +1,38 @@
+<?php /* -- START SAGEPAY INTEGRATION -- */ ?>
+	<div class="multiple-checkout">
+		<span></span>
+	</div>
+
+	<input type="hidden" name="suite_ms_payment_method" id="suite_ms_payment_method" value="<?php echo Mage::helper('clearandfizzy_reducedcheckout')->getPaymentMethod(); ?>" />
+<?php /* -- END SAGEPAY INTEGRATION -- */ ?>
+
+<form action="" id="co-payment-form">
+    <fieldset>
+		<input name="payment[method]" type="hidden" value="<?php echo Mage::helper('clearandfizzy_reducedcheckout')->getPaymentMethod(); ?>" checked="checked" />
+		<span id="payment-buttons-container"></span>
+    </fieldset>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+    var checkout = new Checkout(accordion,{
+        progress: '<?php echo $this->getUrl('reducedcheckout/onepage/progress') ?>',
+        review: '<?php echo $this->getUrl('reducedcheckout/onepage/review') ?>',
+        saveMethod: '<?php echo $this->getUrl('reducedcheckout/onepage/saveMethod') ?>',
+        failure: '<?php echo $this->getUrl('checkout/cart') ?>'}
+    );
+
+<?php
+	// this is to enable forced guest checkout
+	if ( $this->helper('clearandfizzy_reducedcheckout/data')->isGuestCheckoutOnly() == true ) {
+?>
+		Element.hide('register-customer-password');
+	    checkout.gotoSection('billing');
+<?php
+	} // end if
+?>
+    var billing = new Billing('co-billing-form', '<?php echo $this->getUrl('reducedcheckout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('reducedcheckout/onepage/saveBilling') ?>');
+    var shipping = new Shipping('co-shipping-form', '<?php echo $this->getUrl('reducedcheckout/onepage/getAddress') ?>address/', '<?php echo $this->getUrl('reducedcheckout/onepage/saveShipping') ?>','<?php echo $this->getUrl('reducedcheckout/onepage/review') ?>');
+    var payment = new Payment('co-payment-form', '<?php echo $this->getUrl('reducedcheckout/onepage/savePayment') ?>');
+
+//]]>
+</script>

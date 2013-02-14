@@ -132,15 +132,18 @@ button.btn-checkout span span {background-position: 100% 0;padding: 0;}
 .form-list li {}
 .form-list li.control {margin: 20px 0px;}
 .form-list .field {width: 400px;margin: 5px 0px;}
-.form-list label {color: #7F7F7F;display: block !important;float: left !important;width: 120px;text-transform: lowercase;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;height: 20px;line-height: 20px;}
+.form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;min-height: 20px;line-height: 20px;min-width: 120px;}
 .form-list label.required em {display: none;}
 .form-list label.required {color:  #000;}
-.form-list li.control label {width: auto;}
+.form-list li.control label {width: auto;margin-right: 10px;}
+.form-list li.control input.radio, .form-list li.control input.checkbox {margin-top: 3px;}
 .form-list .input-box {float: left;clear: none;}
 .form-list li.wide > .input-box {margin-left: 120px;}
 .form-list li.wide label + .input-box {margin-left:  0px;}
 .form-list input.input-text {border: 1px solid #7F7F7F;background: #fff;height: 20px;width: 255px;}
-.form-list li.wide input.input-text {width: 655px;}
+.form-list li.wide input.input-text {}
+.col2-right-layout .form-list li.wide input.input-text,
+.col2-left-layout .form-list li.wide input.input-text {width: 560px;}
 .form-list select {border: 1px solid #7F7F7F;background: #fff;height: 26px;width: 260px;}
 
 .validation-failed {border: 1px solid #ED1C24!important;background: #fff !important;}
@@ -156,3 +159,32 @@ button.btn-checkout span span {background-position: 100% 0;padding: 0;}
 .box-account {background: #fff;border: 0px;padding: 15px 0px;}
 .box-account .box-head {border: 0px;color: #000;text-align: left;}
 .box-account .box-head h2 {background: none !important;float: none;padding: 0px;color: #000;font-family: lato, sans-serif;}
+
+.opc { position:relative; }
+.opc li.section {background: #fff;border-top: 1px solid #000;}
+.opc li.section.active {}
+
+.opc .step-title { border-width: 0px; background: #fff; padding: 4px 8px 6px 0px; text-align:right; }
+.opc .step-title .number { display: none; }
+.opc .step-title h2 {color: #888; font-family: lato; font-size: 18px; line-height: 26px;}
+.opc .step-title a { display:none; float:right; font-size:11px; line-height:16px; }
+
+.opc .allow .step-title { background: #fff; color: #000; border: 0px;}
+.opc .allow .step-title h2 { color: #000; }
+
+.opc .active .step-title { background: #fff; border: 0px; border-bottom: 3px solid #000; padding-bottom:5px; color: #000; cursor:default; }
+.opc .active .step-title h2 { color: #000; font-family: lato; font-size: 18px; line-height: 26px;}
+
+.opc .step { border: 0px; background: #fff; padding: 15px 10px; position:relative; }
+
+#opc-review .step { border:0; padding: 30px 0px; }
+#opc-review .buttons-set { padding: 20px 0px; border: 1px solid #000; border-width: 1px 0px 0px 0px; text-align: right;}
+
+.block-progress { border:0; margin:0; }
+.block-progress .block-title { background:none; border:0; padding:0; margin:0 0 5px; }
+.block-progress .block-title strong { font-size:15px; color:#000; }
+.block-progress .block-content { background: none; }
+.block-progress dt { font-size:13px; font-weight:bold; line-height: 20px; background: #fff; border-color: #000; border-width: 2px 0px 0px 0px; margin:0 0 6px; padding:2px 8px; color: #000; }
+.block-progress dd { background: #fff; color: #000; border: 0px; padding: 8px 3px; margin: 0 0 10px; }
+.block-progress dt.complete { margin:0; background: #ededed; color: #555; }
+.block-progress dd.complete {}
