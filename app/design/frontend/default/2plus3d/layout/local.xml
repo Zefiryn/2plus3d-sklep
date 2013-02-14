@@ -19,6 +19,7 @@
       <remove name="right.reports.product.compared" />
       <remove name="right.permanent.callout" />
       <remove name="paypal.partner.right.logo" />
+      <remove name="sale.reorder.sidebar" />
       <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
         <action method="setLabel"><label>Informations</label></action>
         <block type="page/template_links" name="information_links" as="links" template="page/template/links.phtml">
@@ -36,6 +37,9 @@
       <block type="catalog/category_block" name="right.books.category" after="information_links" template="catalog/sidebar/block.phtml">
         <action method="setCategoryUrlKey"><name>ksiazki</name></action>
       </block>
+    </reference>
+    <reference name="left">
+      <remove name="left.permanent.callout" />
     </reference>
   </default>
   
@@ -63,10 +67,46 @@
     </reference>
   </customer_account_create>
   
+  <customer_account>
+    <reference name="root">
+      <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+    </reference>
+    <reference name="right">
+      <remove name="sale.reorder.sidebar" />
+      <action method="unsetChild"><alias>cart_sidebar</alias></action>
+      <action method="insert"><block>customer_account_navigation</block><siblingName /><after>0</after><alias /></action>
+      <action method="insert">
+        <block>cart_sidebar</block>
+        <siblingName>customer_account_navigation</siblingName>
+        <after>1</after>
+        <alias />
+      </action>
+      <remove name="information_block" />
+      <remove name="right.books.category" />
+    </reference>
+  </customer_account>
+  
+  <customer_account_index>
+    <reference name="root">
+      <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+    </reference>
+  </customer_account_index>
   
   <catalog_product_view>
     <reference name="product.info">
       <block type="catalog/product_view" name="product.book.info" template="catalog/product/view/book-info.phtml" />
     </reference>
   </catalog_product_view>
+  
+  <sales_billing_agreement_index>
+    <reference name="root">
+      <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+    </reference>
+  </sales_billing_agreement_index>
+  
+  <sales_recurring_profile_index>
+    <reference name="root">
+      <action method="setTemplate"><template>page/2columns-right.phtml</template></action>
+    </reference>
+  </sales_recurring_profile_index>
 </layout>
