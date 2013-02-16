@@ -1,0 +1,3 @@
+// ARTIO PATCH ================================================================
+Mage::dispatchEvent('core_layout_block_create_after', array('block'=>$block));
+// END ARTIO PATCH ============================================================

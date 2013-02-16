@@ -1,0 +1,19 @@
+    $STORES
+
+    # rules for default storeview
+
+    # static rewrite - home page
+    RewriteCond %{SERVER_NAME} ^$SERVER
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$SUBBASE$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$STORECODE.html -f
+    RewriteRule .* $TURBOPATH/$STORECODE.html [L]
+
+    # static rewrite - other pages
+    RewriteCond %{SERVER_NAME} ^$SERVER
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} /$SUBBASE(.*)$EXTENSION$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$SUBBASE$STORECODE/%1.html -f
+    RewriteRule .* $TURBOPATH/$SUBBASE$STORECODE/%1.html [L]

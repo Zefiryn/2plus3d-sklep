@@ -1,0 +1,42 @@
+    
+    #
+    # Rules for storeview $STORENAME
+    #
+    
+    # store view is choosen by cookie
+    
+    # static rewrite - home page
+
+    RewriteCond %{HTTP_COOKIE} store=$STORECODE
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$SUBBASE$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$STORECODE.html -f
+    RewriteRule .* $TURBOPATH/$STORECODE.html [L]
+
+    # static rewrite - other pages
+
+    RewriteCond %{HTTP_COOKIE} store=$STORECODE
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} /$SUBBASE(.*)$EXTENSION$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$SUBBASE$STORECODE/%1.html -f
+    RewriteRule .* $TURBOPATH/$SUBBASE$STORECODE/%1.html [L]
+    
+    # store view is choosen by request_path
+    
+    # static rewrite - home page
+
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$SUBBASE$STORECODE(/|)$
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$STORECODE.html -f
+    RewriteRule .* $TURBOPATH/$STORECODE.html [L]
+    
+    # static rewrite - other pages
+
+    RewriteCond %{HTTP_COOKIE} !artio_mturbo=.*
+    RewriteCond %{REQUEST_URI} ^/$SUBBASE$STORECODE/(.*)$EXTENSION$ [NC]
+    RewriteCond %{QUERY_STRING} !.+
+    RewriteCond $ROOTPATH/$SUBBASE$STORECODE/%1.html -f
+    RewriteRule .* $TURBOPATH/$SUBBASE$STORECODE/%1.html [L]

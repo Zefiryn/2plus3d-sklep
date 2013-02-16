@@ -1,0 +1,13 @@
+// ARTIO PATCH ================================================================
+public static function getStaticState()
+{
+	$reflection = new ReflectionClass('Mage');
+    return $reflection->getStaticProperties(); 
+}
+    
+public static function restoreState($data)
+{
+	foreach ($data as $name => $value)
+		self::$$name = $value;
+}
+// END ARTIO PATCH ============================================================

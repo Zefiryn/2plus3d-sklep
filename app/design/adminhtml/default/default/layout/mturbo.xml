@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<layout version="0.1.0">
+    <mturbo_adminhtml_mturbo_index>
+        <reference name="content">
+            <block type="mturbo/adminhtml_mturbo" name="mturbo" >
+            	<block type="mturbo/adminhtml_edit_form" name="mturbo_form" />
+            </block>
+            <block type="core/template" name="version" template="mturbo/version.phtml" />
+        </reference>
+       	<reference name="left">
+        	<block type="mturbo/adminhtml_edit_tabs" name="edit_tabs" template="mturbo/tabs.phtml">
+        		<block type="mturbo/adminhtml_edit_tab_url" name="edit_tab_url" />
+        	 	<block type="mturbo/adminhtml_edit_tab_main" name="edit_tab_main" /> 
+        	 	<block type="mturbo/adminhtml_edit_tab_website" name="edit_tab_website" />
+                <block type="mturbo/adminhtml_edit_tab_category" name="edit_tab_category" />
+                <block type="mturbo/adminhtml_edit_tab_cms" name="edit_tab_cms" />
+                <block type="mturbo/adminhtml_edit_tab_dynamic" name="edit_tab_dynamic" />
+                <block type="mturbo/adminhtml_edit_tab_actions" name="edit_tab_actions" />
+                <block type="mturbo/adminhtml_edit_tab_license" name="edit_tab_license" />
+                <block type="mturbo/adminhtml_edit_tab_uninstall" name="edit_tab_uninstall" />
+                <action method="addTab"><name>url_section</name><block>edit_tab_url</block></action>
+        		<action method="addTab"><name>main_section</name><block>edit_tab_main</block></action>
+        		<action method="addTab"><name>website_section</name><block>edit_tab_website</block></action>
+                <action method="addTab"><name>category_section</name><block>edit_tab_category</block></action>
+                <action method="addTab"><name>cms_section</name><block>edit_tab_cms</block></action>
+                <action method="addTab"><name>dynamic_section</name><block>edit_tab_dynamic</block></action>
+                <action method="addTab"><name>actions_section</name><block>edit_tab_actions</block></action>
+                <action method="addTab"><name>license_section</name><block>edit_tab_license</block></action>
+                <action method="addTab"><name>uninstall_section</name><block>edit_tab_uninstall</block></action>
+        	</block>
+        	<block type="core/template" name="demo_text" template="mturbo/demo.phtml" />
+        </reference>
+    </mturbo_adminhtml_mturbo_index>
+    <mturbo_adminhtml_mturbo_first>
+    	 <reference name="content">
+            <block type="mturbo/adminhtml_welcome" name="mturbo_welcome" >
+            	<block type="mturbo/adminhtml_welcome_form" name="form" />
+            </block>
+        </reference>
+    </mturbo_adminhtml_mturbo_first>
+    <mturbo_adminhtml_check_index>
+    	 <reference name="content">
+            <block type="mturbo/adminhtml_welcome" name="mturbo_welcome" >
+            	<block type="mturbo/adminhtml_welcome_form" name="form" />
+            </block>
+        </reference>
+    </mturbo_adminhtml_check_index>
+</layout>

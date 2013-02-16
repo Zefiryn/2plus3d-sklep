@@ -10,3 +10,4 @@ php_errors.log
 *.kdev4
 errors/local.xml
 media/tmp/*
+*.bak*
