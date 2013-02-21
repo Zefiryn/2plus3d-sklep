@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Payu_PayuCheckout>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
             <depends>
                 <Mage_Payment/>
