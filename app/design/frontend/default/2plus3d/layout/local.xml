@@ -19,6 +19,7 @@
       <remove name="right.reports.product.compared" />
       <remove name="right.permanent.callout" />
       <remove name="paypal.partner.right.logo" />
+      <remove name="payu_account.advertisement" />
       <remove name="sale.reorder.sidebar" />
       <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
         <action method="setLabel"><label>Informations</label></action>
