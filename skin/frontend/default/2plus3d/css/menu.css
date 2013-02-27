@@ -53,16 +53,19 @@ li.issue .cover img {border: 1px solid #E5E5E5;margin-left: -4px;margin-top: -4p
 .submenu .items li {padding-left: 10px;padding-right: 10px;float: left;}
 .submenu .items a {color: black;display: block;float: left;height: 20px;line-height: 16px;padding-top: 5px;}
 
-.footer-container {border:0px;background-color: #2D2D2D;color: #fff;font-family: lato, sans-serif;font-size: 12px;height: 180px;}
+.footer-container {border:0px;background-color: #fff;color: #fff;font-family: droid-sans, sans-serif;font-size: 12px;height: 180px;background: transparent url('../images/footer-bg.png') repeat-x 0px 20px;}
 .footer {width: 980px;margin: 0 auto;padding: 0px;text-align: left;}
 .footer a {color: #b2b2b2;}
 .footer li.clear {display: none;}
 .footer .left {float: left;width: 690px;padding-right: 10px;min-height: 100px;}
 .footer .left .menu {overflow: hidden;}
-.footer .left .menu > li {padding: 25px 10px 15px 10px;width: 160px;float: left;list-style: none;background: none;}
-.footer .left .menu h3, .footer .left .menu h3 a {color: white;margin: 0px 0px 10px 0px;font-weight: normal;font-size: 14px;}
+.footer .left .menu > li {padding: 25px 10px 15px 10px;width: 120px;float: left;list-style: none;background: none;}
+.footer .left .menu h3, .footer .left .menu h3 a {color: white;margin: 0px 0px 10px 0px;font-weight: normal;font-size: 12px;background: none;text-transform: uppercase;letter-spacing: 1px;font-family: lato, droid-sans, sans-serif;}
 .footer .left .menu ul {display: block;margin: 0px}
-.footer .left .menu ul .menuItem {margin: 0px;padding: 0px 0px 0px 13px;background: transparent url("../images/footerArrow.png");background-repeat: no-repeat;background-position: 0 3px;font-size: 12px;display: list-item;line-height: 15px;}
+.footer .left .menu ul .menuItem {margin: 0px;padding: 1px 0px;background: none;display: list-item;line-height: 15px;}
+.footer .left .menu ul .menuItem a {color: #000;font-family: droid-sans,sans-serif;font-size: 11px;}
 
-.footer .copyrights {font-size: 10px;float: left;width: 270px;min-height: 100px;padding-left: 10px;padding-top: 25px;color: #b2b2b2;text-align: left;}
+.footer .copyrights {font-size: 10px;float: none;clear: both;width: 100%;padding: 25px 0px 10px 10px;color: #b2b2b2;text-align: left;}
 .footer .copyrights * {font-size: 10px;}
+.footer .copyrights p {color: #000;}
+.footer .copyrights p .grey {color: #4F4F4F;}

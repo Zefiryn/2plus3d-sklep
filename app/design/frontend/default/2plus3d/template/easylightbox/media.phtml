@@ -1,0 +1,40 @@
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    
+    $_lightboxConfig = Mage::getStoreConfig('easy_lightbox/general');
+    /* Main Image Size */
+    if (strstr($_lightboxConfig['mainImageSize'], '_')) {
+        $mainImageSize = explode('_', $_lightboxConfig['mainImageSize'], 2);
+    } else {
+        $mainImageSize = array(265, 265);
+    }
+    /* Additional Images Size */
+    if (strstr($_lightboxConfig['additionalImageSize'], '_')) {
+        $additionalImageSize = explode('_', $_lightboxConfig['additionalImageSize'], 2);
+    } else {
+        $additionalImageSize = array(60, 60);
+    }
+
+    $base_image = $_product->getImage();
+?>
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <ul>
+    <?php foreach ($this->getGalleryImages() as $_image): ?>
+      <?php if($base_image != $_image->getFile()):?>
+      <?php $subtitle = (($_lightboxConfig['productName'] != 0) && !$_image->getLabel()) ? $_product->getName() : $this->htmlEscape($_image->getLabel());?>
+      <li>
+          <a href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" 
+              rel="lightbox[rotation]" class="product-image"
+              title="<?php echo $subtitle; ?>"
+              onclick="return false;"
+          ><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($additionalImageSize[0], $additionalImageSize[1]); ?>" alt="<?php echo $subtitle; ?>"
+          /></a>
+      </li>
+      <?php endif; ?>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

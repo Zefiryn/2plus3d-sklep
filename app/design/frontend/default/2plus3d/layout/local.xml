@@ -43,6 +43,9 @@
     <reference name="left">
       <remove name="left.permanent.callout" />
     </reference>
+    <reference name="root">
+      <remove name="breadcrumbs" />
+    </reference>
   </default>
   
   <cms_index_index translate="label">
@@ -96,7 +99,10 @@
   
   <catalog_product_view>
     <reference name="product.info">
-      <block type="catalog/product_view" name="product.book.info" template="catalog/product/view/book-info.phtml" />
+      <block type="catalog/product_view_media" name="product_photos" template="easylightbox/media.phtml" />
+    </reference>
+    <reference name="product.info.media">
+      <action method="setTemplate"><template>catalog/product/view/media.phtml</template></action>
     </reference>
   </catalog_product_view>
   

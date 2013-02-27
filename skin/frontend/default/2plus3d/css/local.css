@@ -1,6 +1,7 @@
 body {background: #fff;color: #000;}
 a {color: #527d97;}
-.header-container {background: #4F7790;border: 0px;height: 110px;}
+.caps {text-transform: uppercase;}
+.header-container {background: #FCCA21;border: 0px;height: 110px;}
 .header {width: 980px;padding: 0px;}
 .header h1.logo {margin-top: 21px;}
 .header h1.logo .logo {margin:0px;}
@@ -24,17 +25,16 @@ a {color: #527d97;}
 .col-right {width: 250px;} 
 .breadcrumbs {margin: 10px 0px;}
 
-.sidebar .block {border: 0px;border-top: 4px solid #000;padding: 0px 0px 0px 3px;margin: 0px 0px 55px 0px;}
+.sidebar .block {border: 0px;border-top: 2px solid #000;padding: 0px 0px 0px 3px;margin: 0px 0px 55px 0px;}
 
-.block .block-title {font-size: 15px;font-family: lato, sans-serif;font-weight: 900;background: #fff;border: 0px;padding: 0px 0px 3px 0px;margin: 0px 0px 9px 0px;}
-.block .block-title strong {color: #000;background: #fff !important;text-transform: none; font-size: 15px;font-family: lato, sans-serif;font-weight: 900;padding: 6px 0px;}
+.block .block-title {background: #fff;border: 0px;padding: 8px 0px 3px 0px;margin: 0px 0px 7px 0px;}
+.block .block-title strong {background:none;padding: 0px;color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;font-weight: 400;text-transform: none;}
 .block .block-content {background: #fff;font-family: lato, sans-serif;font-size: 14px;font-weight: 300;text-align: left;margin: 0px;padding: 0px;}
 .block .empty {margin: 0px;padding: 0px;}
 
 .block .block-content .links li {display: block;}
-.block .block-content .links li a {text-decoration: none;}
 
-a:link, a:visited, a:active {text-decoration: none;}
+a:link, a:visited, a:active {text-decoration: none;color: #3E6E8C;font-family: droid-sans, sans-serif;font-size: 13px;}
 a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #ED1C24;padding: 0px 18px;min-width: 100px;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
@@ -86,22 +86,23 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .products-list .price-box .regular-price .price {font-size: 20px;}
 
 /*PRODUCT VIEW*/
+.catalog-product-view .col-main {border-top: 0px;}
 .product-view {border: 0px;}
 .product-essential {background: none;padding: 0px;}
-.product-view .product-shop {width: 475px;}
-.product-view .product-shop .product-name {margin: 0px 0px 20px 0px;border-bottom: 1px dashed #000;padding: 0px 0px 15px 0px;}
-.product-view .product-shop .product-name h1 {font-size: 24px;color: #000;line-height: 36px;}
-.product-view .product-shop .product-name .author {font-weight: bold;}
-.product-view .product-shop .product-name .author_title {font-style: italic;font-weight: normal;}
-.product-view .product-shop .product-name .editor {font-style: italic;font-weight: normal;}
-.product-view .product-shop .product-name .editr_title {font-weight: bold;}
-.product-view .product-shop .description {line-height: 22px;text-align: justify;}
-.product-view .product-img-box {width: 215px;}
-.product-view .product-img-box .product-image {width: 200px;}
-.product-view .product-img-box .book-info {width: 215px;list-style: none;}
-.product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #000;padding: 0px 0px 10px 0px;font-size: 12px;}
+.product-view .product-shop {width: 475px;border-top: 2px solid #000;}
+.product-view .product-shop .category {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin-top: 8px;}
+.product-view .product-shop .product-name {margin: 20px 0px 20px 0px;border-bottom: 0;padding: 0px 0px 15px 0px;}
+.product-view .product-shop .product-name h1 {font-size: 34px;color: #000;line-height: 36px;font-family:  droid-serif, serif;font-weight: normal;}
+.product-view .product-shop .product-name .author {margin-top:25px;display: block;color: #000000;font-size: 14px;letter-spacing: 1px;line-height: 1.4;font-family: droid-serif, serif;font-weight: normal;}
+.product-view .product-shop .description {line-height: 22px;text-align: justify;font-family: droid-serif, serif;font-size: 14px;line-height: 22px;}
+.product-view .product-shop .more-views {margin-top: 30px;}
+.product-view .product-shop .more-views li {display: block;width: 485px;height: 325px;margin: 10px 0px;}
+.product-view .product-img-box {width: 195px;}
+.product-view .product-img-box .product-image {width: 195px;border: 1px solid #e4e4e4;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
+.product-view .product-img-box .book-info {width: 195px;list-style: none;}
+.product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 10px 0px;font-size: 12px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}
-.product-view .product-img-box .price-box {margin: 10px 0px 0px 0px;border-bottom: 1px solid #000;padding: 0px 0px 10px 0px;}
+.product-view .product-img-box .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;}
 .product-view .product-img-box .price-box .label {font-weight: bold;}
 
 .regular-price .price {font-weight: normal;color: #000;font-size: 12px;}
@@ -112,11 +113,16 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 
 .product-view .product-img-box .add-to-box {margin: 0px;}
 .product-view .product-img-box .add-to-box .add-to-cart {margin-top: 10px;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box {background: #FCCA21;-moz-border-radius: 2px 2px 0px 0px; -webkit-border-radius: 2px 2px 0px 0px; -khtml-border-radius: 2px 2px 0px 0px; border-radius: 2px 2px 0px 0px;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box * {display: none;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .regular-price {display: block;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans-mono, sans-serif;}
 .product-view .product-img-box .add-to-box .add-to-cart label {font-size: 12px;color: #000;}
 .product-view .product-img-box .add-to-box .add-to-cart input {}
-.product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 215px;padding: 0px 0px;margin: 15px 0px 5px 0px;}
-.product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 0px;background: #ED1C24;}
-.product-view .product-img-box .btn-cart span span {}
+.product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;}
+.product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;}
+.product-view .product-img-box .btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
+.product-view .product-img-box .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
 .mini-products-list li.odd {background-color: #fff;}

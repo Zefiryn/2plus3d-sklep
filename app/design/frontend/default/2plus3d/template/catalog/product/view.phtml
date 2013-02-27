@@ -21,12 +21,16 @@
       </div>
 
       <div class="product-shop">
+          <p class="category">
+            <?php echo $this->helper('catalog')->getProductCategoryName($_product);?>
+          </p>
           <div class="product-name">
             <h1>
+              <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
               <?php if ($_product->getAuthor() != null):?>
-              <span class="author"><?php echo $_product->getAuthor();?></span> <span class="author_title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+              <p class="author"><span class="caps"><?php echo $_product->getAuthor();?></span></p>
               <?php else: ?>
-              <span class="editor_title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>,</span> <span class="editor"><?php echo $this->__('edited by %s',$_product->getRedactor());?></span>
+              <p class="author"><span class="caps"><?php echo $_product->getRedactor();?></span> (<?php echo $this->__('ed.');?>)</p>
               <?php endif;?>
               
             </h1>
@@ -36,6 +40,7 @@
               <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getDescription()), 'description') ?></div>
             </div>
           <?php endif;?>
+          <?php echo $this->getChildHtml('product_photos');?>
       </div>
 
       <div class="product-img-box">
@@ -45,7 +50,7 @@
         <?php if (!$this->hasOptions()):?>
           <div class="add-to-box">
             <?php if($_product->isSaleable()): ?>
-              <?php echo $this->getChildHtml('addtocart') ?>              
+              <?php echo $this->getChildHtml('addtocart') ?>
             <?php endif; ?>
           </div>
         <?php endif; ?>

@@ -1,5 +1,25 @@
 <?php /* @var $this Mage_Catalog_Block_Product_View_Abstract */?>
 <?php $_product = $this->getProduct() ?>
+<?php $_helper = $this->helper('catalog');?>
+<ul class="book-info">
+  <li>
+    <span class="label"><?php echo $this->__('Publish date');?>:</span> <?php echo $_helper->getFormatedDate($_product->getPublishDate());?>
+  </li>
+  <li>
+    <span class="label"><?php echo $this->__('Format');?>:</span> <?php echo $_product->getFormat();?>mm
+  </li>
+  <li>
+    <span class="label"><?php echo $this->__('Number of pages');?>:</span> <?php echo $_product->getPageNo();;?>
+  </li>
+  <li>
+    <span class="label"><?php echo $this->__('Binding type');?>:</span> <?php echo $this->__($_product->getAttributeText('binding'));?>
+  </li>
+  <li>
+    <?php echo $this->getPriceHtml($_product) ?>
+  </li>
+  <li>
+    <span class="label"><?php echo $this->__('ISBN');?>:</span> <?php echo $_product->getIsbn();;?>
+  </li>  
+</ul>
 
 <?php echo $this->getChildHtml('product_type_data_extra') ?>
-<?php echo $this->getPriceHtml($_product) ?>
