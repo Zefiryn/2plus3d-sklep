@@ -21,7 +21,7 @@ a {color: #527d97;}
 
 .main-container {background: #fff;}
 .main {background: #fff;width: 970px;padding: 0px 25px 50px 25px;}
-.col-main {width: 700px;border-top: 4px solid #000;}
+.col-main {width: 700px;border-top: 2px solid #000;}
 .col-right {width: 250px;} 
 .breadcrumbs {margin: 10px 0px;}
 
@@ -238,3 +238,11 @@ button.btn-checkout span span {background-position: 100% 0;padding: 0;}
 .block-progress dd { background: #fff; color: #000; border: 0px; padding: 8px 3px; margin: 0 0 10px; }
 .block-progress dt.complete { margin:0; background: #ededed; color: #555; }
 .block-progress dd.complete {}
+
+/* STATIC PAGES */
+.cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 30px;}
+.cms-regulamin-sklepu .breadcrumbs-info {margin-top: 8px;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;line-height: 24px;}
+.cms-regulamin-sklepu .std ol li {font-family: droid-serif, serif;font-size: 18px;font-weight: bold;list-style-type: upper-roman;margin-bottom: 25px;}
+.cms-regulamin-sklepu .std ol li ol li {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;list-style-type: decimal;line-height: 22px;margin-bottom: 0px;}
+.cms-regulamin-sklepu .std ol li ol li ol {margin: 0px;}
+.cms-regulamin-sklepu .std ol li ol li ol li {list-style-type: lower-latin;}
