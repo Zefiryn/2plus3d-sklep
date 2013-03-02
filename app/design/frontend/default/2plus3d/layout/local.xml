@@ -8,6 +8,31 @@
     <reference name="header">
       <remove name="top.search" />
       <remove name="top.links" />
+      <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
+      <action method="setLabel">
+        <label>Informations</label>
+      </action>
+      <block type="page/template_links" name="information_links" as="links" template="page/template/links.phtml">
+        <action method="addLink" translate="label title">
+        <label>Regulations</label>
+        <url>regulamin-sklepu</url>
+        <title>Regulations</title>
+        <prepare>true</prepare>
+        <urlParams />
+        <position>1</position>
+        <liParams/>
+        <aParams />
+        <beforeText />
+          <afterText />
+          </action>
+          <action method="addLink" translate="label title">
+            <label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><urlParams /><position>2</position><liParams/><aParams /><beforeText /><afterText />
+          </action>
+          <action method="addLink" translate="label title">
+            <label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText />
+          </action>
+        </block>
+      </block>      
     </reference>
     <reference name="footer">
       <remove nam="store_switcher" />
@@ -22,20 +47,6 @@
       <remove name="payu_account.advertisement" />
       <remove name="payu_account.partner.right.advertisement" />      
       <remove name="sale.reorder.sidebar" />
-      <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
-        <action method="setLabel"><label>Informations</label></action>
-        <block type="page/template_links" name="information_links" as="links" template="page/template/links.phtml">
-          <action method="addLink" translate="label title">
-            <label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText />
-          </action>
-          <action method="addLink" translate="label title">
-            <label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><urlParams /><position>2</position><liParams/><aParams /><beforeText /><afterText />
-          </action>
-          <action method="addLink" translate="label title">
-            <label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText />
-          </action>
-        </block>
-      </block>
       <block type="catalog/category_block" name="right.books.category" after="information_links" template="catalog/sidebar/block.phtml">
         <action method="setCategoryUrlKey"><name>ksiazki</name></action>
       </block>

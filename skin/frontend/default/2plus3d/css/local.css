@@ -103,6 +103,9 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 10px 0px;font-size: 12px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}
 .product-view .product-img-box .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;}
+.product-view .product-img-box .book-info .price-box * {display: none;}
+.product-view .product-img-box .book-info .price-box .price-excluding-tax, 
+.product-view .product-img-box .book-info .price-box .price-excluding-tax * {display: initial;}
 .product-view .product-img-box .price-box .label {font-weight: bold;}
 
 .regular-price .price {font-weight: normal;color: #000;font-size: 12px;}
@@ -110,18 +113,26 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .old-price .price {color: #999;font-weight: normal;}
 .special-price .price-label {color: #000;font-size: 12px;}
 .special-price .price {color: #000;font-size: 12px;}
+.price-excluding-tax .label {color: #000;}
+.price-excluding-tax .price {color: #000;}
 
 .product-view .product-img-box .add-to-box {margin: 0px;}
 .product-view .product-img-box .add-to-box .add-to-cart {margin-top: 10px;}
-.product-view .product-img-box .add-to-box .add-to-cart .price-box {background: #FCCA21;-moz-border-radius: 2px 2px 0px 0px; -webkit-border-radius: 2px 2px 0px 0px; -khtml-border-radius: 2px 2px 0px 0px; border-radius: 2px 2px 0px 0px;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box {background: #FCCA21;-moz-border-radius: 2px 2px 0px 0px; -webkit-border-radius: 2px 2px 0px 0px; -khtml-border-radius: 2px 2px 0px 0px; border-radius: 2px 2px 0px 0px;height: 36px;line-height: 36px;}
 .product-view .product-img-box .add-to-box .add-to-cart .price-box * {display: none;}
 .product-view .product-img-box .add-to-box .add-to-cart .price-box .regular-price {display: block;}
-.product-view .product-img-box .add-to-box .add-to-cart .price-box .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans-mono, sans-serif;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price, 
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price-including-tax .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;color: #000;}
+
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price-including-tax,
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price-including-tax * {display: initial;}
+.product-view .product-img-box .add-to-box .add-to-cart .price-box .price-including-tax .label {display: none;}
 .product-view .product-img-box .add-to-box .add-to-cart label {font-size: 12px;color: #000;}
 .product-view .product-img-box .add-to-box .add-to-cart input {}
-.product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;}
-.product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;}
+.product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;}
+.product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}
 .product-view .product-img-box .btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
+.product-view .product-img-box .add-to-box .add-to-cart button:hover span {background: #4f4f4f;}
 .product-view .product-img-box .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
