@@ -117,6 +117,7 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .product-view .product-shop .more-views li {display: block;width: 485px;height: 325px;margin: 10px 0px;}
 .product-view .product-img-box {width: 195px;}
 .product-view .product-img-box .product-image {width: 195px;border: 1px solid #e4e4e4;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
+.product-view .product-img-box .product-image img {border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;-khtml-border-radius: 3px;}
 .product-view .product-img-box .book-info {width: 195px;list-style: none;}
 .product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 10px 0px;font-size: 12px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}

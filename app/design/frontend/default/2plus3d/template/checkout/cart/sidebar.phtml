@@ -23,7 +23,7 @@
         <p class="grand-total">
           <span class="label"><?php echo $this->__('Grand Total');?>:</span> <?php echo Mage::helper('core')->currency(Mage::helper('checkout')->getQuote()->getGrandTotal(),true,false); ?>
         </p>
-        <?php echo $this->getChild('checkout.cart.methods.onepage')->setButtonText('Payment')->toHtml();?>
+        <button type="button" title="<?php echo $this->__('Go to Cart') ?>" class="button" onclick="window.location='<?php echo $this->helper('checkout/cart')->getCartUrl() ?>';"><span><span><?php echo $this->__('Payment') ?></span></span></button>
         <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
     <?php else: ?>
         <p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>

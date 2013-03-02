@@ -63,7 +63,6 @@
             <block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
               <label>Shopping Cart Sidebar Extra Actions</label>
             </block>
-            <block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
           </block>
        </reference>
      </default>
