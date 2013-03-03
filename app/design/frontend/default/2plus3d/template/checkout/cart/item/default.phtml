@@ -47,11 +47,11 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
   </td>
 
   <td class="a-center">
-    <?php echo $this->getQty() ?> <?php echo $this->__('qty');?>
+    <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" title="<?php echo $this->__('Qty') ?>" class="input-text qty" maxlength="12" />    
   </td>
 
   <!-- Price -->
-  <td class="a-right">
+  <td class="a-right col-price">
     <?php if (($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()) && !$_item->getNoSubtotal()): ?>  
     <!-- subtotal for this item excluding tax -->
     <div class="subtotal-excl-tax">

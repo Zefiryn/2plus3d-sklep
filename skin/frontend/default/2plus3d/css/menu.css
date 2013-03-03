@@ -6,7 +6,7 @@
 #menu li a.submenuToggler, #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {display: block;float: left;height: 25px;width: 20px;background-image: url("../images/dropDownArrow.png");background-repeat: no-repeat;background-position: center center;}
 #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {cursor: move;width: 15px;background-position: left center;background-image: url("../images/dot.png");}
 #menu li a.selected {background-image: url("../images/dropDownArrowUp.png");}
-#menu li a.selected, #menu li a.submenuToggler:hover {background-color: #3b3b3b;}
+#menu li a.selected, #menu li a.submenuToggler:hover {background-color: rgba(59,59,59,0.5);}
 #menu li:hover {background: #FCCA21;}
 #menu li:hover a.link {color: #000;text-decoration: none;}
 

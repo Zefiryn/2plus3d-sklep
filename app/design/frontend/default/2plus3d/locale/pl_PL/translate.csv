@@ -1,6 +1,7 @@
 "Log in to the bookshop","Zaloguj się do księgarni"
 "My Cart","Koszyk"
 "Your Cart","Twój koszyk"
+"Cart","Koszyk"
 "You have no items in your shopping cart.","Koszyk jest pusty"
 "All rights reserved.","Wszelkie prawa zastrzeżone."
 "Project","Projekt"
@@ -38,3 +39,5 @@
 "To Checkout","Do kasy"
 "Go to Cart","Przejdź do koszyka"
 "Bookshop","Księgarnia"
+"Item","Przedmiot"
+"Update Shopping Cart","Przelicz wartości w koszyku"

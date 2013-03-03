@@ -48,7 +48,7 @@
           <tr>
             <th colspan="2"><span class="nobr"><?php echo $this->__('Item') ?></span></th>
             <th class="a-center"><?php echo $this->__('Qty') ?></th>
-            <th class="a-right"><?php echo $this->__('Price') ?></th>                        
+            <th class="a-right col-price"><?php echo $this->__('Price') ?></th>                        
           </tr>                    
         </thead>
         <tbody>
@@ -72,8 +72,10 @@
           <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
         </div>
       </div>
+      <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><?php echo $this->__('Clear Shopping Cart'); ?></button>
       <div class="totals">
         <?php echo $this->getChildHtml('totals'); ?>
+        <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update"><?php echo $this->__('Update Shopping Cart'); ?></button>
         <?php if(!$this->hasError()): ?>
         <ul class="checkout-types">
         <?php foreach ($this->getMethods('methods') as $method): ?>
@@ -85,10 +87,6 @@
         <?php endif; ?>
       </div>
       
-      <?php if($this->getContinueShoppingUrl()): ?>
-        <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
-      <?php endif; ?>
-      <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><span><span><?php echo $this->__('Clear Shopping Cart'); ?></span></span></button>                            
       <!--[if lt IE 8]>
         <input type="hidden" id="update_cart_action_container" />
         <script type="text/javascript">
@@ -110,5 +108,9 @@
       </script>
       <![endif]-->
     </div>
+
+    <?php if($this->getContinueShoppingUrl()): ?>
+      <a title="<?php echo $this->__('Continue Shopping') ?>" class="button btn-continue" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')">&laquo; <?php echo $this->__('Continue Shopping') ?></a>
+    <?php endif; ?>
   </form>
 </div>

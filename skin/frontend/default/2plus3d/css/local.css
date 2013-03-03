@@ -10,7 +10,7 @@ a {color: #527d97;}
 #menu {text-align: left;width:979px; margin: 0px auto;overflow: visible;position: relative;}
 
 .main-container {background: #fff;}
-.main {background: #fff;width: 970px;padding: 0px 25px 50px 25px;}
+.main {background: #fff;width: 970px;padding: 50px 25px 50px 25px;}
 .col-main {width: 700px;border-top: 2px solid #000;}
 .col-right {width: 250px;} 
 .breadcrumbs {margin: 10px 0px;}
@@ -31,9 +31,6 @@ button.button:hover, a.button:hover {background: #FCCA21;color: #000;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
 button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;}
 button.button:hover span span, a.button:hover span span {color: #000;}
-button.button.btn-continue {border-color: #7F7F7F;background-color: #D7D6D6;color: #000;}
-button.button.btn-continue span span {color: #000;font-weight: normal}
-.cart-table .btn-empty span, .cart-table .btn-update span { border-color:#ED1C24; background:#ED1C24; }
 
 .messages {border: 0px;margin: 0px 0px 20px 0px !important;}
 .messages li {border: 0px;padding: 15px 0px 15px 40px !important;}
@@ -142,7 +139,7 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .product-view .product-img-box .add-to-box .add-to-cart button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;}
 .product-view .product-img-box .btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}
 .product-view .product-img-box .btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
-.product-view .product-img-box .add-to-box .add-to-cart button:hover span {background: #4f4f4f;}
+.product-view .product-img-box .add-to-box .add-to-cart button:hover span {background: #4f4f4f;color:#fff;}
 .product-view .product-img-box .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
@@ -150,10 +147,12 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .mini-products-list li.even {background-color: #fff;}
 .mini-products-list li.last {border-bottom: 0px;}
 
+/* CART */
 .cart .page-title h1 {font-family: lato, sans-serif;font-size: 20px;font-weight: bold;}
 .data-table {border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
-.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-size: 13px;font-weight: bold;}
-.data-table thead tr.last th {border-bottom: 2px solid #000 !important;}
+.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;line-height: 15px;color: #000;padding: 0px;}
+.data-table thead tr.last th {border-bottom: 2px solid #000 !important;padding-bottom: 5px;}
+.data-table thead .col-price {padding-right: 10px;}
 .data-table tfoot {border: 0px;}
 .data-table tfoot tr {background: none !important;}
 .data-table tfoot tr.first td {background: none;}
@@ -161,13 +160,29 @@ button.button.btn-continue span span {color: #000;font-weight: normal}
 .data-table .even {background: none;}
 .data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;}
 .data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #7F7F7F;}
-.data-table tbody td .product-name, .data-table tbody td .product-name a {color: #000;font-size: 13px;}
+.data-table tbody td .product-name, .data-table tbody td .product-name a {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;line-height: 15px;color: #000;}
+.data-table tbody td.col-price {padding-right: 0px;}
+.data-table input.qty {height: 25px;width: 40px !important;padding: 0px;text-align: center;}
+.data-table input.qty:focus {background: #fff;}
+.data-table .cart-price .price {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;}
 
+.cart .button.btn-continue {border: 0px;background: transparent;position: absolute;margin-top: -50px;text-decoration: none;color: #3E6E8C;font-weight: normal;font-size: 13px;line-height: 18px;font-family: droid-sans, sans-serif;padding: 0px;}
+.cart .button.btn-continue:hover {background: transparent;cursor: pointer;text-decoration: underline;color: #3E6E8C;}
+.cart .button.btn-empty {border: 0px;background: transparent;color: #4F4F4F;text-decoration: none;padding: 0px;font-family: droid-sans, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;text-transform: lowercase;}
+.cart .button.btn-empty:hover {background: transparent;cursor: pointer;text-decoration: underline;color: #4f4f4f;}
+.cart .button.btn-update {border: 0px;background: transparent;color: #3E6E8C;text-decoration: none;padding: 0px;font-family: droid-sans, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;text-align: center;display: block;}
+.cart .button.btn-update:hover {background: transparent;cursor: pointer;text-decoration: underline;color: #4f4f4f;}
+.cart .button.btn-proceed-checkout {width: 150px;padding: 0px 0px 5px 0px;}
+.cart .button.btn-proceed-checkout span {width: 150px;background:#000;padding: 5px 0px 5px 0px;}
+.cart .button.btn-proceed-checkout:hover span {background: #FCCA21;}
+
+.cart .cart-collaterals {padding: 10px 0px 0px;}
 .cart .totals {float: right;width: auto;background: none;border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
-.cart .totals table {border-bottom: 2px solid #000;}
+.cart .totals table {border-bottom: 2px solid #000;margin-bottom: 30px;}
+.cart .totals tfoot td {padding: 0px 0px 6px 0px;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 19px;}
 .cart .totals .checkout-types {font-size: 13px;padding: 15px 0px 5px 0px;text-align: right;}
-.cart .totals tfoot th strong, .cart .totals tfoot td strong {font-size: 13px;}
-button.btn-checkout span span {background-position: 100% 0;padding: 0;}
+.cart .totals tfoot th strong, .cart .totals tfoot td strong {font-size: inherit;}
+
 
 .fieldset {border: 0px;background: none;padding: 20px;margin: 0px;}
 .form-list li {}
