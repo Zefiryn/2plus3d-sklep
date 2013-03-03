@@ -1,12 +1,23 @@
-#menu, #rightMenu {display: block;list-style: none;height: 25px;margin: 0;padding: 0;border-left: 1px solid #7e7e7e;min-width: 100px;}
+#menu, #rightMenu {display: block;list-style: none;height: 25px;margin: 0;padding: 0;border-left: 0px;min-width: 100px;font-family: lato, sans-serif;font-size: 12px;font-style: normal;font-weight: normal;}
 #menu a {font-family: "Droid Serif Pro", "Lucida Grande", Geneva, Arial, Verdana, sans-serif;font-size: 14px;letter-spacing: 1px;color: white;}
 #menu li, .submenu .items li, #rightMenu li {margin: 0;padding: 0;float: left;}
-#menu li {position: relative;height: 25px;border-right: 1px solid #7e7e7e;}
-#menu li a.link, #rightMenu li.login, #rightMenu li a.atom {display: block;float: left;height: 21px;padding-top: 3px;padding-left: 10px;padding-right: 10px;}
+#menu li {position: relative;height: 25px;border-right: 0px;}
+#menu li a.link, #rightMenu li.login, #rightMenu li a.atom {display: block;float: left;height: 21px;padding-top: 3px;padding-left: 10px;padding-right: 10px;font-family: lato, sans-serif;font-size: 12px;font-style: normal;font-weight: normal;letter-spacing: 1px;text-transform: uppercase;}
 #menu li a.submenuToggler, #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {display: block;float: left;height: 25px;width: 20px;background-image: url("../images/dropDownArrow.png");background-repeat: no-repeat;background-position: center center;}
 #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {cursor: move;width: 15px;background-position: left center;background-image: url("../images/dot.png");}
 #menu li a.selected {background-image: url("../images/dropDownArrowUp.png");}
 #menu li a.selected, #menu li a.submenuToggler:hover {background-color: #3b3b3b;}
+#menu li:hover {background: #FCCA21;}
+#menu li:hover a.link {color: #000;text-decoration: none;}
+
+/* shop submenu */
+#menu .menuItem .submenuBlock {display: none;clear: both;position: absolute;margin-top: 25px;background: #fff;z-index: 100;box-shadow: 2px 2px 5px #555;max-width: 300px;width: 140px;}
+#menu .menuItem:hover .submenuBlock {display: block;}
+#menu .menuItem .submenuBlock a {color: #000;font-family: lato, sans-serif;font-size: 11px;font-style: normal;font-weight: normal;display: block;padding: 3px 8px !important;}
+#menu .menuItem .submenuBlock a:hover {text-decoration: none;}
+#menu .menuItem .submenuBlock .links li {float: none;display: block;margin: 0px;padding: 0px !important;width: auto;}
+#menu .menuItem .submenuBlock .links li:hover, #menu .menuItem .submenuBlock .links li.last:hover {background: #fcca21 !important;}
+
 
 #submenu .hidden {display: none !important;}
 #submenu {display: block;font-family: 'Lucida Grande', Geneva, Arial, Verdana, sans-serif;font-size: 12px;padding-bottom: 25px;width: 980px;margin: 0px auto;}

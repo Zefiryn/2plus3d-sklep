@@ -9,21 +9,20 @@
       <remove name="top.search" />
       <remove name="top.links" />
       <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
-      <action method="setLabel">
-        <label>Informations</label>
-      </action>
-      <block type="page/template_links" name="information_links" as="links" template="page/template/links.phtml">
-        <action method="addLink" translate="label title">
-          <label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText />
-        </action>
-        <action method="addLink" translate="label title">
-            <label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><urlParams /><position>2</position><liParams/><aParams /><beforeText /><afterText />
-        </action>
-        <action method="addLink" translate="label title">
-          <label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText />
-        </action>
-        </block>
+        <action method="setLabel"><label>Informations</label></action>
+        
       </block>      
+    </reference>
+    <reference name="site.topmenu">
+      <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams /></action>
+      <action method="addMenuElement"><alias>login</alias><title>Login</title><link helper="customer/getLoginUrl" /><prepare>0</prepare><liParams><class>right</class></liParams></action>
+      <action method="addMenuElement"><alias>informations</alias><title>Informations</title><link /><prepare>1</prepare><liParams><class>right</class></liParams></action>
+      <block type="page/template_links" name="information_links" template="page/template/links.phtml">
+        <action method="addLink" translate="label title"><label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText /></action>
+        <action method="addLink" translate="label title"><label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><urlParams /><position>2</position><liParams/><aParams /><beforeText /><afterText /></action>
+        <action method="addLink" translate="label title"><label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><urlParams /><position>3</position><liParams/><aParams /><beforeText /><afterText /></action>
+      </block>
+      <action method="appendSubmenuBlock"><name>information_links</name><menuItem>informations</menuItem></action>
     </reference>
     <reference name="footer">
       <remove nam="store_switcher" />

@@ -11,10 +11,16 @@
   <ul id="menu">
     <?php foreach($menu as $position => $items):?>
     <?php $mItem = $items['element']; $smItems = isset($items['sublevel']) ? $items['sublevel'] : null;?>
-    <li class="menuItem">
-      <a href="<?php echo $_helper->menuItemUrl(array('item' => $mItem));?>" class="link"><?php echo $this->__($mItem->getTitle());?></a>
+    <li class="menuItem <?php if ($mItem->getLiClass()): echo $mItem->getLiClass(); endif;?>">
+      <?php $elem_url = $mItem->getAdditional() == true ? $mItem->getLink() : $_helper->menuItemUrl(array('item' => $mItem));?>
+      <a href="<?php echo $elem_url;?>" class="link"><?php echo $this->__($mItem->getTitle());?></a>
       <?php if ((count($smItems) > 0) || $mItem->getPreview() != null):?>
       <a href="#" class="submenuToggler slideButton" id="submenuToggler_13"></a>
+      <?php endif;?>
+      <?php if (array_key_exists('submenuBlock', $items)):?>
+        <div class="submenuBlock">
+          <?php echo $this->getChildHtml($items['submenuBlock']);?>
+        </div>
       <?php endif;?>
     </li>
     <?php endforeach;?>

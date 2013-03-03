@@ -111,5 +111,4 @@ class DpTD_Site_Model_Menu_Item extends Mage_Core_Model_Abstract {
     }
     return $parameters;
   }
-
 }
