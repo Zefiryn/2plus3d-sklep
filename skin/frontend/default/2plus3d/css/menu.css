@@ -2,6 +2,8 @@
 #menu a {font-family: "Droid Serif Pro", "Lucida Grande", Geneva, Arial, Verdana, sans-serif;font-size: 14px;letter-spacing: 1px;color: white;}
 #menu li, .submenu .items li, #rightMenu li {margin: 0;padding: 0;float: left;}
 #menu li {position: relative;height: 25px;border-right: 0px;}
+#menu li.current {background: #fff !important;}
+#menu li.current a {color: #000;}
 #menu li a.link, #rightMenu li.login, #rightMenu li a.atom {display: block;float: left;height: 21px;padding-top: 3px;padding-left: 10px;padding-right: 10px;font-family: lato, sans-serif;font-size: 12px;font-style: normal;font-weight: normal;letter-spacing: 1px;text-transform: uppercase;}
 #menu li a.submenuToggler, #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {display: block;float: left;height: 25px;width: 20px;background-image: url("../images/dropDownArrow.png");background-repeat: no-repeat;background-position: center center;}
 #menu li span.handle, .submenu span.handle, #rightMenu span.handle, #footer span.handle {cursor: move;width: 15px;background-position: left center;background-image: url("../images/dot.png");}

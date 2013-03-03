@@ -41,3 +41,7 @@
 "Bookshop","Księgarnia"
 "Item","Przedmiot"
 "Update Shopping Cart","Przelicz wartości w koszyku"
+"Checkout Method","Logowanie/Rejestracja"
+"Shipping Method","Sposób dostarczenia"
+"Mage_Checkout::Billing Information","Adres rozliczeniowy"
+"Mage_Checkout::Shipping Information","Adres dostawy"

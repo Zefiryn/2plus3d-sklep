@@ -39,6 +39,9 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .messages li li {position: relative;padding: 0px !important;border: 0px;}
 .error-msg, .success-msg, .note-msg, .notice-msg {font-weight: normal !important;font-size: 12px !important;padding: 0px !important;margin: 0px !important;min-height: auto !important;}
 
+.validation-advice {background: none;padding: 0px;float: left;width: 190px;clear: none !important;display: block;line-height: 16px;color: #ED1C1B;margin: 0px 0px 0px 10px;text-transform: lowercase;font-family: droid-sans, sans-serif; font-size: 13px; font-weight: bold;}
+.validation-failed {border: 1px solid #ED1C1C!important;}
+
 /* CART RIGHT SIDEBAR BLOCK*/
 .sidebar .block-cart {border-top: 0px !important;border-bottom: 1px solid #000;padding: 0px 0px 15px 0px;}
 .sidebar .block-cart .block-title {background: #000;color: #fff;padding-left: 6px;}
@@ -186,27 +189,30 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 
 .fieldset {border: 0px;background: none;padding: 20px;margin: 0px;}
 .form-list li {}
-.form-list li.control {margin: 20px 0px;}
-.form-list .field {width: 400px;margin: 5px 0px;}
-.form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;font-size: 12px;min-height: 20px;line-height: 20px;min-width: 120px;}
+.form-list li.control {margin: 20px 0px 20px 120px;}
+.form-list .field {width: auto;margin: 5px 0px;}
+.form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;min-height: 20px;line-height: 36px;min-width: 105px;text-align: right;padding-right: 15px;}
+.form-list label[for="billing-address-select"]{color: #000;margin-bottom: 15px;}
 .form-list label.required em {display: none;}
 .form-list label.required {color:  #000;}
-.form-list li.control label {width: auto;margin-right: 10px;}
-.form-list li.control input.radio, .form-list li.control input.checkbox {margin-top: 3px;}
-.form-list .input-box {float: left;clear: none;}
+.form-list li.control label {width: auto;margin-right: 10px;font-family: droid-sans, sans-serif; font-size: 13px; font-weight: normal;color: #000;text-transform: initial;height: 15px;line-height: 18px;}
+.form-list li.control input.radio, .form-list li.control input.checkbox {margin-top: 3px;float: left;}
+.form-list .input-box {float: left;clear: none;width: 560px;}
+.form-list li.wide .input-box {width: auto;}
 .form-list li.wide > .input-box {margin-left: 120px;}
 .form-list li.wide label + .input-box {margin-left:  0px;}
-.form-list input.input-text {border: 1px solid #7F7F7F;background: #fff;height: 20px;width: 255px;}
+.form-list input.input-text {border: 1px solid #CCCCCC;background: #fff;height: 34px;width: 335px;font-size: 13px;float: left;padding-left: 10px;}
+.form-list input.input-text:hover {border-color: #000;}
 .form-list li.wide input.input-text {}
 .col2-right-layout .form-list li.wide input.input-text,
-.col2-left-layout .form-list li.wide input.input-text {width: 560px;}
-.form-list select {border: 1px solid #7F7F7F;background: #fff;height: 26px;width: 260px;}
-
-.validation-failed {border: 1px solid #ED1C24!important;background: #fff !important;}
+.col2-left-layout .form-list li.wide input.input-text {width: 335px;float: left;clear: none;}
+.form-list select {border: 1px solid #ccc;background: #fff;height: 36px;width: 350px;font-size: 13px;padding-left: 10px;}
+.form-list li.wide select {width: 475px;}
 
 .buttons-set {border: 0px;color: #000;margin: 0px;padding: 0px;text-align: left;}
 .buttons-set .back-link {color: #000;}
 .buttons-set button.button {float: none;}
+.buttons-set .required {display: none;}
 
 .page-title {border-bottom: 0px;font-size: 15px;font-family: lato, sans-serif;font-weight: 900;background: #fff;border: 0px;padding: 0px 0px 3px 0px;margin: 0px 0px 9px 0px;}
 .page-title h1, .page-title h2 {color: #000;padding: 6px 0px;}
@@ -216,9 +222,11 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .box-account .box-head {border: 0px;color: #000;text-align: left;}
 .box-account .box-head h2 {background: none !important;float: none;padding: 0px;color: #000;font-family: lato, sans-serif;}
 
+/* CHECKOUT */
+
 .opc { position:relative; }
-.opc li.section {background: #fff;border-top: 1px solid #000;}
-.opc li.section.active {}
+.opc li.section {background: #fff;border-top: 0px;display:  none;}
+.opc li.section.active {display: block;}
 
 .opc .step-title { border-width: 0px; background: #fff; padding: 4px 8px 6px 0px; text-align:right; }
 .opc .step-title .number { display: none; }
@@ -228,22 +236,29 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .opc .allow .step-title { background: #fff; color: #000; border: 0px;}
 .opc .allow .step-title h2 { color: #000; }
 
-.opc .active .step-title { background: #fff; border: 0px; border-bottom: 3px solid #000; padding-bottom:5px; color: #000; cursor:default; }
-.opc .active .step-title h2 { color: #000; font-family: lato; font-size: 18px; line-height: 26px;}
+.opc .active .step-title { background: #fff; border: 0px; padding-bottom:5px; color: #000; cursor:default; }
+.opc .active .step-title h2 { font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;height: 24px;letter-spacing: 1px;line-height: 24px;}
 
-.opc .step { border: 0px; background: #fff; padding: 15px 10px; position:relative; }
+.opc .step { border: 0px; background: #fff; padding: 15px 10px 15px 0px; position:relative; width: auto;}
+.opc .step fieldset {width: auto;}
 
 #opc-review .step { border:0; padding: 30px 0px; }
 #opc-review .buttons-set { padding: 20px 0px; border: 1px solid #000; border-width: 1px 0px 0px 0px; text-align: right;}
 
+#billing-buttons-container {width: 470px;}
+#billing-buttons-container button.button {float: right}
+
 .block-progress { border:0; margin:0; }
-.block-progress .block-title { background:none; border:0; padding:0; margin:0 0 5px; }
-.block-progress .block-title strong { font-size:15px; color:#000; }
-.block-progress .block-content { background: none; }
-.block-progress dt { font-size:13px; font-weight:bold; line-height: 20px; background: #fff; border-color: #000; border-width: 2px 0px 0px 0px; margin:0 0 6px; padding:2px 8px; color: #000; }
-.block-progress dd { background: #fff; color: #000; border: 0px; padding: 8px 3px; margin: 0 0 10px; }
-.block-progress dt.complete { margin:0; background: #ededed; color: #555; }
-.block-progress dd.complete {}
+.block-progress .block-title { background:none; border:0; padding: 11px 0px 0px; margin:0 0 5px;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;letter-spacing: 1px;line-height: 24px;}
+.block-progress .block-title strong {font-size: inherit; color:inherit;font-weight: normal;}
+.block-progress .block-content { background: none; margin-top: 12px;}
+.block-progress ol li {list-style-type: none;margin-bottom: 10px;font-family: droid-sans, sans-serif; font-size: 13px;}
+.block-progress ol li .step-counter {background: #ccc;width: 26px; height: 26px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;-khtml-border-radius: 2px;display: inline-block;color: #fff;font-family: droid-sans, sans-serif; font-size: 14px; font-weight: bold;text-align: center;line-height: 26px;margin-right: 10px;}
+.block-progress ol li.complete {}
+.block-progress ol li.complete .step-counter {background: #000;}
+.block-progress ol li.active .step-counter {background: #fcca21;}
+.block-progress ol li .step-summary {padding-left: 40px;}
+.block-progress ol li .step-summary, .block-progress ol li .step-summary address {font-family: droid-sans, sans-serif; font-size: 12px; font-weight: normal;line-height: 16px;color: #4F4F4F;}
 
 /* STATIC PAGES */
 .cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 30px;}

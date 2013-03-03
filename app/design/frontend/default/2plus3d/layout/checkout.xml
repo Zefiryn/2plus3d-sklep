@@ -78,6 +78,14 @@
       </reference>
       <reference name="right">
         <remove name="cart_sidebar" />
+        <remove name="right.books.category" />
+        <block type="page/html_wrapper" name="checkout.progress.wrapper" translate="label">
+          <label>Checkout Progress Wrapper</label>
+          <action method="setElementId">
+            <value>checkout-progress-wrapper</value>
+          </action>
+          <block type="checkout/onepage_progress" name="checkout.progress" before="-" template="checkout/onepage/progress.phtml"/>
+        </block>
       </reference>
       <reference name="content">
         <block type="checkout/cart" name="checkout.cart">
