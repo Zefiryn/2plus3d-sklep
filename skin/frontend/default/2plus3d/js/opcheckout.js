@@ -46,9 +46,19 @@ Checkout.prototype = {
   },
   
   setActiveStep: function() {
+    $$('.opc-block-progress li.active').invoke('removeClassName','active');
     var id = $$('.opc li.active')[0].readAttribute('id');
     id = id.replace('opc-','step-');
     $(id).addClassName('active');
+    var active = false;
+    $$('.opc-block-progress li').each(function(step){
+      if(step.hasClassName('active')) {
+        active = true;
+      }
+      if (!active) {
+        step.addClassName('complete');
+      }
+    });
   },
   
   /**
