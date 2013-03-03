@@ -121,6 +121,7 @@ Checkout.prototype = {
     sectionElement.addClassName('allow');
     this.accordion.openSection('opc-'+section);
     this.reloadProgressBlock(section);
+    this.setActiveStep();
   },
 
   setMethod: function(){

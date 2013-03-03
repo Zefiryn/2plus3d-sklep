@@ -46,7 +46,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
         </li>
         <?php endif;?>
         
-        <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+        <?php if ($this->getCheckout()->getStepData('billing', 'is_show') || $isCart): ?>
           <?php if ($this->isStepComplete('billing') && !$isCart): ?>
           <li class="complete" id="step-billing">
             <span class="step-counter"><?php echo $step++;?></span>
@@ -63,7 +63,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
           <?php endif; ?>
         <?php endif; ?>
 
-        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show') || $isCart): ?>
           <?php if ($this->isStepComplete('shipping') && !$isCart): ?>
           <li class="complete" id="step-shipping">
             <span class="step-counter"><?php echo $step++;?></span>
@@ -80,7 +80,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
           <?php endif; ?>
         <?php endif; ?>
 
-        <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show')): ?>
+        <?php if ($this->getCheckout()->getStepData('shipping_method', 'is_show') || $isCart): ?>
           <?php if ($this->isStepComplete('shipping_method') && !$isCart): ?>
           <li class="complete" id="step-shipping_method">
             <span class="step-counter"><?php echo $step++;?></span>
@@ -114,7 +114,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
         <?php endif; ?>
         
 
-        <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
+        <?php if ($this->getCheckout()->getStepData('payment', 'is_show') || $isCart): ?>
           <?php if ($this->isStepComplete('payment') && !$isCart): ?>
           <li class="complete" id="step-payment">
             <span class="step-counter"><?php echo $step++;?></span>
