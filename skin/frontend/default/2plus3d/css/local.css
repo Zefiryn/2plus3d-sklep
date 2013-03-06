@@ -159,6 +159,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .data-table tfoot {border: 0px;}
 .data-table tfoot tr {background: none !important;}
 .data-table tfoot tr.first td {background: none;}
+.data-table tfoot td.no-border {border: 0px !important;}
 .data-table .odd {background: none;}
 .data-table .even {background: none;}
 .data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;}
@@ -190,6 +191,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .fieldset {border: 0px;background: none;padding: 20px;margin: 0px;}
 .form-list li {}
 .form-list li.control {margin: 20px 0px 20px 120px;}
+.form-list li.control.no-indent {margin: 20px 0px 20px 0px;}
 .form-list .field {width: auto;margin: 5px 0px;}
 .form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;min-height: 20px;line-height: 36px;min-width: 105px;text-align: right;padding-right: 15px;}
 .form-list label[for="billing-address-select"]{color: #000;margin-bottom: 15px;}
@@ -236,17 +238,52 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .opc .allow .step-title { background: #fff; color: #000; border: 0px;}
 .opc .allow .step-title h2 { color: #000; }
 
+.opc .buttons-set button.button {float: right;}
+.opc .buttons-set .back-link a {background: transparent;padding-left: 0px;}
+.opc .buttons-set .back-link small {display: inline;}
+
 .opc .active .step-title { background: #fff; border: 0px; padding-bottom:5px; color: #000; cursor:default; }
 .opc .active .step-title h2 { font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;height: 24px;letter-spacing: 1px;line-height: 24px;}
 
 .opc .step { border: 0px; background: #fff; padding: 15px 10px 15px 0px; position:relative; width: auto;}
-.opc .step fieldset {width: auto;}
+.opc .step fieldset {width: 100%;}
 
-#opc-review .step { border:0; padding: 30px 0px; }
-#opc-review .buttons-set { padding: 20px 0px; border: 1px solid #000; border-width: 1px 0px 0px 0px; text-align: right;}
+#opc-login .form-list label {text-align: left;}
+#opc-login .form-list .input-box {width: 330px;}
+#opc-login .form-list input.input-text {width: 315px}
+#opc-login .buttons-set button.button {float: right;}
+#opc-login #remember-me-box {margin: 0px;}
+#opc-login #remember-me-box .input-box {margin-left: 0px;width: auto;}
+#opc-login #remember-me-box label {width: auto;}
 
-#billing-buttons-container {width: 470px;}
+#opc-billing #remember-me-box {margin: 0px 0px 0px 120px;}
+#opc-billing #remember-me-box .input-box {margin-left: 0px;width: auto;}
+#opc-billing #remember-me-box label {width: auto;}
+
+#opc-shipping_method {width: 400px;}
+#opc-shipping_method #co-shipping-method-form h3 {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;height: 15px;color: #4F4F4F;line-height: 15px;}
+
+#billing-buttons-container, #shipping-buttons-container {width: 470px;}
 #billing-buttons-container button.button {float: right}
+
+#opc-payment {width: 450px;}
+#opc-payment label[for="p_method_payu_account"] img {display: none;}
+.sp-methods dd > ul {display: block !important;border: 0px !important;margin: 0px 0px 0px 20px;padding: 0px !important;}
+.sp-methods dd > ul li {margin: 0px !important;border: 0px !important;}
+.opc .checkout-agreements .agreement-content, #payment_form_payu_account {border: 0px;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;line-height: 15px;color: #4f4f4f;}
+.opc .checkout-agreements .agreement-content br {line-height: 20px;}
+
+#opc-review .data-table {border-bottom: 2px solid #777777;}
+#opc-review .data-table tbody tr td {padding: 10px 0px 5px 0px;}
+#opc-review .data-table tfoot tr td {border: 0px;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;height: 15px;line-height: 15px;padding: 10px 0px;text-transform: lowercase;}
+#opc-review .data-table tfoot tr td.total-cost {font-weight: bold;}
+#opc-review .data-table tfoot tr.totals-subtotal td {border-bottom: 2px solid #000;font-weight: bold;}
+#opc-review .data-table tfoot tr.totals-shipping td {border-bottom: 1px solid #000;}
+#opc-review .data-table tfoot tr.totals-tax td {border-bottom: 1px solid #000;}
+#opc-review .product-name {font-weight: normal;color: #000;}
+#opc-review .step { border:0; padding: 30px 0px; }
+#opc-review .buttons-set { padding: 20px 0px; border: 0px; border-width: 1px 0px 0px 0px; text-align: right;}
+
 
 .block-progress { border:0; margin:0; }
 .block-progress .block-title { background:none; border:0; padding: 11px 0px 0px; margin:0 0 5px;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;letter-spacing: 1px;line-height: 24px;}

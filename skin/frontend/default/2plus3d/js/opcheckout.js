@@ -261,8 +261,10 @@ Billing.prototype = {
     if (isNew) {
       this.resetSelectedAddress();
       Element.show('billing-new-address-form');
+      $$('.shipping_address_settings').invoke('removeClassName','no-indent');
     } else {
       Element.hide('billing-new-address-form');
+      $$('.shipping_address_settings').invoke('addClassName','no-indent');
     }
   },
   
@@ -400,8 +402,10 @@ Shipping.prototype = {
     if (isNew) {
       this.resetSelectedAddress();
       Element.show('shipping-new-address-form');
+      $$('.use-billing-address').invoke('removeClassName','no-indent');
     } else {
       Element.hide('shipping-new-address-form');
+      $$('.use-billing-address').invoke('addClassName','no-indent');
     }
     shipping.setSameAsBilling(false);
   },

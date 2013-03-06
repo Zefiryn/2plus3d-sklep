@@ -5,29 +5,32 @@
  */
 ?>
 <?php if ($this->includeTax() && $this->getTotalExclTax()>=0):?>
-<tr>
-    <td style="<?php echo $this->getStyle() ?>" class="a-left" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->helper('tax')->__('Grand Total Excl. Tax')?></strong>
+<tr class="totals-grand totals-grand-excl">
+    <td class="no-border"></td>
+    <td style="<?php echo $this->getStyle() ?>" class="a-left">
+        <strong><?php echo $this->helper('tax')->__('Total to Pay Excl. Tax')?></strong>
     </td>
-    <td style="<?php echo $this->getStyle() ?>" class="a-right">
+    <td style="<?php echo $this->getStyle() ?>" class="a-right" colspan="2">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotalExclTax()) ?></strong>
     </td>
 </tr>
 <?php echo $this->renderTotals('taxes', $this->getColspan()); ?>
-<tr>
-    <td style="<?php echo $this->getStyle() ?>" class="a-left" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->helper('tax')->__('Grand Total Incl. Tax')?></strong>
+<tr class="totals-grand totals-grand-incl">
+    <td class="no-border"></td>
+    <td style="<?php echo $this->getStyle() ?>" class="a-left">
+        <strong><?php echo $this->helper('tax')->__('Total to Pay Incl. Tax')?></strong>
     </td>
-    <td style="<?php echo $this->getStyle() ?>" class="a-right">
+    <td style="<?php echo $this->getStyle() ?>" class="a-right" colspan="2">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></strong>
     </td>
 </tr>
 <?php else:?>
-<tr>
-    <td style="<?php echo $this->getStyle() ?>" class="a-left" colspan="<?php echo $this->getColspan(); ?>">
-        <strong><?php echo $this->__('Grand Total') ?></strong>
+<tr class="totals-grand">
+    <td class="no-border"></td>
+    <td style="<?php echo $this->getStyle() ?>" class="a-left">
+        <strong><?php echo $this->__('Total to Pay') ?></strong>
     </td>
-    <td style="<?php echo $this->getStyle() ?>" class="a-right">
+    <td style="<?php echo $this->getStyle() ?>" class="a-right total-cost" colspan="2">
         <strong><?php echo $this->helper('checkout')->formatPrice($this->getTotal()->getValue()) ?></strong>
     </td>
 </tr>
