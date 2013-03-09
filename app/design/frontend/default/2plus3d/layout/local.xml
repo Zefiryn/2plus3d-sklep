@@ -40,7 +40,10 @@
       <block type="catalog/category_block" name="right.books.category" after="information_links" template="catalog/sidebar/block.phtml">
         <action method="setCategoryUrlKey"><name>ksiazki</name></action>
       </block>
-    </reference>
+      <block type="catalog/category_block" name="right.magazine.category" after="right.books.category" template="catalog/sidebar/block.phtml">
+        <action method="setCategoryUrlKey"><name>kwartalnik</name></action>
+      </block>
+   </reference>
     <reference name="left">
       <remove name="left.permanent.callout" />
     </reference>

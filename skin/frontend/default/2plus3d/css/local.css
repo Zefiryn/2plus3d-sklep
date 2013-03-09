@@ -10,7 +10,7 @@ a {color: #527d97;}
 #menu {text-align: left;width:979px; margin: 0px auto;overflow: visible;position: relative;}
 
 .main-container {background: #fff;}
-.main {background: #fff;width: 970px;padding: 50px 25px 50px 25px;}
+.main {background: #fff;width: 970px;padding: 25px 25px 50px 25px;}
 .col-main {width: 700px;border-top: 2px solid #000;}
 .col-right {width: 250px;} 
 .breadcrumbs {margin: 10px 0px;}
@@ -98,7 +98,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .catalog-product-view .col-main {border-top: 0px;}
 .product-view {border: 0px;}
 .product-essential {background: none;padding: 0px;}
-.product-view .product-shop {width: 475px;border-top: 2px solid #000;}
+.product-view .product-shop {width: 485px;border-top: 2px solid #000;}
 .product-view .product-shop .category {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin-top: 8px;}
 .product-view .product-shop .product-name {margin: 20px 0px 20px 0px;border-bottom: 0;padding: 0px 0px 15px 0px;}
 .product-view .product-shop .product-name h1 {font-size: 34px;color: #000;line-height: 36px;font-family:  droid-serif, serif;font-weight: normal;}
@@ -107,10 +107,10 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .product-view .product-shop .more-views {margin-top: 30px;}
 .product-view .product-shop .more-views li {display: block;width: 485px;height: 325px;margin: 10px 0px;}
 .product-view .product-img-box {width: 195px;}
-.product-view .product-img-box .product-image {width: 195px;border: 1px solid #e4e4e4;border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;}
+.product-view .product-img-box .product-image {width: 193px;border: 1px solid #CCCCCC;}
 .product-view .product-img-box .product-image img {border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;-khtml-border-radius: 3px;}
 .product-view .product-img-box .book-info {width: 195px;list-style: none;}
-.product-view .product-img-box .book-info li {list-style: none;display: block;margin: 10px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 10px 0px;font-size: 12px;font-family: droid-sans, sans-serif;}
+.product-view .product-img-box .book-info li {list-style: none;display: block;margin: 7px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 7px 0px;font-size: 13px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}
 .product-view .product-img-box .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;}
 .product-view .product-img-box .book-info .price-box * {display: none;}
@@ -144,6 +144,8 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .product-view .product-img-box .btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
 .product-view .product-img-box .add-to-box .add-to-cart button:hover span {background: #4f4f4f;color:#fff;}
 .product-view .product-img-box .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
+.product-view .product-img-box .add-to-box .btn-cart-sold-out {cursor: default;}
+.product-view .product-img-box .add-to-box .btn-cart-sold-out span {background: #4f4f4f;color:#fff;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
 .mini-products-list li.odd {background-color: #fff;}
@@ -298,9 +300,13 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .block-progress ol li .step-summary, .block-progress ol li .step-summary address {font-family: droid-sans, sans-serif; font-size: 12px; font-weight: normal;line-height: 16px;color: #4F4F4F;}
 
 /* STATIC PAGES */
-.cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 30px;}
-.cms-regulamin-sklepu .breadcrumbs-info {margin-top: 8px;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;line-height: 24px;}
+.cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 20px;}
+.cms-page-view .breadcrumbs-info {margin-top: 8px;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;line-height: 24px;}
 .cms-regulamin-sklepu .std ol li {font-family: droid-serif, serif;font-size: 18px;font-weight: bold;list-style-type: upper-roman;margin-bottom: 25px;}
 .cms-regulamin-sklepu .std ol li ol li {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;list-style-type: decimal;line-height: 22px;margin-bottom: 0px;}
 .cms-regulamin-sklepu .std ol li ol li ol {margin: 0px;}
 .cms-regulamin-sklepu .std ol li ol li ol li {list-style-type: lower-latin;}
+.cms-platnosc-i-dostawa .std {font-family: droid-serif, serif;font-size: 14px;line-height: 22px;color: #000;font-weight: normal;}
+.cms-platnosc-i-dostawa .std h2.section_header {font-weight: bold;text-transform: uppercase;color: #000;font-size: 14px;margin-top: 35px;}
+.cms-platnosc-i-dostawa .std h2.section_header:first-child {margin-top: 0px;}
+.cms-kontakt .std {font-family: droid-serif, serif;font-size: 14px;line-height: 22px;color: #000;font-weight: normal;}

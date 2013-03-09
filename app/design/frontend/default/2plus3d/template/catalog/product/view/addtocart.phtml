@@ -1,5 +1,5 @@
 <?php $_product = $this->getProduct(); ?>
-<?php $buttonTitle = $this->__('To Cart'); ?>
+<?php $buttonTitle = $_product->isSaleable() ? $this->__('To Cart') : $this->__('Sold Out'); ?>
 <?php if($_product->isSaleable()): ?>
     <div class="add-to-cart">
         <?php if(!$_product->isGrouped()): ?>
@@ -10,4 +10,8 @@
         <span class="shipping-cost-info"><?php echo $this->__('price includes the shipping cost and tax');?></span>
         <?php echo $this->getChildHtml('', true, true) ?>
     </div>
+<?php else :?>
+<div class="add-to-cart">
+  <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart btn-cart-sold-out"><span><span><?php echo $buttonTitle ?></span></span></button>
+</div>
 <?php endif; ?>

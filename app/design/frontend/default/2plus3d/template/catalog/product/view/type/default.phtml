@@ -2,24 +2,34 @@
 <?php $_product = $this->getProduct() ?>
 <?php $_helper = $this->helper('catalog');?>
 <ul class="book-info">
+  <?php if ($_product->getPublishDate() != null):?>
   <li>
     <span class="label"><?php echo $this->__('Publish date');?>:</span> <?php echo $_helper->getFormatedDate($_product->getPublishDate());?>
   </li>
+  <?php endif;?>
+  <?php if ($_product->getFormat() != null):?>
   <li>
     <span class="label"><?php echo $this->__('Format');?>:</span> <?php echo $_product->getFormat();?>mm
   </li>
+  <?php endif;?>
+  <?php if ($_product->getPageNo() != null):?>
   <li>
-    <span class="label"><?php echo $this->__('Number of pages');?>:</span> <?php echo $_product->getPageNo();;?>
+    <span class="label"><?php echo $this->__('Number of pages');?>:</span> <?php echo $_product->getPageNo();?>
   </li>
+  <?php endif;?>
+  <?php if ($_product->getBinding() != null):?>
   <li>
     <span class="label"><?php echo $this->__('Binding type');?>:</span> <?php echo $this->__($_product->getAttributeText('binding'));?>
   </li>
+  <?php endif;?>  
   <li>
     <?php echo $this->getPriceHtml($_product) ?>
   </li>
+  <?php if ($_product->getIsbn() != null):?>
   <li>
-    <span class="label"><?php echo $this->__('ISBN');?>:</span> <?php echo $_product->getIsbn();;?>
-  </li>  
+    <span class="label"><?php echo $this->__('ISBN');?>:</span> <?php echo $_product->getIsbn();?>
+  </li>
+  <?php endif;?>
 </ul>
 
 <?php echo $this->getChildHtml('product_type_data_extra') ?>

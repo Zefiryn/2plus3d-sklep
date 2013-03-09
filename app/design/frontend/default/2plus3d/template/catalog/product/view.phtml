@@ -29,7 +29,7 @@
               <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
               <?php if ($_product->getAuthor() != null):?>
               <p class="author"><span class="caps"><?php echo $_product->getAuthor();?></span></p>
-              <?php else: ?>
+              <?php elseif ($_product->getRedactor() != null): ?>
               <p class="author"><span class="caps"><?php echo $_product->getRedactor();?></span> (<?php echo $this->__('ed.');?>)</p>
               <?php endif;?>
               
@@ -49,9 +49,7 @@
         <?php echo $this->getChildHtml('product_type_data') ?>
         <?php if (!$this->hasOptions()):?>
           <div class="add-to-box">
-            <?php if($_product->isSaleable()): ?>
-              <?php echo $this->getChildHtml('addtocart') ?>
-            <?php endif; ?>
+            <?php echo $this->getChildHtml('addtocart') ?>
           </div>
         <?php endif; ?>
       </div>
