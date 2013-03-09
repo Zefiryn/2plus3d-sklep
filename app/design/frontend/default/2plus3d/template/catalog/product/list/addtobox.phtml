@@ -1,0 +1,15 @@
+<?php $_product = $this->getProduct();?>
+<?php $buttonTitle = $_product->isSaleable() ? $this->__('Buy') : $this->__('Sold Out'); ?>
+<?php if($_product->isSaleable()): ?>
+    <div class="add-to-cart">
+      <?php if(!$_product->isGrouped()): ?>
+      <input type="hidden" name="qty" id="qty" maxlength="1" value="1" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+      <?php endif; ?>
+      <?php echo $this->getPriceHtml($_product);?>
+      <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $buttonTitle ?></span></span></button>
+  </div>
+<?php else :?>
+<div class="add-to-cart">
+  <button type="button" title="<?php echo $buttonTitle ?>" class="button btn-cart btn-cart-sold-out"><span><span><?php echo $buttonTitle ?></span></span></button>
+</div>
+<?php endif; ?>

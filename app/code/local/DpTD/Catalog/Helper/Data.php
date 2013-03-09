@@ -27,7 +27,7 @@ class DpTD_Catalog_Helper_Data extends Mage_Catalog_Helper_Data
   }
 
   protected function _getCategoryName($categoryId) {
-    if ($this->_categories[$categoryId] == null) {
+    if (!array_key_exists($categoryId, $this->_categories) || $this->_categories[$categoryId] == null) {
       $this->_categories[$categoryId] = Mage::getModel('catalog/category')->load($categoryId)->getUrlKey();
     }
     return $this->_categories[$categoryId];

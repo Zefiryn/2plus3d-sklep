@@ -54,6 +54,17 @@
   
   <cms_index_index translate="label">
     <remove name="cms.wrapper" />
+    <reference name="content">
+      <block type="core/template" name="homepage.books" template="catalog/html/books-list.phtml">
+	<block type="catalog/listing" name="homepage.books.list" template="catalog/product/homepage-list.phtml">  
+	  <action method="showToolbar"><val>0</val></action>
+	  <action method="setCollectionType"><type>CATEGORY</type></action>
+	  <action method="setCategory"><id>ksiazki</id><type>url_key</type></action>
+	  <action method="setListCount"><count>1</count></action>
+	  <action method="setMode"><mode>list</mode></action>	  
+	</block>
+      </block>
+    </reference>
   </cms_index_index>
   
   <customer_account_login>
