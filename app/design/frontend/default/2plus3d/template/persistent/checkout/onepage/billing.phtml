@@ -1,6 +1,10 @@
 <?php
 /** @var Mage_Checkout_Block_Onepage_Billing $this */
 ?>
+
+<div class="address-explain">
+  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('billing-address-explain')->toHtml();?>
+</div>
 <form id="co-billing-form" action="" autocomplete="off">
 <fieldset>
   <ul class="form-list">
@@ -68,11 +72,7 @@
             </div>
           </li>
           
-          <li class="control">
-            <input type="checkbox" name="billing[require_invoice]" id="billing:require_invoice" value="1" title="<?php echo  $this->__('Require Invoice') ?>" onclick="billing.toggleInvoiceFields(this)" class="checkbox" /><label for="billing:require_invoice"><?php echo  $this->__('I want to receive the invoice') ?></label></li>
-          </li>
-          
-          <li class="fields" id="invoice-fields">            
+          <li class="fields" id="invoice-fields">
             <div class="field">
               <label for="billing:company"><?php echo $this->__('Company') ?>:</label>
               <div class="input-box">
@@ -83,6 +83,12 @@
               <?php echo $this->getTaxvatHtml() ?>
             </div>
           </li>
+          
+          <li class="control">
+            <input type="checkbox" name="billing[require_invoice]" id="billing:require_invoice" value="1" title="<?php echo  $this->__('Require Invoice') ?>" onclick="billing.toggleInvoiceFields(this)" class="checkbox" /><label for="billing:require_invoice"><?php echo  $this->__('I want to receive the invoice') ?></label></li>
+          </li>
+          
+
             
           <?php if(!$this->isCustomerLoggedIn()): ?>
           <li class="fields" id="register-customer-password">

@@ -276,9 +276,8 @@ button.button.btn-cart span span {font-size: 16px;text-align: center;font-family
 #opc-login #remember-me-box .input-box {margin-left: 0px;width: auto;}
 #opc-login #remember-me-box label {width: auto;}
 
-#opc-billing #invoice-fields {display: none;}
+#opc-billing #billing-new-address-form .control {margin-bottom: 0px;}
 #opc-billing .shipping_address_settings {display: none;}
-
 #opc-billing #remember-me-box {margin: 0px 0px 0px 120px;}
 #opc-billing #remember-me-box .input-box {margin-left: 0px;width: auto;}
 #opc-billing #remember-me-box label {width: auto;}

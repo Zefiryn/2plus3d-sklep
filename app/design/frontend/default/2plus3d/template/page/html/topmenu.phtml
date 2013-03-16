@@ -30,7 +30,7 @@
 <?php foreach($menu as $position => $items):?>
   <?php $mItem = $items['element']; $smItems = isset($items['sublevel']) ? $items['sublevel'] : null;?>
   <?php if ((count($smItems) > 0) || $mItem->getPreview() != null):?>
-    <div id="submenu_<?php echo $mItem->getId(); ?>" class="<?php echo $mItem->getType();?>Submenu submenu slideDescription">
+    <div id="submenu_<?php echo $mItem->getId(); ?>" class="<?php echo $mItem->getType();?>Submenu submenu slideDescription" style="display: none;">
       <div class="submenu-wrapper">
         <div class="spacer"></div>
         <?php if (count($smItems) > 0):?>
