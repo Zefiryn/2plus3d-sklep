@@ -49,7 +49,9 @@ Checkout.prototype = {
     $$('.opc-block-progress li.active').invoke('removeClassName','active');
     var id = $$('.opc li.active')[0].readAttribute('id');
     id = id.replace('opc-','step-');
-    $(id).addClassName('active');
+    if ($(id) != null) { 
+      $(id).addClassName('active');
+    }
     var active = false;
     $$('.opc-block-progress li').each(function(step){
       if(step.hasClassName('active')) {
@@ -59,6 +61,9 @@ Checkout.prototype = {
         step.addClassName('complete');
       }
     });
+    if (active == false) {
+      $$('.opc-block-progress li').invoke('removeClassName','complete');
+    }
   },
   
   /**
@@ -331,43 +336,71 @@ Billing.prototype = {
   resetLoadWaiting: function(transport){
     checkout.setLoadWaiting(false);
     document.body.fire('billing-request:completed', {transport: transport});
-},
+  },
 
-/**
- *        This method recieves the AJAX response on success.
- *        There are 3 options: error, redirect or html with shipping options.
- */
-nextStep: function(transport){
-  if (transport && transport.responseText){
-    try{
-      response = eval('(' + transport.responseText + ')');
-    }
-    catch (e) {
-      response = {};
-    }
-  }
-  
-  if (response.error){
-    if ((typeof response.message) == 'string') {
-      alert(response.message);
-  } else {
-    if (window.billingRegionUpdater) {
-      billingRegionUpdater.update();
+  /**
+  *        This method recieves the AJAX response on success.
+  *        There are 3 options: error, redirect or html with shipping options.
+  */
+  nextStep: function(transport){
+    if (transport && transport.responseText){
+      try{
+        response = eval('(' + transport.responseText + ')');
+      }
+      catch (e) {
+        response = {};
+      }
     }
     
-    alert(response.message.join("\n"));
-  }
-  
-  return false;
-}
+    if (response.error){
+      if ((typeof response.message) == 'string') {
+        alert(response.message);
+      } 
+      else {
+        if (window.billingRegionUpdater) {
+          billingRegionUpdater.update();
+        }      
+        alert(response.message.join("\n"));
+      }    
+      return false;
+    }
 
-checkout.setStepResponse(response);
-payment.initWhatIsCvvListeners();
-// DELETE
-//alert('error: ' + response.error + ' / redirect: ' + response.redirect + ' / shipping_methods_html: ' + response.shipping_methods_html);
-// This moves the accordion panels of one page checkout and updates the checkout progress
-//checkout.setBilling();
-}
+    checkout.setStepResponse(response);
+    payment.initWhatIsCvvListeners();
+    // DELETE
+    //alert('error: ' + response.error + ' / redirect: ' + response.redirect + ' / shipping_methods_html: ' + response.shipping_methods_html);
+    // This moves the accordion panels of one page checkout and updates the checkout progress
+    //checkout.setBilling();
+  },
+  
+  toggleInvoiceFields: function(input) {
+    if (input.checked == true) {
+      this.showInvoiceFields();
+    }
+    else {
+      this.hideInvoiceFields();
+    }
+  },
+  
+  showInvoiceFields: function() {
+    $('invoice-fields').setStyle({'display': 'block'});
+    $$('#invoice-fields label').invoke('addClassName', 'required');
+    $$('#invoice-fields input').invoke('addClassName', 'required-entry');
+    $$('.shipping_address_settings').invoke('setStyle',{'display': 'block'});
+    $('billing:use_for_shipping_yes').checked = false;
+    $('billing:use_for_shipping_no').checked = true;
+  },
+  
+  hideInvoiceFields: function() {
+    $('invoice-fields').setStyle({'display': 'none'});
+    $$('#invoice-fields label').invoke('removeClassName', 'required');
+    $$('#invoice-fields input').invoke('removeClassName', 'required-entry');
+    $$('.shipping_address_settings').invoke('setStyle',{'display': 'none'});
+    $('billing:use_for_shipping_yes').checked = true;
+    $('billing:use_for_shipping_no').checked = false;
+    $('billing:company').value = null;
+    $('billing:taxvat').value = null;
+  }
 }
 
 // shipping
@@ -465,9 +498,9 @@ Shipping.prototype = {
         }
       }
       //$('shipping:country_id').value = $('billing:country_id').value;
-      shippingRegionUpdater.update();
-      $('shipping:region_id').value = $('billing:region_id').value;
-      $('shipping:region').value = $('billing:region').value;
+      //shippingRegionUpdater.update();
+      //$('shipping:region_id').value = $('billing:region_id').value;
+      //$('shipping:region').value = $('billing:region').value;
       //shippingForm.elementChildLoad($('shipping:country_id'), this.setRegionValue.bind(this));
     } else {
       $('shipping-address-select').value = $('billing-address-select').value;

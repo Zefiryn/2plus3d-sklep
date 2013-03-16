@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <modules>
+    <DpTD_Checkout>
+      <version>0.1.0</version>
+    </DpTD_Checkout>
+  </modules>
+  <global>    
+    <blocks>      
+    </blocks>
+    <helpers>
+    </helpers>
+    <models>
+      <dptd_checkout>
+        <class>DpTD_Checkout_Model</class>
+      </dptd_checkout>
+    </models>
+  </global>
+  <frontend>
+    <events>
+      <controller_action_postdispatch_checkout_onepage_saveBilling>
+        <observers>
+          <setInvoiceRequest>
+            <type>singleton</type>
+            <class>DpTD_Checkout_Model_Observer</class>
+            <method>setInvoiceRequest</method>
+          </setInvoiceRequest>
+        </observers>
+      </controller_action_postdispatch_checkout_onepage_saveBilling>
+    </events>
+  </frontend>          
+</config>

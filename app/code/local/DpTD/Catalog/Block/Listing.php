@@ -86,11 +86,12 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
   public function getAddToCartHtml($_product) {
     return $this->getAddToCartBlock()
                 ->setTemplate('catalog/product/list/addtobox.phtml')
+                ->setProductId($_product->getId())
                 ->setProduct($_product)->toHtml();
   }
   
   public function getAddToCartBlock() {
-    return $this->getLayout()->createBlock('catalog/product','product-list-addtocart');
+    return $this->getLayout()->createBlock('catalog/product_new','product-list-addtocart');
   }
   
   protected function _getProductCollection() {

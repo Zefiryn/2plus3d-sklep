@@ -1,0 +1,5 @@
+<jstranslator>
+  <validate-nip translate="message" module="checkout">
+    <message>Please enter a valid NIP number</message>
+  </validate-nip>    
+</jstranslator>

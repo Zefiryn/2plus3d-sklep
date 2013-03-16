@@ -26,6 +26,7 @@
 /* @var $this Mage_Checkout_Block_Onepage_Progress */
 $step = 1;
 $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : false;
+$invoiceRequested = Mage::getSingleton('checkout/session')->getInvoiceRequest();
 ?>
 <div class="block block-progress opc-block-progress">
     <div class="block-title">
@@ -34,7 +35,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
     <div class="block-content">
       <ol>
 
-        <?php if ($this->helper('customer')->isLoggedIn() || Mage::app()->getRequest()->isXmlHttpRequest() || $this->isStepComplete('billing')):?>
+        <?php /*if ($this->helper('customer')->isLoggedIn() || Mage::app()->getRequest()->isXmlHttpRequest() || $this->isStepComplete('billing')):?>
         <li class="complete" id="step-login">
           <span class="step-counter"><?php echo $step++;?></span>
           <?php echo $this->__('Checkout Method') ?> <span class="separator">|</span>
@@ -44,13 +45,14 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
         <li id="step-login">
           <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Checkout Method') ?>
         </li>
-        <?php endif;?>
+        <?php endif;*/?>
         
         <?php if ($this->getCheckout()->getStepData('billing', 'is_show') || $isCart): ?>
           <?php if ($this->isStepComplete('billing') && !$isCart): ?>
           <li class="complete" id="step-billing">
+            <?php $label = $invoiceRequested == 0 ? 'Address' : 'Billing Address';?>
             <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__('Billing Address') ?> <span class="separator">|</span>
+            <?php echo $this->__($label) ?> <span class="separator">|</span>
             <a href="#billing" onclick="checkout.gotoSection('billing'); return false;"><?php echo $this->__('Change') ?></a>
             <div class="step-summary">
               <address><?php echo $this->getBilling()->format('html') ?></address>
@@ -58,12 +60,12 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
           </li >
           <?php else: ?>
           <li id="step-billing">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Billing Address') ?>
+            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Address') ?>
           </li>
           <?php endif; ?>
         <?php endif; ?>
 
-        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show') || $isCart): ?>
+        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show') && $invoiceRequested == 1): ?>
           <?php if ($this->isStepComplete('shipping') && !$isCart): ?>
           <li class="complete" id="step-shipping">
             <span class="step-counter"><?php echo $step++;?></span>
@@ -76,7 +78,7 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
           <?php else: ?>
           <li id="step-shipping">
             <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Shipping Address') ?>
-          </li>
+          </li>          
           <?php endif; ?>
         <?php endif; ?>
 
@@ -140,7 +142,9 @@ $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : fals
 
 <script type="text/javascript">
 //<![CDATA[
+  if (typeof(checkout) != 'undefined') {
     checkout.setActiveStep();
+  }
 //]]>
 </script>
 

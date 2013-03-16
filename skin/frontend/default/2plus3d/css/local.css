@@ -213,6 +213,7 @@ button.button.btn-cart span span {font-size: 16px;text-align: center;font-family
 .form-list .field {width: auto;margin: 5px 0px;}
 .form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;min-height: 20px;line-height: 36px;min-width: 105px;text-align: right;padding-right: 15px;}
 .form-list label[for="billing-address-select"]{color: #000;margin-bottom: 15px;}
+.form-list label.uppercase {text-transform: uppercase;}
 .form-list label.required em {display: none;}
 .form-list label.required {color:  #000;}
 .form-list li.control label {width: auto;margin-right: 10px;font-family: droid-sans, sans-serif; font-size: 13px; font-weight: normal;color: #000;text-transform: initial;height: 15px;line-height: 18px;}
@@ -270,9 +271,13 @@ button.button.btn-cart span span {font-size: 16px;text-align: center;font-family
 #opc-login .form-list .input-box {width: 330px;}
 #opc-login .form-list input.input-text {width: 315px}
 #opc-login .buttons-set button.button {float: right;}
+#opc-login .col-1 .form-list li.control {margin: 8px 0px;}
 #opc-login #remember-me-box {margin: 0px;}
 #opc-login #remember-me-box .input-box {margin-left: 0px;width: auto;}
 #opc-login #remember-me-box label {width: auto;}
+
+#opc-billing #invoice-fields {display: none;}
+#opc-billing .shipping_address_settings {display: none;}
 
 #opc-billing #remember-me-box {margin: 0px 0px 0px 120px;}
 #opc-billing #remember-me-box .input-box {margin-left: 0px;width: auto;}
