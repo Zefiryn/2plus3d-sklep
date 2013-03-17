@@ -2,20 +2,18 @@
 <layout version="0.1.0">
   <default>
     <reference name="head">
-      <action method="addExternalItem"><type>external_js</type><name>http://webfonts.creativecloud.com/lato:n7,n4,n9,n3:all.js</name><params/></action>
       <action method="addItem"><type>skin_css</type><path>css/local.css</path></action>
+      <action method="addItem"><type>skin_js</type><path>js/ajax_cart.js</path></action>
     </reference>
     <reference name="header">
       <remove name="top.search" />
       <remove name="top.links" />
       <block type="core/template" name="information_block" as="informations" template="page/template/block.phtml">
-        <action method="setLabel"><label>Informations</label></action>
-        
+        <action method="setLabel"><label>Informations</label></action>        
       </block>      
     </reference>
     <reference name="site.topmenu">
       <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams /></action>
-      <action method="addMenuElement"><alias>login</alias><title>Login</title><link helper="customer/getLoginUrl" /><prepare>0</prepare><liParams><class>right</class></liParams></action>
       <action method="addMenuElement"><alias>informations</alias><title>Informations</title><link /><prepare>1</prepare><liParams><class>right</class></liParams></action>
       <block type="page/template_links" name="information_links" template="page/template/links.phtml">
         <action method="addLink" translate="label title"><label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText /></action>

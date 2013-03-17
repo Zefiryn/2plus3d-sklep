@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+  <checkout_ajax_cartblock>
+    <reference name="root">
+      <action method="setTemplate"><template>page/ajax.phtml</template></action>
+    </reference>
+    <reference name="content">
+      <block type="checkout/cart_sidebar" name="ajax_cart_sidebar" template="checkout/cart/sidebar.phtml" before="-">
+        <action method="addItemRender"><type>simple</type><block>checkout/cart_item_renderer</block><template>checkout/cart/sidebar/default.phtml</template></action>
+        <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>checkout/cart/sidebar/default.phtml</template></action>
+        <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>checkout/cart/sidebar/default.phtml</template></action>
+        <block type="core/text_list" name="ajax_cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+          <label>Shopping Cart Sidebar Extra Actions</label>
+        </block>
+      </block>
+    </reference>
+  </checkout_ajax_cartblock>
+</layout>

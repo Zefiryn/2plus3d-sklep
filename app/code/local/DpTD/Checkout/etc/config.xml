@@ -16,7 +16,15 @@
       </dptd_checkout>
     </models>
   </global>
-  <frontend>
+  <frontend>    
+    <layout>
+      <updates>
+        <dptd_checkout>
+          <file>dptd_checkout.xml</file>
+        </dptd_checkout>
+      </updates>
+    </layout>
+    
     <events>
       <controller_action_postdispatch_checkout_onepage_saveBilling>
         <observers>
@@ -27,6 +35,26 @@
           </setInvoiceRequest>
         </observers>
       </controller_action_postdispatch_checkout_onepage_saveBilling>
+      
+      <http_response_send_before>
+        <observers>
+          <ajaxcart_observer>
+              <type>singleton</type>
+              <class>DpTD_Checkout_Model_Observer</class>
+              <method>onAjaxRequest</method>
+          </ajaxcart_observer>
+        </observers>
+      </http_response_send_before>
     </events>
+    
+    <routers>
+      <checkout>
+        <args>
+          <modules>
+            <DpTD_Checkout before="Mage_Checkout">DpTD_Checkout</DpTD_Checkout>
+          </modules>
+        </args>
+      </checkout>
+    </routers>
   </frontend>          
 </config>

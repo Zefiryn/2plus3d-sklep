@@ -26,7 +26,7 @@ a {color: #527d97;}
 
 a:link, a:visited, a:active {text-decoration: none;color: #3E6E8C;font-family: droid-sans, sans-serif;font-size: 13px;}
 a:hover {text-decoration: underline;}
-button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #000;padding: 0px 18px;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;}
+button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #000;padding: 0px 18px;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;position: relative;}
 button.button:hover, a.button:hover {background: #FCCA21;color: #000;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
 button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;padding: 0px;}
@@ -43,7 +43,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .validation-failed {border: 1px solid #ED1C1C!important;}
 
 /* CART RIGHT SIDEBAR BLOCK*/
-.sidebar .block-cart {border-top: 0px !important;border-bottom: 1px solid #000;padding: 0px 0px 15px 0px;}
+.sidebar .block-cart {border-top: 0px !important;border-bottom: 1px solid #000;padding: 0px 0px 15px 0px;position: relative;}
 .sidebar .block-cart .block-title {background: #000;color: #fff;padding-left: 6px;}
 .sidebar .block-cart .block-title strong {color: #fff;}
 .sidebar .block-cart .block-content {}
@@ -155,13 +155,14 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .add-to-cart .price-box .price-including-tax * {display: initial;}
 .add-to-cart .price-box .price-including-tax .label {display: none;}
 .add-to-cart label {font-size: 12px;color: #000;}
-.add-to-cart button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;}
-button.button.btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}
-button.button.btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
-.add-to-box .add-to-cart button:hover span {background: #4f4f4f;color:#fff;}
+.add-to-cart .button {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;float: left;}
+.button.btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}
+.button.btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
+.add-to-box .add-to-cart .button:hover {text-decoration: none;}
+.add-to-box .add-to-cart .button:hover span {background: #4f4f4f;color:#fff;}
 .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
-.add-to-box button.button.btn-cart-sold-out {cursor: default;}
-.add-to-box button.button.btn-cart-sold-out span {background: #4f4f4f;color:#fff;}
+.add-to-box .button.btn-cart-sold-out {cursor: default;text-decoration: none;}
+.add-to-box .button.btn-cart-sold-out span {background: #4f4f4f;color:#fff;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
 .mini-products-list li.odd {background-color: #fff;}
@@ -335,3 +336,6 @@ button.button.btn-cart span span {font-size: 16px;text-align: center;font-family
 .cms-platnosc-i-dostawa .std h2.section_header {font-weight: bold;text-transform: uppercase;color: #000;font-size: 14px;margin-top: 35px;}
 .cms-platnosc-i-dostawa .std h2.section_header:first-child {margin-top: 0px;}
 .cms-kontakt .std {font-family: droid-serif, serif;font-size: 14px;line-height: 22px;color: #000;font-weight: normal;}
+
+
+.drop-loader {width: 100%;height: 102%;display: block;position: absolute;z-index: 10;top: 0px;background: #fff url('../images/ajax_small_loader.gif') no-repeat center center;opacity: 0.8;}
