@@ -49,8 +49,10 @@
           <?php $author = $_product->getAuthor() != null ? $_product->getAuthor() : $_product->getRedactor();  ?>
           <h2 class="product-name">
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>">
-              <?php if ($autor != null):?>
-              <span class="author"><?php echo $author ?></span> <span class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>          
+              <?php if ($author != null):?>
+              <span class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+              <br />
+              <span class="author"><?php echo $author ?></span>
               <?php else: ?>
               <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
               <?php endif;?>
