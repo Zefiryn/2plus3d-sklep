@@ -80,7 +80,10 @@
               </div>
             </div>
             <div class="field">
-              <?php echo $this->getTaxvatHtml() ?>
+              <label for="billing:vat_id" class="uppercase"><?php echo $this->__('TAX/VAT Number') ?></label>
+              <div class="input-box">
+                <input type="text" id="billing:vat_id" name="billing[vat_id]" value="<?php echo $this->escapeHtml($this->getAddress()->getVatId()) ?>" title="<?php echo $this->__('VAT Number') ?>" class="input-text validate-nip <?php echo $this->helper('customer/address')->getAttributeValidationClass('vat_id') ?>" />
+              </div>
             </div>
           </li>
           

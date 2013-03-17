@@ -402,7 +402,6 @@ Billing.prototype = {
   },
   
   showInvoiceFields: function() {
-    $('invoice-fields').setStyle({'display': 'block'});
     $$('#invoice-fields label').invoke('addClassName', 'required');
     $$('#invoice-fields input').invoke('addClassName', 'required-entry');
     $$('.shipping_address_settings').invoke('setStyle',{'display': 'block'});
@@ -411,7 +410,6 @@ Billing.prototype = {
   },
   
   hideInvoiceFields: function() {
-    $('invoice-fields').setStyle({'display': 'none'});
     $$('#invoice-fields label').invoke('removeClassName', 'required');
     $$('#invoice-fields input').invoke('removeClassName', 'required-entry');
     $$('.shipping_address_settings').invoke('setStyle',{'display': 'none'});

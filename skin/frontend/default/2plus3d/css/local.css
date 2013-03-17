@@ -29,7 +29,7 @@ a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #000;padding: 0px 18px;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;}
 button.button:hover, a.button:hover {background: #FCCA21;color: #000;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
-button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;}
+button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;padding: 0px;}
 button.button:hover span span, a.button:hover span span {color: #000;}
 
 .messages {border: 0px;margin: 0px 0px 20px 0px !important;}
@@ -318,6 +318,11 @@ button.button.btn-cart span span {font-size: 16px;text-align: center;font-family
 .block-progress ol li.active .step-counter {background: #fcca21;}
 .block-progress ol li .step-summary {padding-left: 40px;}
 .block-progress ol li .step-summary, .block-progress ol li .step-summary address {font-family: droid-sans, sans-serif; font-size: 12px; font-weight: normal;line-height: 16px;color: #4F4F4F;}
+
+.checkout-onepage-success .page-title .checkout-success {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;letter-spacing: 1px;}
+.checkout-onepage-success p {font-family: droid-sans,sans-serif;font-size: 13px;line-height: 15px;margin: 3px 0px;}
+.checkout-onepage-success .sub-title {margin-bottom: 30px;color: #000;font-weight: normal;font-size: 14px;line-height: 18px;}
+.checkout-onepage-success .buttons-set {margin-top: 100px;}
 
 /* STATIC PAGES */
 .cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 20px;}
