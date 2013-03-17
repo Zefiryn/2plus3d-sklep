@@ -21,39 +21,55 @@
     <?php foreach ($_productCollection as $_product): ?>
       <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
         
-        <?php // Product Name ?>
-        <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-        <?php $author = $_product->getAuthor() != null ? $_product->getAuthor() : $_product->getRedactor();  ?>
-        <h2 class="product-name">
-          <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>">
-            <span class="author"><?php echo $author ?></span>, <span class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>          
-          </a>
-        </h2>
-
         <?php // Product Image ?>
-        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(180,290); ?>" width="180" height="290" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
-
-        <?php // Product description ?>
-        <div class="product-info">
-          <div class="f-fix">
-            
-            <?php if($_product->getRatingSummary()): ?>
-            <?php echo $this->getReviewsSummaryHtml($_product) ?>
-            <?php endif; ?>
-
-            <div class="desc std">
-              <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
-              <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('More...') ?></a>
+        <div class="left">
+          <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(195,275); ?>" width="195" height="275" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+          
+          <?php // Add to cart button?>
+          <div class="add-to-box">
+            <div class="add-to-cart">
+              <?php $buttonTitle = $_product->isSaleable() ? $this->__('Buy') : $this->__('Sold Out'); ?>
+              <?php if($_product->isSaleable()): ?>
+                <?php if(!$_product->isGrouped()): ?>
+                <input type="hidden" name="qty" id="qty" maxlength="1" value="1" title="<?php echo $this->__('Qty') ?>" class="input-text qty" />
+                <?php endif; ?>
+                <?php echo $this->getPriceHtml($_product, true) ?>
+                <a title="<?php echo $buttonTitle ?>" class="button btn-cart" href="<?php echo $this->getAddToCartUrl($_product) ?>"><span><span><?php echo $buttonTitle ?></span></span></a>
+                
+              <?php else: ?>
+              <a title="<?php echo $buttonTitle ?>" class="button btn-cart btn-cart-sold-out"><span><span><?php echo $buttonTitle ?></span></span></a>
+              <?php endif; ?>
             </div>
+          </div>
+        </div>
 
-            <?php echo $this->getPriceHtml($_product, true) ?>
+        <div class="right">
+          <?php // Product Name ?>
+          <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+          <?php $author = $_product->getAuthor() != null ? $_product->getAuthor() : $_product->getRedactor();  ?>
+          <h2 class="product-name">
+            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>">
+              <?php if ($autor != null):?>
+              <span class="author"><?php echo $author ?></span> <span class="title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>          
+              <?php else: ?>
+              <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+              <?php endif;?>
+            </a>
+          </h2>
+          <?php // Product description ?>
+          <div class="product-info">
+            <div class="f-fix">
+              
+              <?php if($_product->getRatingSummary()): ?>
+              <?php echo $this->getReviewsSummaryHtml($_product) ?>
+              <?php endif; ?>
 
-            <?php if($_product->isSaleable()): ?>
-            <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
-            <?php else: ?>
-            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-            <?php endif; ?>
-            
+              <div class="desc std">
+                <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped ?>" class="link-learn"><?php echo $this->__('More...') ?></a>
+              </div>            
+              
+            </div>
           </div>
         </div>
       </li>
