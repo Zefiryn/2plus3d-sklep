@@ -18,7 +18,7 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
   protected $_listCount;
   protected $_listOrder;
   protected $_showToolbar = true;
-
+  
   public function addToFilter($attributeName, $conditionType, $attributeValue, $type = self::_filterTypeAND) {
 
     $this->_filters[] = array('name' => $attributeName, 'value' => $attributeValue, 'type' => $type);
@@ -91,7 +91,7 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
   }
   
   public function getAddToCartBlock() {
-    return $this->getLayout()->createBlock('catalog/product_new','product-list-addtocart');
+    return $this->getLayout()->createBlock('catalog/product_list','product-list-addtocart');
   }
   
   protected function _getProductCollection() {
