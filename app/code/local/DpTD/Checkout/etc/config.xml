@@ -9,12 +9,19 @@
     <blocks>      
     </blocks>
     <helpers>
+      <checkout>
+        <rewrite>
+          <data>DpTD_Checkout_Helper_Data</data>
+        </rewrite>
+      </checkout>
     </helpers>
     <models>
       <dptd_checkout>
         <class>DpTD_Checkout_Model</class>
       </dptd_checkout>
     </models>
+    <fieldset>
+    </fieldset>
   </global>
   <frontend>    
     <layout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magebase
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ *
+ * @category    Magebase
+ * @package     Magebase_CheckoutComment
+ * @copyright   Copyright (c) 2012 Magebase. (http://magebase.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Magebase_CheckoutComment>
+            <version>0.1.1</version>
+        </Magebase_CheckoutComment>
+    </modules>
+    <global>
+        <helpers>
+            <checkoutcomment>
+                <class>Magebase_CheckoutComment_Helper</class>
+            </checkoutcomment>
+        </helpers>
+        <blocks>
+            <checkoutcomment>
+                <class>Magebase_CheckoutComment_Block</class>
+            </checkoutcomment>
+        </blocks>
+        <models>
+            <checkoutcomment>
+                <class>Magebase_CheckoutComment_Model</class>
+            </checkoutcomment>
+        </models>
+        <fieldsets>
+            <sales_convert_quote_address>
+                <customer_notes><to_order>customer_note</to_order></customer_notes>
+            </sales_convert_quote_address>
+        </fieldsets>
+    </global>
+    <frontend>
+        <events>
+			<controller_action_predispatch_checkout_onepage_saveOrder>
+                <observers>
+                    <checkoutcomment_save_comment>
+                        <type>singleton</type>
+                        <class>checkoutcomment/observer</class>
+                        <method>saveComment</method>
+                    </checkoutcomment_save_comment>
+                </observers>
+            </controller_action_predispatch_checkout_onepage_saveOrder>
+        </events>
+        <translate>
+            <modules>
+                <Magebase_CheckoutComment>
+                    <files>
+                        <default>Magebase_CheckoutComment.csv</default>
+                    </files>
+                </Magebase_CheckoutComment>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <checkoutcomment module="Magebase_CheckoutComment">
+                    <file>magebase/checkoutcomment.xml</file>
+                </checkoutcomment>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <translate>
+            <modules>
+                <Magebase_CheckoutComment>
+                    <files>
+                        <default>Magebase_CheckoutComment.csv</default>
+                    </files>
+                </Magebase_CheckoutComment>
+            </modules>
+        </translate>
+    </adminhtml>
+    <default>
+        <checkout>
+            <mbcheckoutcomment>
+                <enable_comment>1</enable_comment>
+            </mbcheckoutcomment>
+        </checkout>
+    </default>
+</config>

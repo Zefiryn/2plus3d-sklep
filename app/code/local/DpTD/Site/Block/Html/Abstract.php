@@ -31,7 +31,6 @@ class DpTD_Site_Block_Html_Abstract extends Mage_Core_Block_Template {
     $element->setAdditional(true);
     $url = $prepare ? $this->getUrl($link) : $link;
     $element->setLink($url);
-    Mage::log($liParams);
     foreach($liParams as $key => $val) {
       if ($key == 'class') {
         $element->setLiClass($val);

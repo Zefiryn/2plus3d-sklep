@@ -70,7 +70,7 @@ li.issue .cover img {border: 1px solid #E5E5E5;margin-left: -4px;margin-top: -4p
 .footer {width: 980px;margin: 0 auto;padding: 0px;text-align: left;}
 .footer a {color: #b2b2b2;}
 .footer li.clear {display: none;}
-.footer .left {float: left;width: 100%;padding-right: 10px;min-height: 100px;}
+.footer .left {float: left;width: 840px;padding-right: 10px;min-height: 100px;}
 .footer .left .menu {overflow: hidden;}
 .footer .left .menu > li {padding: 25px 10px 15px 10px;width: 120px;float: left;list-style: none;background: none;}
 .footer .left .menu h3, .footer .left .menu h3 a {color: white;margin: 0px 0px 10px 0px;font-weight: normal;font-size: 12px;background: none;text-transform: uppercase;letter-spacing: 1px;font-family: lato, droid-sans, sans-serif;}

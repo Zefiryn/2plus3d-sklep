@@ -26,7 +26,6 @@ var Checkout = Class.create();
 Checkout.prototype = {
   initialize: function(accordion, urls){
     this.accordion = accordion;
-    this.prevStep = null;
     this.progressUrl = urls.progress;
     this.reviewUrl = urls.review;
     this.saveMethodUrl = urls.saveMethod;
@@ -37,8 +36,8 @@ Checkout.prototype = {
     this.method = '';
     this.payment = '';
     this.loadWaiting = false;
-    this.steps = ['login', 'billing', 'shipping', 'shipping_method', 'payment', 'review'];
-    this.progressSteps = {'login': 0, 'billing': 1, 'shipping': 1, 'shipping_method': 0, 'payment': 1, 'review': 1}
+    this.showShippingAddress = urls.showShippingAddress;
+    this.steps = ['billing', 'shipping', 'payment', 'review'];
     
     this.accordion.sections.each(function(section) {
       Event.observe($(section).down('.step-title'), 'click', this._onSectionClick.bindAsEventListener(this));
@@ -213,8 +212,12 @@ Checkout.prototype = {
       
   back: function(){
     if (this.loadWaiting) return;
-    this.accordion.openPrevSection(true);
-    //this.gotoSection(this.prevStep);
+    //this.accordion.openPrevSection(true);
+    var currentStep = $$('.opc li.section.active')[0];
+    var step = currentStep.readAttribute('id').replace('opc-','');
+    back = (step == 'payment' && this.showShippingAddress == true) ? 1 : 2;
+    var go = this.steps[this.steps.indexOf(step)-back];
+    this.gotoSection(go);
   },
       
   setStepResponse: function(response){
@@ -245,10 +248,6 @@ Checkout.prototype = {
       return true;
     }
     return false;
-  },
-  
-  setPrevStep: function(step) {
-    this.prevStep = step;
   }
 }
 
@@ -337,6 +336,8 @@ Billing.prototype = {
       //  $('billing:use_for_shipping').value=1;
       //}
       
+      $('billing:require_invoice').checked ? checkout.showShippingAddress = true : checkout.showShippingAddress = false;
+      
       var request = new Ajax.Request(
         this.saveUrl,
         {
@@ -361,7 +362,6 @@ Billing.prototype = {
   *        There are 3 options: error, redirect or html with shipping options.
   */
   nextStep: function(transport){
-    checkout.setPrevStep('billing');
     if (transport && transport.responseText){
       try{
         response = eval('(' + transport.responseText + ')');
@@ -552,7 +552,6 @@ Shipping.prototype = {
   },
   
   nextStep: function(transport){
-    checkout.setPrevStep('shipping');
     if (transport && transport.responseText){
       try{
         response = eval('(' + transport.responseText + ')');
@@ -831,7 +830,6 @@ Payment.prototype = {
   },
   
   save: function(){
-    checkout.setPrevStep('payment');
     if (checkout.loadWaiting!=false) return;
           var validator = new Validation(this.form);
     if (this.validate() && validator.validate()) {
@@ -906,8 +904,9 @@ Review.prototype = {
     if (checkout.loadWaiting!=false) return;
       checkout.setLoadWaiting('review');
     var params = Form.serialize(payment.form);
+    params += '&customer_notes='+$('customer_notes').value;
     if (this.agreementsForm) {
-      params += '&'+Form.serialize(this.agreementsForm);
+      params += '&'+Form.serialize(this.agreementsForm);      
     }
     params.save = true;
     var request = new Ajax.Request(

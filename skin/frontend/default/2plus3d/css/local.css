@@ -6,6 +6,8 @@ a {color: #527d97;}
 .header h1.logo {margin-top: 21px;}
 .header h1.logo .logo {margin:0px;}
 
+input.input-text:focus,select:focus,textarea:focus { background-color:#fff;border: 1px solid #000; }
+
 .nav-container {background: transparent url('../images/footer-bg.png') repeat-x 0px 0px;border-color: #000000;}
 #menu {text-align: left;width:979px; margin: 0px auto;overflow: visible;position: relative;}
 
@@ -182,9 +184,9 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .data-table tfoot td.no-border {border: 0px !important;}
 .data-table .odd {background: none;}
 .data-table .even {background: none;}
-.data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;}
+.data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;vertical-align: middle;}
 .data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #7F7F7F;}
-.data-table tbody td .product-name, .data-table tbody td .product-name a {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;line-height: 15px;color: #000;}
+.data-table tbody td .product-name, .data-table tbody td .product-name a {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;line-height: 15px;color: #000;margin: 0px;}
 .data-table tbody td.col-price {padding-right: 0px;}
 .data-table input.qty {height: 25px;width: 40px !important;padding: 0px;text-align: center;}
 .data-table input.qty:focus {background: #fff;}
@@ -306,6 +308,20 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 #opc-review .data-table tfoot tr.totals-tax td {border-bottom: 1px solid #000;}
 #opc-review .product-name {font-weight: normal;color: #000;}
 #opc-review .step { border:0; padding: 30px 0px; }
+#opc-review .field {
+    margin: 25px 0px;
+}
+#opc-review .field label {
+    font-family: droid-sans, sans-serif;
+    font-weight: bold;
+}
+#opc-review .field .input-box {
+    margin: 3px 0px;
+}
+#opc-review .field .input-box textarea {
+    width: 430px;
+    height: 100px;
+}
 #opc-review .buttons-set { padding: 20px 0px; border: 0px; border-width: 1px 0px 0px 0px; text-align: right;}
 
 
