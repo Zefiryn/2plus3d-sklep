@@ -70,13 +70,18 @@ li.issue .cover img {border: 1px solid #E5E5E5;margin-left: -4px;margin-top: -4p
 .footer {width: 980px;margin: 0 auto;padding: 0px;text-align: left;}
 .footer a {color: #b2b2b2;}
 .footer li.clear {display: none;}
-.footer .left {float: left;width: 690px;padding-right: 10px;min-height: 100px;}
+.footer .left {float: left;width: 100%;padding-right: 10px;min-height: 100px;}
 .footer .left .menu {overflow: hidden;}
 .footer .left .menu > li {padding: 25px 10px 15px 10px;width: 120px;float: left;list-style: none;background: none;}
 .footer .left .menu h3, .footer .left .menu h3 a {color: white;margin: 0px 0px 10px 0px;font-weight: normal;font-size: 12px;background: none;text-transform: uppercase;letter-spacing: 1px;font-family: lato, droid-sans, sans-serif;}
 .footer .left .menu ul {display: block;margin: 0px}
 .footer .left .menu ul .menuItem {margin: 0px;padding: 1px 0px;background: none;display: list-item;line-height: 15px;}
 .footer .left .menu ul .menuItem a {color: #000;font-family: droid-sans,sans-serif;font-size: 11px;}
+.footer .left .menu ul .menuItem.facebook-link a {background: transparent url('../images/sprites.png') no-repeat 0px -132px;display: block;height: 40px;width: 40px;} 
+
+.footer .payu {float: right;margin-top: 55px;margin-right: 20px;}
+.footer .payu p {color: #000;margin: 0px 0px 20px 0px;font-size: 11px;font-family: droid-sans, sans-serif;}
+.footer .payu .payu-logo {background: transparent url('../images/sprites.png') no-repeat -30px -65px;display: block; width: 105px; height: 30px;}
 
 .footer .copyrights {font-size: 10px;float: none;clear: both;width: 100%;padding: 25px 0px 10px 10px;color: #b2b2b2;text-align: left;}
 .footer .copyrights * {font-size: 10px;}

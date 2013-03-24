@@ -1,8 +1,12 @@
 <?php $_helper = $this->helper('site');?>
 <ul id="submenuItems_<?php echo $this->getMenuItem()->getId();?>" class="items">
   <?php foreach($this->getCollection() as $item):?>
-    <li id="submenuItem_<?php echo $item->getId()?>" class="menuItem">
-      <a href="<?php echo $_helper->menuItemUrl(array('item' => $item));?>"><?php echo $item->getTitle();?></a>      
+    <li id="submenuItem_<?php echo $item->getId()?>" class="menuItem <?php echo $item->getLiClass();?>">
+      <?php if ($item->getLink() == null):?>
+      <a href="<?php echo $_helper->menuItemUrl(array('item' => $item));?>"><?php echo $item->getTitle();?></a>
+      <?php else:?>
+      <a href="<?php echo $item->getLink();?>" title="<?php echo $item->getTitle();?>"><?php echo $item->getTitle();?></a>
+      <?php endif;?>
     </li>    
   <?php endforeach;?>
   <?php if ($this->getMenuItem()->getTitle() == 'Internet'):?>

@@ -15,7 +15,7 @@ a {color: #527d97;}
 .col-right {width: 250px;} 
 .breadcrumbs {margin: 10px 0px;}
 
-.sidebar .block {border: 0px;border-top: 2px solid #000;padding: 0px 0px 0px 3px;margin: 0px 0px 55px 0px;}
+.sidebar .block {border: 0px;border-top: 2px solid #000;padding: 0px 0px 0px 3px;margin: 0px 0px 40px 0px;}
 
 .block .block-title {background: #fff;border: 0px;padding: 8px 0px 3px 0px;margin: 0px 0px 7px 0px;}
 .block .block-title strong {background:none;padding: 0px;color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;font-weight: 400;text-transform: none;}
@@ -43,7 +43,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .validation-failed {border: 1px solid #ED1C1C!important;}
 
 /* CART RIGHT SIDEBAR BLOCK*/
-.sidebar .block-cart {border-top: 0px !important;border-bottom: 1px solid #000;padding: 0px 0px 15px 0px;position: relative;}
+.sidebar .block-cart {border-top: 0px !important;border: 0px;padding: 0px 0px 15px 0px;position: relative;}
 .sidebar .block-cart .block-title {background: #000;color: #fff;padding-left: 6px;}
 .sidebar .block-cart .block-title strong {color: #fff;}
 .sidebar .block-cart .block-content {}
@@ -106,7 +106,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .homepage-product-list .left {width: 195px;}
 .homepage-product-list .right {width: 485px;text-align: left;}
 .homepage-product-list .add-to-box .add-to-cart .price-box {width: 100%;}
-.homepage-product-list .products-list .product-image {width: auto;height: auto;border: 1px solid #ccc;}
+.homepage-product-list .products-list .product-image {width: auto;height: auto;border: 0px;display: block;}
 .homepage-product-list .category {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin: 0px 0px 20px 0px;}
 .homepage-product-list .product-name a {font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
 .homepage-product-list .products-list .product-name {border: 0px;}

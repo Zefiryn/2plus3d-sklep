@@ -23,6 +23,14 @@
       <action method="appendSubmenuBlock"><name>information_links</name><menuItem>informations</menuItem></action>
     </reference>
     <reference name="footer">
+      <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams /></action>
+      <action method="addSublevelElement" translate="label title"><menuItem>bookshop</menuItem><label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><position>1</position><liParams/></action>
+      <action method="addSublevelElement" translate="label title"><menuItem>bookshop</menuItem><label>Payment and Delivery</label><url>platnosc-i-dostawa</url><title>Payment and Delivery</title><prepare>true</prepare><position>2</position><liParams/></action>
+      <action method="addSublevelElement" translate="label title"><menuItem>bookshop</menuItem><label>Contact</label><url>kontakt</url><title>Contact</title><prepare>true</prepare><position>3</position><liParams/></action>
+      <action method="addMenuElement"><alias>facebook</alias><title>Facebook</title><link /><prepare>1</prepare><liParams /></action>
+      <action method="addSublevelElement" translate="label title"><menuItem>facebook</menuItem><label></label><url>http://facebook.com/2plus3d</url><title></title><prepare>0</prepare><position>1</position><liParams><class>facebook-link</class></liParams></action>
+    </reference>
+    <reference name="footer">
       <remove nam="store_switcher" />
       <remove name="footer_links" />
     </reference>

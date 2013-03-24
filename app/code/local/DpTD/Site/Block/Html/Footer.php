@@ -1,13 +1,12 @@
 <?php
-class DpTD_Site_Block_Html_Footer extends Mage_Page_Block_Html_Footer {
-
-  protected $_footerMenu;
+class DpTD_Site_Block_Html_Footer extends DpTD_Site_Block_Html_Abstract  {
 
   public function getFooterMenu() {
-      if ($this->_footerMenu === null) {
-      $this->_footerMenu = Mage::getModel('site/menu_item')->getFooterMenuTree();
+      if ($this->_menu === null) {
+      $this->_menu = Mage::getModel('site/menu_item')->getFooterMenuTree();
+      $this->_addShopMenuElements('footer');
     }
     
-    return $this->_footerMenu;
+    return $this->_menu;
   }
 }
