@@ -235,7 +235,7 @@ class PowerMedia_Ifirma_Model_InvoiceSend {
 			$positions[] = $invoice_position->getProperties();
 		}
 		$shipping = $order->getShippingInclTax();
-		if($shipping >= 0){
+		if($shipping > 0){
 			/* @var $item Mage_Sales_Model_Order_Item */
 			$invoice_position = new PowerMedia_Ifirma_Model_InvoicePosition();
 			$tax = sprintf('%.2f',($item->getTaxPercent()/100));

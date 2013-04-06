@@ -2,7 +2,7 @@
 <config>
     <modules>       
 	    <EM_DeleteOrder>
-	        <active>true</active>
+	        <active>false</active>
             <codePool>community</codePool>
 	    </EM_DeleteOrder>  
     </modules>
