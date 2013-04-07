@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.1.0">
+    <payupl_payment_new>
+        <reference name="root">
+            <action method="setTemplate"><template>payupl/empty.phtml</template></action>
+            <block type="payupl/redirect" name="payupl_child" template="payupl/redirect.phtml" />
+        </reference>
+    </payupl_payment_new>
+    <payupl_payment_online>
+        <reference name="root">
+            <action method="setTemplate"><template>payupl/empty.phtml</template></action>
+            <block type="core/template" name="payupl_child" template="payupl/online.phtml" />
+        </reference>
+    </payupl_payment_online>
+</layout>
