@@ -23,7 +23,7 @@
              to add: <?php echo $this->getChildHtml('mbcomments') ?>
           -->
         <reference name="checkout.onepage.review.info.items.after">
-        <block type="checkout/onepage_shipping" name="mbcomments" template="magebase/checkoutcomment/shipping_comment.phtml" before="-"/>
+            <block type="checkout/onepage_review" name="mbcomments" template="magebase/checkoutcomment/shipping_comment.phtml" before="-"/>
         </reference>
     </checkout_onepage_review>
 </layout>

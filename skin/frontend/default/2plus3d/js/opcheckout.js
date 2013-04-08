@@ -51,12 +51,11 @@ Checkout.prototype = {
     $$('.opc-block-progress li.active').invoke('removeClassName','active');
     var id = $$('.opc li.active')[0].readAttribute('id');
     active = false;
-    for (var step in this.progressSteps) {
+    for (var idx in this.steps) {
+      var step = this.steps[idx];
       if ('opc-' + step == id) {
         active = true;
-        if (this.progressSteps[step] == 1) {
-          $('step-'+step).addClassName('active');
-        }
+        $('step-'+step).addClassName('active');
       }
       if (active == false) {
         if ($('step-'+step) != null) {

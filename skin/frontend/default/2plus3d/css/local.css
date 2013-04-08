@@ -112,7 +112,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .homepage-product-list .category {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin: 0px 0px 20px 0px;}
 .homepage-product-list .product-name a {font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
 .homepage-product-list .products-list .product-name {border: 0px;}
-.homepage-product-list .products-list .homepage-product-name {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;color: #000;text-align: center;display: block;}
+.homepage-product-list .products-list .homepage-product-name {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;color: #000;text-align: center;display: block;margin-top: 10px;}
 .homepage-product-list .products-list .description {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;margin-top: 20px;}
 
 /*PRODUCT VIEW*/
@@ -124,19 +124,19 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .product-view .product-shop .product-name {margin: 20px 0px 20px 0px;border-bottom: 0;padding: 0px 0px 15px 0px;}
 .product-view .product-shop .product-name h1 {font-size: 34px;color: #000;line-height: 36px;font-family:  droid-serif, serif;font-weight: normal;}
 .product-view .product-shop .product-name .author {margin-top:25px;display: block;color: #000000;font-size: 14px;letter-spacing: 1px;line-height: 1.4;font-family: droid-serif, serif;font-weight: normal;}
-.product-view .product-shop .description {line-height: 22px;text-align: justify;font-family: droid-serif, serif;font-size: 14px;line-height: 22px;}
+.product-view .product-shop .description {line-height: 22px;text-align: left;font-family: droid-serif, serif;font-size: 14px;line-height: 22px;}
 .product-view .product-shop .more-views {margin-top: 30px;}
 .product-view .product-shop .more-views li {display: block;width: 485px;height: 325px;margin: 10px 0px;}
 .product-view .product-img-box {width: 195px;}
-.product-view .product-img-box .product-image {width: 193px;border: 1px solid #CCCCCC;}
+.product-view .product-img-box .product-image {width: 195px;border: 0px;}
 .product-view .product-img-box .product-image img {border-radius: 3px;-webkit-border-radius: 3px;-moz-border-radius: 3px;-khtml-border-radius: 3px;}
 .product-view .product-img-box .book-info {width: 195px;list-style: none;}
 .product-view .product-img-box .book-info li {list-style: none;display: block;margin: 7px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 7px 0px;font-size: 13px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}
 .product-view .product-img-box .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;}
 .product-view .product-img-box .book-info .price-box * {display: none;}
-.product-view .product-img-box .book-info .price-box .price-excluding-tax, 
-.product-view .product-img-box .book-info .price-box .price-excluding-tax * {display: initial;}
+.product-view .product-img-box .book-info .price-box .price-including-tax, 
+.product-view .product-img-box .book-info .price-box .price-including-tax * {display: initial;}
 .product-view .product-img-box .price-box .label {font-weight: bold;}
 
 .regular-price .price {font-weight: normal;color: #000;font-size: 12px;}
@@ -144,8 +144,8 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .old-price .price {color: #999;font-weight: normal;}
 .special-price .price-label {color: #000;font-size: 12px;}
 .special-price .price {color: #000;font-size: 12px;}
-.price-excluding-tax .label {color: #000;}
-.price-excluding-tax .price {color: #000;}
+.price-excluding-tax .label, .price-including-tax .label {color: #000;}
+.price-excluding-tax .price, .price-including-tax .price  {color: #000;font-weight: normal;}
 
 .add-to-box {margin: 0px;}
 .add-to-cart {margin-top: 10px;}
@@ -308,20 +308,11 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 #opc-review .data-table tfoot tr.totals-tax td {border-bottom: 1px solid #000;}
 #opc-review .product-name {font-weight: normal;color: #000;}
 #opc-review .step { border:0; padding: 30px 0px; }
-#opc-review .field {
-    margin: 25px 0px;
-}
-#opc-review .field label {
-    font-family: droid-sans, sans-serif;
-    font-weight: bold;
-}
-#opc-review .field .input-box {
-    margin: 3px 0px;
-}
-#opc-review .field .input-box textarea {
-    width: 430px;
-    height: 100px;
-}
+#opc-review .field {margin: 25px 0px;}
+#opc-review .field label {font-family: droid-sans, sans-serif;font-weight: bold;}
+#opc-review .field .input-box {margin: 3px 0px;}
+#opc-review .field .input-box textarea {width: 430px;height: 100px;}
+#opc-review .field .input-box .info {width: 430px;}
 #opc-review .buttons-set { padding: 20px 0px; border: 0px; border-width: 1px 0px 0px 0px; text-align: right;}
 
 
@@ -343,9 +334,9 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .checkout-onepage-success .buttons-set {margin-top: 100px;}
 
 /* STATIC PAGES */
-.cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 34px;line-height: 40px;font-weight: normal;margin-bottom: 20px;}
+.cms-page-view .page-title h1 {font-family: droid-serif, serif;font-size: 28px;line-height: 42px;font-weight: normal;margin-bottom: 20px;}
 .cms-page-view .breadcrumbs-info {margin-top: 8px;font-family: droid-sans, sans-serif;font-size: 16px;letter-spacing: 1px;line-height: 24px;}
-.cms-regulamin-sklepu .std ol li {font-family: droid-serif, serif;font-size: 18px;font-weight: bold;list-style-type: upper-roman;margin-bottom: 25px;}
+.cms-regulamin-sklepu .std ol li {font-family: droid-serif, serif;font-size: 12px;font-weight: normal;list-style-type: decimal;margin-bottom: 25px;}
 .cms-regulamin-sklepu .std ol li ol li {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;list-style-type: decimal;line-height: 22px;margin-bottom: 0px;}
 .cms-regulamin-sklepu .std ol li ol li ol {margin: 0px;}
 .cms-regulamin-sklepu .std ol li ol li ol li {list-style-type: lower-latin;}
