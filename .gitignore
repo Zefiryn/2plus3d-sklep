@@ -12,3 +12,4 @@ errors/local.xml
 media/tmp/*
 *.bak*
 /nbproject
+media/*
