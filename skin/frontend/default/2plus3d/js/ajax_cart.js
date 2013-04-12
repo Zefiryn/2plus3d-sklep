@@ -16,7 +16,7 @@ AjaxCart.prototype = {
   
   _onButtonClick: function(event) {
     event.stop();
-    var button = event.element().up('.button');
+    var button = event.element().hasClassName('button') ? event.element() : event.element().up('.button');
     var element = button.href ? button : button.up('form');
     
     if (this.addRequest == false) {
