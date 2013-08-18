@@ -2,8 +2,10 @@
 
 class DpTD_Site_Helper_Data extends Mage_Core_Helper_Abstract {
 
-  //@todo move this to the settings
-  protected $_siteBaseUrl = 'http://2plus3d.pl/';
+  const SITE_URL_XML_PATH = 'dptd_site/general/site_address';
+  const PROTOCOL_MATCH_XML_PATH = 'dptd_site/general/protocol_match';
+  
+  protected $_siteUrl = null;
 
   protected $_menuUrl = array(
     'types' => array('articles' => 'artykuly', 'events' => 'kalendarium', 'issues' => 'kwartalnik', 'sitemap' => 'mapa'),
@@ -17,7 +19,14 @@ class DpTD_Site_Helper_Data extends Mage_Core_Helper_Abstract {
   );
 
   public function getSiteBaseUrl() {
-    return $this->_siteBaseUrl;
+    if ($this->_siteUrl == null) {
+      $this->_siteUrl = Mage::getStoreConfig(self::SITE_URL_XML_PATH);
+      if (Mage::getStoreConfig(self::PROTOCOL_MATCH_XML_PATH)) {
+        $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $this->_siteUrl = $protocol . substr($this->_siteUrl, strpos($this->_siteUrl, '://') + 3);
+      }
+    }
+    return $this->_siteUrl;
   }
 
   public function ago($date, $limit = 1, $startPeriod = 0) {

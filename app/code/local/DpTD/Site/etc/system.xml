@@ -1,0 +1,51 @@
+<config>
+  <tabs>
+    <dptd_site translate="label" module="site">
+      <label>Portal Integration</label>
+      <sort_order>120</sort_order>
+    </dptd_site>
+  </tabs>
+  <sections>
+    <dptd_site translate="label" module="site">
+      <label>Portal Basic Configuration</label>
+      <tab>dptd_site</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>53</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>1</show_in_website>
+      <show_in_store>1</show_in_store>
+      <groups>
+        <general translate="label" module="site">
+          <label>General</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>10</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <expanded>1</expanded>
+          <fields>
+            <site_address translate="label" module="site">
+              <label>Portal Base URL</label>
+              <frontend_type>text</frontend_type>
+              <validate>validate-url</validate>
+              <sort_order>1</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </site_address>
+            <protocol_match translate="label" module="site">
+              <label>Match Protocol</label>
+              <comment>Automatically set address to https:// if on magento https page</comment>
+              <frontend_type>select</frontend_type>
+              <source_model>adminhtml/system_config_source_yesno</source_model>
+              <sort_order>2</sort_order>
+              <show_in_default>1</show_in_default>
+              <show_in_website>1</show_in_website>
+              <show_in_store>1</show_in_store>
+            </protocol_match>
+          </fields>
+        </general>
+      </groups>
+    </dptd_site>
+  </sections>
+</config>

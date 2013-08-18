@@ -95,7 +95,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .product-info .desc {text-align: justify;line-height: 22px;font-family: sans-serif;font-size: 12px;}
 .products-list .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;display: block;width: 195px;}
 .products-list .price-box .label {display: none;}
-.products-list .price-box * {display: none;}
+.products-list .price-box .price-excluding-tax {display: none;}
 .products-list .price-box .label {font-weight: bold;}
 
 /* HOMEPAGE LIST */
@@ -134,9 +134,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .product-view .product-img-box .book-info li {list-style: none;display: block;margin: 7px 0px 0px 0px;border-bottom: 1px solid #a8a5a5;padding: 0px 0px 7px 0px;font-size: 13px;font-family: droid-sans, sans-serif;}
 .product-view .product-img-box .book-info li .label {font-weight: bold;}
 .product-view .product-img-box .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;}
-.product-view .product-img-box .book-info .price-box * {display: none;}
-.product-view .product-img-box .book-info .price-box .price-including-tax, 
-.product-view .product-img-box .book-info .price-box .price-including-tax * {display: initial;}
+.product-view .product-img-box .book-info .price-box .price-excluding-tax {display: none;}
 .product-view .product-img-box .price-box .label {font-weight: bold;}
 
 .regular-price .price {font-weight: normal;color: #000;font-size: 12px;}
@@ -150,13 +148,11 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .add-to-box {margin: 0px;}
 .add-to-cart {margin-top: 10px;}
 .add-to-cart .price-box {background: #FCCA21;-moz-border-radius: 2px 2px 0px 0px; -webkit-border-radius: 2px 2px 0px 0px; -khtml-border-radius: 2px 2px 0px 0px; border-radius: 2px 2px 0px 0px;height: 36px;line-height: 36px;}
-.add-to-cart .price-box * {display: none;}
-.add-to-cart .price-box .regular-price {display: block;}
 .add-to-cart .price-box .price, 
 .add-to-cart .price-box .price-including-tax .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;color: #000;}
-.add-to-cart .price-box .price-including-tax,
-.add-to-cart .price-box .price-including-tax * {display: initial;}
-.add-to-cart .price-box .price-including-tax .label {display: none;}
+.add-to-cart .price-box .price-excluding-tax,
+.add-to-cart .price-box .price-excluding-tax * {display: none;}
+.add-to-cart .price-box .label {display: none;}
 .add-to-cart label {font-size: 12px;color: #000;}
 .button.btn-cart {display: block;width: 195px;padding: 0px 0px;margin: 0px 0px 5px 0px;-moz-border-radius: 0px 0px 2px 2px; -webkit-border-radius: 0px 0px 2px 2px; -khtml-border-radius: 0px 0px 2px 2px; border-radius: 0px 0px 2px 2px;float: left;}
 .button.btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}

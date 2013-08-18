@@ -1,0 +1,6 @@
+"Portal Integration","Integracja z portalem"
+"Portal Basic Configuration","Podstawowa konfiguracja"
+"General","Sekcja główna"
+"Portal Base URL","Podstawoy adres URL do portalu"
+"Match Protocol","Dopasuj protokół"
+"Automatically set address to https:// if on magento https page","Automatycznie dopasuj protokół do używanego przez aktualną stronę"

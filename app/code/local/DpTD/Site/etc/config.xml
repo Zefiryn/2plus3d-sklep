@@ -32,15 +32,33 @@
       <site_mysql4>
         <class>DpTD_Site_Model_Mysql4</class>
         <entities>
-          <menu_item><table>menu_items</table></menu_item>
-          <menu_item_parameter><table>menu_item_parameters</table></menu_item_parameter>
-          <article><table>articles</table></article>
-          <issue><table>issues</table></issue>
-          <image><table>images</table></image>
-          <event><table>events</table></event>
-          <page><table>pages</table></page>
-          <event_date><table>event_dates</table></event_date>
-          <city><table>taxonomy</table></city>
+          <menu_item>
+            <table>menu_items</table>
+          </menu_item>
+          <menu_item_parameter>
+            <table>menu_item_parameters</table>
+          </menu_item_parameter>
+          <article>
+            <table>articles</table>
+          </article>
+          <issue>
+            <table>issues</table>
+          </issue>
+          <image>
+            <table>images</table>
+          </image>
+          <event>
+            <table>events</table>
+          </event>
+          <page>
+            <table>pages</table>
+          </page>
+          <event_date>
+            <table>event_dates</table>
+          </event_date>
+          <city>
+            <table>taxonomy</table>
+          </city>
         </entities>
       </site_mysql4>
     </models>
@@ -80,4 +98,35 @@
       </site>
     </helpers>
   </global>
+  <adminhtml>
+    <acl>
+      <resources>
+        <admin>
+          <children>
+            <system>
+              <children>
+                <config>
+                  <children>
+                    <dptd_site translate="title" module="site">
+                      <label>Portal integration</label>
+                      <sort_order>120</sort_order>
+                    </dptd_site>
+                  </children>
+                </config>
+              </children>
+            </system>
+          </children>
+        </admin>
+      </resources>
+    </acl>
+    <translate>
+      <modules>
+        <DpTD_Site>
+          <files>
+            <default>DpTD_Site.csv</default>
+          </files>
+        </DpTD_Site>
+      </modules>
+    </translate>
+  </adminhtml>
 </config>
