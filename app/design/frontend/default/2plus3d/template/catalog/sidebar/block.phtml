@@ -7,7 +7,9 @@
 ?>
 <div class="block block-category">
   <div class="block-title">
-    <strong><span><?php echo $this->__($this->getCategory()->getName()) ?></span></strong>
+    <a href="<?php echo $this->getCategory()->getUrl();?>">
+      <strong><span><?php echo $this->__($this->getCategory()->getName()) ?></span></strong>
+    </a>
   </div>
   <div class="block-content">
     <ul class="links products-links">

@@ -137,7 +137,7 @@ class Orba_Payupl_Model_Payment extends Mage_Payment_Model_Method_Abstract
             $this->_order = Mage::getModel('sales/order')->loadByIncrementId($incrementOrderId);
             $lPayment = $this->_order->getPayment();
             if($lPayment == null){  
-              throw new Exception('No payment exists for given order. '.$request['session_id']);
+              throw new Exception('No payment exists for given order. '.$incrementOrderId . 'session: ' . $request['session_id']);
             }
 
             if (!($this->isOrderCompleted($this->_order))) {

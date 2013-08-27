@@ -1,16 +1,10 @@
 <config>
-  <tabs>
-    <dptd_site translate="label" module="site">
-      <label>Portal Integration</label>
-      <sort_order>120</sort_order>
-    </dptd_site>
-  </tabs>
   <sections>
     <dptd_site translate="label" module="site">
-      <label>Portal Basic Configuration</label>
-      <tab>dptd_site</tab>
+      <label>Portal Integration</label>
+      <tab>general</tab>
       <frontend_type>text</frontend_type>
-      <sort_order>53</sort_order>
+      <sort_order>1002</sort_order>
       <show_in_default>1</show_in_default>
       <show_in_website>1</show_in_website>
       <show_in_store>1</show_in_store>

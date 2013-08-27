@@ -14,6 +14,7 @@
     </reference>
     <reference name="site.topmenu">
       <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams /></action>
+      <action method="addCategoriesBLock"><menuItem>bookshop</menuItem><level>1</level></action>
       <action method="addMenuElement"><alias>informations</alias><title>Informations</title><link /><prepare>1</prepare><liParams><class>right</class></liParams></action>
       <block type="page/template_links" name="information_links" template="page/template/links.phtml">
         <action method="addLink" translate="label title"><label>Regulations</label><url>regulamin-sklepu</url><title>Regulations</title><prepare>true</prepare><urlParams /><position>1</position><liParams/><aParams /><beforeText /><afterText /></action>

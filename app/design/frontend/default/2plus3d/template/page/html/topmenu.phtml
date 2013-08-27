@@ -21,7 +21,11 @@
       <?php endif;?>
       <?php if (array_key_exists('submenuBlock', $items)):?>
         <div class="submenuBlock">
+          <?php if (is_object($items['submenuBlock'])):?>
+          <?php echo $items['submenuBlock']->toHtml();?>
+          <?php else: ?>
           <?php echo $this->getChildHtml($items['submenuBlock']);?>
+          <?php endif;?>
         </div>
       <?php endif;?>
     </li>

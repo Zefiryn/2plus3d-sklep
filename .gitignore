@@ -13,3 +13,5 @@ media/tmp/*
 *.bak*
 /nbproject
 media/*
+server.sh
+*.ignore.*
