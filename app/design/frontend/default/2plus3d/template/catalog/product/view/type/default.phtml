@@ -30,6 +30,11 @@
     <span class="label"><?php echo $this->__('ISBN');?>:</span> <?php echo $_product->getIsbn();?>
   </li>
   <?php endif;?>
+  <?php if ($_product->getIssn() != null):?>
+  <li>
+    <span class="label"><?php echo $this->__('ISSN');?>:</span> <?php echo $_product->getIssn();?>
+  </li>
+  <?php endif;?>
 </ul>
 
 <?php echo $this->getChildHtml('product_type_data_extra') ?>
