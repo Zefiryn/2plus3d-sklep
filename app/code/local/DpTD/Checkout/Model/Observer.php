@@ -1,19 +1,17 @@
 <?php
 
 class DpTD_Checkout_Model_Observer {
-
+  
   public function setInvoiceRequest(Varien_Event_Observer $observer) {
     $controller = $observer->getEvent()->getControllerAction();
     $request = $controller->getRequest();
     $data = $request->getPost('billing', array());
     $session = Mage::getSingleton('checkout/session');
     if (array_key_exists('require_invoice',$data)) {      
-      $session->setInvoiceRequest(1);
-      $session->getQuote()->setRequireInvoice('yes')->save();
+      $session->getQuote()->setRequireInvoice(DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_TRUE)->save();
     }
     else {
-      $session->setInvoiceRequest(0);
-      $session->getQuote()->setRequireInvoice('no')->save();
+      $session->getQuote()->setRequireInvoice(DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_FALSE)->save();
     }
     
     return $this;
@@ -52,8 +50,8 @@ class DpTD_Checkout_Model_Observer {
             'index' => 'require_invoice',
             'type'  => 'options',
             'width' => '70px',
-            'options' => array( 'yes' => Mage::helper('dptd_checkout')->__('Yes'), 
-                                'no' => Mage::helper('dptd_checkout')->__('No')),
+            'options' => array( DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_TRUE => Mage::helper('dptd_checkout')->__('Yes'), 
+                                DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_FALSE => Mage::helper('dptd_checkout')->__('No')),
         ));
     $gridBlock->addColumnsOrder('require_invoice', 'shipping_name');
   }

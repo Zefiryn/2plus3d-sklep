@@ -91,6 +91,8 @@
 "Sort Order","Kolejność sortowania"
 "State","Województwo"
 "State/Region","Województwo/Region"
+"Subtotal (Excl. Tax)","Suma częściowa (bez podatku)"
+"Subtotal (Incl. Tax)","Suma częściowa (z podatkiem)"
 "Tax","Podatek"
 "Tax Based On","Podatek na podstawie"
 "Tax Class for Shipping","Klasa podatku dla dostawy"
