@@ -75,7 +75,9 @@
       <button type="submit" name="update_cart_action" value="empty_cart" title="<?php echo $this->__('Clear Shopping Cart'); ?>" class="button btn-empty" id="empty_cart_button"><?php echo $this->__('Clear Shopping Cart'); ?></button>
       <div class="totals">
         <?php echo $this->getChildHtml('totals'); ?>
-        <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update"><?php echo $this->__('Update Shopping Cart'); ?></button>
+        <button type="submit" name="update_cart_action" value="update_qty" title="<?php echo $this->__('Update Shopping Cart'); ?>" class="button btn-update">
+          <span><span><?php echo $this->__('Update Shopping Cart'); ?></span></span>
+        </button>
         <?php if(!$this->hasError()): ?>
         <ul class="checkout-types">
         <?php foreach ($this->getMethods('methods') as $method): ?>
