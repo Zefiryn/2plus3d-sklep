@@ -83,11 +83,11 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .new-users .account-create .buttons-set button.button {margin-left: 690px}
 
 /*PRODUCT LIST*/
-.products-list li.item {display: block;padding: 0px 0px 15px 0px;margin: 20px 0px;}
+.products-list li.item {display: block;padding: 0px 0px 15px 0px;margin: 20px 0px;border-bottom: 0px;}
 .products-list .item .product-name {border-bottom: 1px dashed #527D97;padding-bottom: 5px;margin-top: 5px;}
 .products-list .left {width: 200px;margin-right: 20px;}
 .products-list .right {width: 480px;}
-.products-list .product-name a {color: #000;font-weight: normal;font-family: lato, sans-serif;font-size: 20px;}
+.products-list .product-name a {color: #000;font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
 .products-list .product-name .author {font-weight: bold;}
 .products-list .product-name .title {font-style: italic;}
 .products-list .product-image {width: 195px; height: auto;float: none;margin-bottom: 0px;}
@@ -103,6 +103,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .homepage-product-list:last-child {border: 0px;}
 .homepage-product-list .products-list li.item {margin-top: 10px;border: 0px;}
 .homepage-product-list .products-list li {float: left;width: 195px;margin-right: 55px;}
+.homepage-product-list .products-list li.item:nth-child(3n+1),
 .homepage-product-list .products-list li.last {margin-right: 0px;}
 .homepage-product-list .products-list li.first {float: none;width: 100%;}
 .homepage-product-list .left {width: 195px;}

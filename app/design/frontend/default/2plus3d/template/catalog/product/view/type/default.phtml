@@ -4,7 +4,7 @@
 <ul class="book-info">
   <?php if ($_product->getPublishDate() != null):?>
   <li>
-    <span class="label"><?php echo $this->__('Publish date');?>:</span> <?php echo $_helper->getFormatedDate($_product->getPublishDate());?>
+    <span class="label"><?php echo $this->__('Publish date');?>:</span> <?php echo $_product->getPublishDate();?>
   </li>
   <?php endif;?>
   <?php if ($_product->getFormat() != null):?>

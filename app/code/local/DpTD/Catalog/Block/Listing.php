@@ -122,7 +122,7 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
           $collection->getSelect()->order(new Zend_Db_Expr('RAND()'));
         }
         else {
-          $collection->setOrder($this->_listOrder);
+          $collection->getSelect()->order($this->_listOrder);
         }
       }
       

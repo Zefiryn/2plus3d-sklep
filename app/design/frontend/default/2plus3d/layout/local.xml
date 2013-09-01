@@ -49,6 +49,7 @@
       </block>
       <block type="catalog/category_block" name="right.magazine.category" after="right.books.category" template="catalog/sidebar/block.phtml">
         <action method="setCategoryUrlKey"><name>kwartalnik</name></action>
+        <action method="setListOrder"><order>sku DESC</order></action>
       </block>
    </reference>
     <reference name="left">
@@ -156,6 +157,9 @@
     </reference>
     <reference name="right">
       <remove name="left.reports.product.viewed" />      
+    </reference>
+    <reference name="product_list_toolbar">
+      <action method="setDefaultDirection"><dir>desc</dir></action>
     </reference>
   </catalog_category_default>
 </layout>
