@@ -13,7 +13,7 @@
       </block>      
     </reference>
     <reference name="site.topmenu">
-      <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams /></action>
+      <action method="addMenuElement"><alias>bookshop</alias><title>Bookshop</title><link /><prepare>1</prepare><liParams><class>current</class></liParams></action>
       <action method="addCategoriesBLock"><menuItem>bookshop</menuItem><level>1</level></action>
       <action method="addMenuElement"><alias>informations</alias><title>Informations</title><link /><prepare>1</prepare><liParams><class>right</class></liParams></action>
       <block type="page/template_links" name="information_links" template="page/template/links.phtml">
