@@ -96,7 +96,14 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;display: block;width: 195px;}
 .products-list .price-box .label {display: none;}
 .products-list .price-box .price-excluding-tax {display: none;}
-.products-list .price-box .label {font-weight: bold;}
+.products-list .price-box .label {font-weight: bold;display: inline-block !important;}
+.products-list .add-to-box .add-to-cart {float: none;width: 100%;}
+.products-list .add-to-box .add-to-cart .price-box {width: 50%;background: transparent;border: 1px solid #A8A5A5;border-right:  0px;border-left: 0px;height: 30px;line-height: 30px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;padding: 0px 5px 0px 0px;}
+.products-list .add-to-box .add-to-cart .price-box .price {display: inline;font-size: 12px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
+.products-list .add-to-box .add-to-cart .btn-cart {width: 48%;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;float: right;margin: 0px;padding: 0px;}
+.products-list .add-to-box .add-to-cart .btn-cart span {display: inline;padding: 0px;line-height: 28px;}
+.products-list .add-to-box .add-to-cart .btn-cart span span {font-family: droid-sans-mono, sans-serif;font-size: 12px;font-style: normal;height:  auto;display: inline;padding: 0px;line-height: 30px;}
+.products-list .add-to-box .add-to-cart .btn-cart:hover span {background: transparent;}
 
 /* HOMEPAGE LIST */
 .homepage-product-list {border-bottom: 1px solid #000;overflow: hidden;padding-bottom: 10px;}
@@ -108,7 +115,6 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .homepage-product-list .products-list li.first {float: none;width: 100%;}
 .homepage-product-list .left {width: 195px;}
 .homepage-product-list .right {width: 485px;text-align: left;}
-.homepage-product-list .add-to-box .add-to-cart .price-box {width: 100%;}
 .homepage-product-list .products-list .product-image {width: auto;height: auto;border: 0px;display: block;}
 .homepage-product-list .category a {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin: 0px 0px 20px 0px;}
 .homepage-product-list .product-name a {font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
