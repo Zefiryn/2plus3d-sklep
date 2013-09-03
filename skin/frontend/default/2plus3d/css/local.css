@@ -87,7 +87,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .item .product-name {border-bottom: 1px dashed #527D97;padding-bottom: 5px;margin-top: 5px;}
 .products-list .left {width: 200px;margin-right: 20px;}
 .products-list .right {width: 480px;}
-.products-list .product-name a {color: #000;font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
+.products-list .product-name a {color: #000;font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;}
 .products-list .product-name .author {font-weight: bold;}
 .products-list .product-name .title {font-style: italic;}
 .products-list .product-image {width: 195px; height: auto;float: none;margin-bottom: 0px;}
@@ -98,7 +98,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .price-box .price-excluding-tax {display: none;}
 .products-list .price-box .label {font-weight: bold;display: inline-block !important;}
 .products-list .add-to-box .add-to-cart {float: none;width: 100%;}
-.products-list .add-to-box .add-to-cart .price-box {width: 50%;background: transparent;border: 1px solid #A8A5A5;border-right:  0px;border-left: 0px;height: 30px;line-height: 30px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;padding: 0px 5px 0px 0px;-moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px;}
+.products-list .add-to-box .add-to-cart .price-box {width: 47%;background: transparent;border: 1px solid #A8A5A5;border-right:  0px;border-left: 0px;height: 30px;line-height: 30px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;padding: 0px;-moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px;}
 .products-list .add-to-box .add-to-cart .price-box .price {display: inline;font-size: 12px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;}
 .products-list .add-to-box .add-to-cart .btn-cart {width: 48%;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;float: right;margin: 0px;padding: 0px;}
 .products-list .add-to-box .add-to-cart .btn-cart span {display: inline;padding: 0px;line-height: 28px;}
@@ -117,9 +117,9 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .homepage-product-list .right {width: 485px;text-align: left;}
 .homepage-product-list .products-list .product-image {width: auto;height: auto;border: 0px;display: block;}
 .homepage-product-list .category a {color: #000000;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: 400;letter-spacing: 1px;margin: 0px 0px 20px 0px;}
-.homepage-product-list .product-name a {font-family: droid-serif, serif;font-size: 28px;font-weight: normal;line-height: 42px;}
+.homepage-product-list .product-name a {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;}
 .homepage-product-list .products-list .product-name {border: 0px;}
-.homepage-product-list .products-list .homepage-product-name {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;color: #000;text-align: center;display: block;margin-top: 10px;}
+.homepage-product-list .products-list .homepage-product-name {font-family: droid-sans, sans-serif;font-size: 14px;font-weight: bold;color: #000;text-align: center;display: block;margin-top: 10px;}
 .homepage-product-list .products-list .description {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;margin-top: 20px;}
 
 /*PRODUCT VIEW*/
@@ -156,7 +156,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .add-to-cart {margin-top: 10px;}
 .add-to-cart .price-box {background: #FCCA21;-moz-border-radius: 2px 2px 0px 0px; -webkit-border-radius: 2px 2px 0px 0px; -khtml-border-radius: 2px 2px 0px 0px; border-radius: 2px 2px 0px 0px;height: 36px;line-height: 36px;}
 .add-to-cart .price-box .price, 
-.add-to-cart .price-box .price-including-tax .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;color: #000;}
+.add-to-cart .price-box .price-including-tax .price {display: block;font-size: 18px;text-align: center;font-family: droid-sans, sans-serif;font-weight: normal;color: #000;}
 .add-to-cart .price-box .price-excluding-tax,
 .add-to-cart .price-box .price-excluding-tax * {display: none;}
 .add-to-cart .price-box .label {display: none;}
@@ -165,7 +165,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .button.btn-cart span {width:100%;display: block;margin: 0px;padding: 1px 0px;background: #000;height: 36px;line-height: 36px;}
 .button.btn-cart span span {font-size: 16px;text-align: center;font-family: droid-sans-mono, sans-serif;font-weight: normal;}
 .button.btn-cart:hover {text-decoration: none;}
-.button.btn-cart:hover span {background: #4f4f4f;color:#fff;}
+.button.btn-cart:hover span {background: #4f4f4f;color:#000;}
 .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
 .add-to-cart .button.btn-cart-sold-out {cursor: default;text-decoration: none;}
 .add-to-cart .button.btn-cart-sold-out span {background: #4f4f4f;color:#fff;}
