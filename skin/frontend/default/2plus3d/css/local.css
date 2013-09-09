@@ -84,7 +84,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 
 /*PRODUCT LIST*/
 .products-list li.item {display: block;padding: 0px 0px 15px 0px;margin: 20px 0px;border-bottom: 0px;}
-.products-list .item .product-name {border-bottom: 1px dashed #527D97;padding-bottom: 5px;margin-top: 5px;}
+.products-list .item .product-name {border: none;padding-bottom: 5px;margin-top: 5px;}
 .products-list .left {width: 200px;margin-right: 20px;}
 .products-list .right {width: 480px;}
 .products-list .product-name a {color: #000;font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;}
@@ -92,7 +92,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .product-name .title {font-style: italic;}
 .products-list .product-image {width: 195px; height: auto;float: none;margin-bottom: 0px;}
 .products-list .product-info {float: right;width: 100%;margin-top: 15px;}
-.products-list .product-info .desc {text-align: justify;line-height: 22px;font-family: sans-serif;font-size: 12px;}
+.products-list .product-info .desc {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;margin-top: 20px;}
 .products-list .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;display: block;width: 195px;}
 .products-list .price-box .label {display: none;}
 .products-list .price-box .price-excluding-tax {display: none;}
@@ -167,7 +167,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .button.btn-cart:hover {text-decoration: none;}
 .button.btn-cart:hover span {background: #4f4f4f;color:#000;}
 .add-to-box .shipping-cost-info {display:block;font-size: 12px;text-align: center;font-family: droid-sans, sans-serif;}
-.add-to-cart .button.btn-cart-sold-out {cursor: default;text-decoration: none;}
+.add-to-cart .button.btn-cart-sold-out {cursor: default;text-decoration: none;background: #4f4f4f;margin: 0px auto;}
 .add-to-cart .button.btn-cart-sold-out span {background: #4f4f4f;color:#fff;}
 
 .mini-products-list li {padding: 10px 9px;border-bottom: 1px dotted #000;}
