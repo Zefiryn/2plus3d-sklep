@@ -22,9 +22,6 @@
     <span class="label"><?php echo $this->__('Binding type');?>:</span> <?php echo $this->__($_product->getAttributeText('binding'));?>
   </li>
   <?php endif;?>  
-  <li>
-    <?php echo $this->getPriceHtml($_product) ?>
-  </li>
   <?php if ($_product->getIsbn() != null):?>
   <li>
     <span class="label"><?php echo $this->__('ISBN');?>:</span> <?php echo $_product->getIsbn();?>

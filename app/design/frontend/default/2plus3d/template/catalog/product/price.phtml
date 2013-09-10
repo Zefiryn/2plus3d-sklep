@@ -61,12 +61,13 @@
         <?php $_weeeTaxAmountInclTaxes = $_weeeHelper->getAmountInclTaxes($_attributes); ?>
     <?php endif; ?>
 
-    <div class="price-box">
     <?php $_price = $_taxHelper->getPrice($_product, $_product->getPrice()) ?>
     <?php $_regularPrice = $_taxHelper->getPrice($_product, $_product->getPrice(), $_simplePricesTax) ?>
     <?php $_finalPrice = $_taxHelper->getPrice($_product, $_product->getFinalPrice()) ?>
     <?php $_finalPriceInclTax = $_taxHelper->getPrice($_product, $_product->getFinalPrice(), true) ?>
     <?php $_weeeDisplayType = $_weeeHelper->getPriceDisplayType(); ?>
+
+    <div class="price-box <?php if ($_finalPrice < $_price): ?>special-price-box<?php endif;?>">
     <?php if ($_finalPrice >= $_price): ?>
         <?php if ($_taxHelper->displayBothPrices()): ?>
             <?php if ($_weeeTaxAmount && $_weeeHelper->typeOfDisplay($_product, 0)): // including ?>
@@ -196,14 +197,16 @@
                     <?php echo $_coreHelper->currency($_price + $_weeeTaxAmount, true, true) ?>
                 </span>
             <?php else: ?>
-                <span class="label"><?php echo $this->helper('tax')->__('Price:') ?></span>
-                <span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
-                    <?php if ($_finalPrice == $_price): ?>
-                        <?php echo $_coreHelper->currency($_price, true, true) ?>
-                    <?php else: ?>
-                        <?php echo $_coreHelper->currency($_finalPrice, true, true) ?>
-                    <?php endif; ?>
-                </span>
+                <p class="regular-price">
+                  <span class="label"><?php echo $this->helper('tax')->__('Price:') ?></span>
+                  <span class="regular-price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
+                      <?php if ($_finalPrice == $_price): ?>
+                          <?php echo $_coreHelper->currency($_price, true, true) ?>
+                      <?php else: ?>
+                          <?php echo $_coreHelper->currency($_finalPrice, true, true) ?>
+                      <?php endif; ?>
+                  </span>
+                </p>
             <?php endif; ?>
         <?php endif; ?>
     <?php else: /* if ($_finalPrice == $_price): */ ?>
@@ -344,14 +347,13 @@
                 </p>
             <?php else: ?>
             <p class="special-price">
-                <span class="price-label"><?php echo $this->__('Special Price:') ?></span>
+                <span class="price-label"><?php echo $this->__('Price:') ?></span>
                 <span class="price" id="product-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_finalPrice, true, false) ?>
                 </span>
             </p>
             <?php endif; ?>
-            <p class="old-price">
-                <span class="price-label"><?php echo $this->__('Regular Price:') ?></span>
+            <p class="old-price">                
                 <span class="price" id="old-price-<?php echo $_id ?><?php echo $this->getIdSuffix() ?>">
                     <?php echo $_coreHelper->currency($_regularPrice, true, false) ?>
                 </span>

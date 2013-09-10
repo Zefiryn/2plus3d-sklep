@@ -17,7 +17,17 @@
       <li>
         <a href="<?php echo $_product->setCategoryId($this->getCategory()->getId())->getProductUrl();?>"><?php echo $this->htmlEscape($_product->getName()) ?></a>, 
         <?php $_priceIncludingTax = $this->helper('tax')->getPrice($_product, $_product->getFinalPrice(), true);?>
-        <?php echo Mage::helper('core')->currency($_priceIncludingTax,true,false);?>
+        <?php $_basepriceIncludingTax = $this->helper('tax')->getPrice($_product, $_product->getPrice(), true);?>
+        <?php if ($_priceIncludingTax < $_basepriceIncludingTax):?>
+        <span class="old-price">
+          <span class="price"><?php echo Mage::helper('core')->currency($_basepriceIncludingTax,true,false);?></span>
+        </span>
+        <span class="special-price">
+          <span class="price"><?php echo Mage::helper('core')->currency($_priceIncludingTax,true,false);?></span>
+        </span>
+        <?php else:?>
+        <span class="price"><?php echo Mage::helper('core')->currency($_basepriceIncludingTax,true,false);?></span>
+        <?php endif;?>
       </li>
     <?php endforeach;?>
     </ul>
