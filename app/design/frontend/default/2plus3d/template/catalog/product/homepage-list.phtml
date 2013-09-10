@@ -21,7 +21,7 @@
     <li class="item first<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
       <div class="left">
         <?php // Product Image ?>
-        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(193,263); ?>" width="193" height="263" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
+        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(193,259); ?>" width="193" height="259" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
         <div class="add-to-box">
           <?php echo  $this->getAddToCartHtml($_product);?>
         </div>
@@ -51,7 +51,7 @@
     <?php else:?>
     
     <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
-      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(195,259); ?>" width="195" height="259" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
+      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(195,261); ?>" width="195" height="261" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
 
       <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
       <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>" class="homepage-product-name">

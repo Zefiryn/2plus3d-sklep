@@ -91,6 +91,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list .product-name .author {font-weight: bold;}
 .products-list .product-name .title {font-style: italic;}
 .products-list .product-image {width: 195px; height: auto;float: none;margin-bottom: 0px;}
+.products-list .product-image img {border: 1px solid #CDCDCD;}
 .products-list .product-info {float: right;width: 100%;margin-top: 0px;}
 .products-list .product-info .desc {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;margin-top: 15px;}
 .products-list .price-box {margin: 0px 0px 0px 0px;border: 0px;padding: 0px 0px 0px 0px;display: block;width: 195px;}
