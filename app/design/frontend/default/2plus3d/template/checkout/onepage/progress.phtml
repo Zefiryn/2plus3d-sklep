@@ -26,7 +26,7 @@
 /* @var $this Mage_Checkout_Block_Onepage_Progress */
 $step = 1;
 $isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : false;
-$invoiceRequested = Mage::getSingleton('checkout/session')->getInvoiceRequest();
+$invoiceRequested = Mage::getSingleton('checkout/session')->getQuote()->getRequireInvoice() == DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_TRUE;
 ?>
 <div class="block block-progress opc-block-progress">
     <div class="block-title">
