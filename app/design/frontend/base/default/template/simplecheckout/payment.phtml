@@ -1,0 +1,21 @@
+<form action="" id="co-payment-form">
+  <div class="content-loaded" id="payment_methods_loaded">
+    <?php echo $this->getChildHtml('methods');?>
+  </div>
+
+  <input type="checkbox" name="billing[same_as_shipping]" value="1" title="<?php echo $this->__('My shipping address is also my billing address') ?>" id="billing:same_as_shipping" <?php if ($this->helper('simplecheckout')->isBillingSameAsShipping()):?> checked="checked"<?php endif;?> class="checkbox" onchange="payment.showBillingAddress()" />
+  <label for="billing:same_as_shipping"><?php echo $this->__('%s is also my billing address', $this->helper('simplecheckout')->getQuote()->getShippingAddress()->getStreet(1)) ?></label>
+  
+  <div class="billing-address">
+    <?php echo $this->getChildHtml('billing-address');?>
+  </div>
+  
+  <div class="buttons-set" id="payment-buttons-container">
+      <button type="button" class="button" title="<?php echo $this->__('Continue') ?>" onclick="payment.save();"><span><span><?php echo $this->__('Continue') ?></span></span></button>
+  </div>
+</form>
+<script type="text/javascript">
+//<![CDATA[
+  window.payment = new SimplePayment('co-payment-form', '<?php echo $this->getSaveUrl()?>');  
+//]]>
+</script>

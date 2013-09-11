@@ -1,0 +1,61 @@
+<div class="step-block step-login" id="simplecheckout-login-form" >
+  <div class="close-btn" onclick="link.hide();">x</div>
+  <div class="step-frame">
+    <h2>
+      <span>
+        <?php echo $this->__($this->getStepTitle()); ?>
+      </span>
+    </h2>
+    <hr clas="ruler" />
+    <div class="step-form">
+      <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
+        <div class="col2-set">
+          <div class="col-1 registered-users">
+            <div class="content">
+              <h2><?php echo $this->__('Registered Customers') ?></h2>
+              <p><?php echo $this->__('If you have an account with us, please log in.') ?></p>
+              <ul class="form-list">
+                <li>
+                  <label for="email" class="required"><em>*</em><?php echo $this->__('Email Address') ?></label>
+                  <div class="input-box">
+                    <input type="text" name="login[username]" value="<?php echo $this->escapeHtml($this->getUsername()) ?>" id="email" class="input-text required-entry validate-email" title="<?php echo $this->__('Email Address') ?>" placeholder="<?php echo $this->__('Email Address') ?>"/>
+                  </div>
+                </li>
+                <li>
+                  <label for="pass" class="required"><em>*</em><?php echo $this->__('Password') ?></label>
+                  <div class="input-box">
+                    <input type="password" name="login[password]" class="input-text required-entry validate-password" id="pass" title="<?php echo $this->__('Password') ?>" placeholder="<?php echo $this->__('Password') ?>"/>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-2 new-users">
+            <div class="content">
+              <h2><?php echo $this->__('New Customers') ?></h2>
+              <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
+            </div>
+          </div>            
+        </div>
+        <div class="col2-set">
+          <div class="col-1 registered-users">
+            <div class="buttons-set">
+              <button class="button" onclick="link.login();return false;" title="<?php echo $this->__('Login') ?>" name="send" id="send2"><span><span><?php echo $this->__('Login') ?></span></span></button>
+              <span class="password-forgot-link" onclick="link.showForgotPasswordForm();"><?php echo $this->__('forgot your password?');?></span>
+            </div>
+          </div>
+          <div class="col-2 new-users">
+            <div class="buttons-set">
+              <button type="button" title="<?php echo $this->__('Create an Account') ?>" class="button" onclick="link.showRegisterForm();"><span><span><?php echo $this->__('Create an Account') ?></span></span></button>
+            </div>
+          </div>            
+        </div>        
+      </form>
+    </div>
+  </div>
+  <hr clas="ruler" />
+  <div class="step-footer">
+    <img src="<?php echo $this->getSkinUrl('images/simplecheckout/secure.png');?>" />
+    <span><?php echo $this->__('Checking out on %s is safe and secure', $this->getStoreName());?></span>
+  </div>
+</div>

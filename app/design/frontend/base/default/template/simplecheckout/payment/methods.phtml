@@ -1,0 +1,36 @@
+<?php
+/**
+ * SimpleCheckout payment methods
+ *
+ * @var $this WSNYC_SimpleCheckout_Block_Payment
+ */
+?>
+<?php
+    $methods = $this->getMethods();
+    $oneMethod = count($methods) <= 1;
+?>
+<?php if (empty($methods)): ?>
+<p>
+  <?php echo $this->__('No Payment Methods') ?>
+</p>
+
+<?php else:?>
+  <div class="method-select">
+  <?php foreach ($methods as $_method):?>
+    <?php $_code = $_method->getCode();?>
+    <?php $selectMethod = $this->getSelectedMethodCode() != null ? $this->getSelectedMethodCode() == $_code : 'authorizenet'?>
+    <div id="method_<?php echo $_code ?>" class="payment-methods<?php if ($selectMethod == $_code):?> selected<?php endif;?>">
+      <label for="p_method_<?php echo $_code ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"><?php echo $this->escapeHtml($this->getMethodTitle($_method)) ?> <?php echo $this->getMethodLabelAfterHtml($_method) ?></label>
+      <span class="no-display">
+        <input id="p_method_<?php echo $_code ?>" value="<?php echo $_code ?>" type="radio" name="payment[method]" title="<?php echo $this->escapeHtml($_method->getTitle()) ?>" onclick="payment.switchMethod('<?php echo $_code ?>')"<?php if($selectMethod  == $_code || $oneMethod): ?> checked="checked"<?php endif; ?> class="radio" />
+      </span>      
+    </div>
+  <?php endforeach;?>
+  </div>
+
+  <?php foreach ($methods as $_method):?>
+    <?php if ($html = $this->getPaymentMethodFormHtml($_method)): ?>
+    <?php echo $html; ?>
+    <?php endif; ?>
+  <?php endforeach;?>
+<?php endif;?>

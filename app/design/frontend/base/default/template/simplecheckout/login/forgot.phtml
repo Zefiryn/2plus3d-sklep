@@ -1,0 +1,32 @@
+<div class="step-block step-forgot" id="simplecheckout-forgotpassword-form" style="display: none;">
+  <div class="close-btn" onclick="link.hide();">x</div>
+  <div class="step-frame">
+    <h2>
+      <span>
+        <?php echo $this->__($this->getStepTitle()); ?>
+      </span>
+    </h2>
+    <hr clas="ruler" />
+    <div class="step-form">
+      <form action="<?php echo $this->getForgotPasswordActionUrl() ?>" method="post" id="forgotpassword-form">
+        <ul class="form-list">
+          <li>        
+            <div class="input-box">
+              <input type="text" name="email" alt="email" id="email_address" class="input-text required-entry validate-email" value="<?php echo $this->htmlEscape($this->getEmailValue()) ?>" placeholder="<?php echo strtoupper($this->__('Email Address'));?>"/>
+            </div>
+          </li>
+        </ul>
+        <p><?php echo $this->__('You will receive a link via email to reset your password upon clicking Submit.') ?></p>
+        <div class="buttons-set">
+          <button type="button" onclick="link.rememberPassword();return false;" title="<?php echo $this->__('Submit') ?>" class="button"><span><span><?php echo $this->__('Submit') ?></span></span></button>
+          <span class="forgot-return-link" onclick="link.showLoginForm();"><?php echo $this->__('Return to Login');?></span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr clas="ruler" />
+  <div class="step-footer">
+      <img src="<?php echo $this->getSkinUrl('images/simplecheckout/secure.png'); ?>" />
+      <span><?php echo $this->__('Checking out on %s is safe and secure', $this->getStoreName()); ?></span>
+  </div>
+</div>

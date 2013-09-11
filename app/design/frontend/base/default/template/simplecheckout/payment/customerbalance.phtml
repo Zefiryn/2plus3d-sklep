@@ -1,0 +1,73 @@
+<?php if ($this->isDisplayContainer()): ?>
+<div class="input-checkbox" id="storeCredit">
+  
+  <input type="checkbox" class="checkbox" name="payment[use_customer_balance]" value="1" id="use_customer_balance" <?php echo ($this->isCustomerBalanceUsed() ? 'checked' : '') ?>/>
+  <label for="use_customer_balance"><?php echo $this->__('Apply my %s store credit', Mage::helper('core')->currency($this->getBalance())) ?></label>
+</div>
+<script type="text/javascript">
+    //<![CDATA[
+    var isFullyPaidAfterCustomerBalanceApplication = <?php echo ($this->isFullyPaidAfterApplication() ? 'true' : 'false'); ?>;
+    var customerBalanceSubstracted = <?php if ($this->isCustomerBalanceUsed()): ?>true<?php else: ?>false<?php endif; ?>;
+    
+    if (customerBalanceSubstracted) {
+        quoteBaseGrandTotal = <?php echo (float)($this->getQuote()->getBaseGrandTotal() + $this->getQuote()->getBaseCustomerBalAmountUsed()); ?>;
+        checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+        customerBalanceSubstracted = false;
+    }
+    else {
+        quoteBaseGrandTotal = <?php echo (float)($this->getQuote()->getBaseGrandTotal()); ?>;
+        checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+    }
+
+    SimplePayment.prototype.switchCustomerBalanceCheckbox = function() {
+
+        if (!customerBalanceSubstracted && $('use_customer_balance').checked) {
+            quoteBaseGrandTotal -= <?php echo (float)$this->getBalance(); ?>;
+            customerBalanceSubstracted = true;
+            checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+        }
+        if (customerBalanceSubstracted && !$('use_customer_balance').checked) {
+            quoteBaseGrandTotal += <?php echo (float)$this->getBalance(); ?>;
+            customerBalanceSubstracted = false;
+            checkQuoteBaseGrandTotal = quoteBaseGrandTotal;
+        }
+        if (((checkQuoteBaseGrandTotal < 0.0001 || checkQuoteBaseGrandTotal > 0.0001) && quoteBaseGrandTotal == 0) || (quoteBaseGrandTotal > checkQuoteBaseGrandTotal)) {
+            quoteBaseGrandTotal = checkQuoteBaseGrandTotal;
+        }
+
+        if (quoteBaseGrandTotal < 0.0001) {
+            var elements = Form.getElements(this.form);
+            for (var i=0; i<elements.length; i++) {
+                if ($('use_customer_balance').checked) {
+                    if (elements[i].name == 'payment[method]') {
+                        elements[i].disabled = true;
+                    }
+                }
+                if (elements[i].name == 'payment[method]' && elements[i].value == 'free') {
+                    elements[i].checked = false;
+                    elements[i].disabled = true;
+                    $(elements[i].parentNode).hide();
+                }
+            }
+            if ($('use_customer_balance').checked) {
+                $('payment_methods_loaded').hide();
+                payment.switchMethod();
+            }
+        } else {
+            var elements = Form.getElements(this.form);
+            for (var i=0; i<elements.length; i++) {
+                if (elements[i].name == 'payment[method]') {
+                    elements[i].disabled = false;
+                }
+            }
+            $('payment_methods_loaded').show();
+            if ($('method_free')) {
+              $('method_free').hide();
+            }
+            payment.switchMethod(payment.lastUsedMethod);
+        }
+    }    
+    
+    //]]>
+    </script>
+<?php endif; ?>

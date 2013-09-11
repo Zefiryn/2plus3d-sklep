@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * WSNYC SimpleCheckout layout update
+-->
+<layout version="0.1.0">
+  
+  <checkout_cart_index>
+    <reference name="head">
+      <action method="addItem">
+        <type>skin_js</type>
+        <file>js/simplecheckout/checkout.js</file>
+      </action>
+      <action method="addItem">
+        <type>skin_css</type>
+        <file>css/simplecheckout/simplecheckout.css</file>
+      </action>
+    </reference>
+    <reference name="checkout.cart.methods">
+      <block type="simplecheckout/link" name="checkout.cart.methods.simplecheckout" template="simplecheckout/link.phtml"/>
+    </reference>
+  </checkout_cart_index>
+  
+  <simplecheckout_index_index>
+    <reference name="root">
+      <action method="setTemplate">
+        <file>page/1column.phtml</file>
+      </action>
+    </reference>    
+    <reference name="head">
+      <action method="addItem">
+        <type>skin_css</type>
+        <file>css/simplecheckout/simplecheckout.css</file>
+      </action>
+      <action method="addItem">
+        <type>skin_js</type>
+        <file>js/simplecheckout/checkout.js</file>
+      </action>
+    </reference>        
+    <reference name="content">
+      <block type="simplecheckout/container" name="simplecheckout.container" template="simplecheckout/container.phtml">
+        <block type="simplecheckout/shipping" name="step.shipping.info" template="simplecheckout/shipping.phtml">
+          <action method="setStepTitle"><title>Shipping Address</title></action>
+        </block>
+        <block type="simplecheckout/payment" name="step.payment.info" template="simplecheckout/payment.phtml">
+          <action method="setStepTitle"><title>Payment Information</title></action>
+          <block type="simplecheckout/payment_methods" name="simplepayment.methods" as="methods" template="simplecheckout/payment/methods.phtml" />
+          <block type="simplecheckout/payment_address" name="simplepayment.address" as="billing-address" template="simplecheckout/payment/address.phtml" />
+          <block class="simplecheckout/customerbalance" name="simplepayment.customerbalance" as="store_credit" template="simplecheckout/payment/customerbalance.phtml" />
+        </block>
+        <block type="simplecheckout/review" name="step.review.info" template="simplecheckout/review.phtml">
+          <action method="setStepTitle"><title>Review Your Order</title></action>
+          <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>simplecheckout/review/item.phtml</template></action>
+          <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>simplecheckout/review/item.phtml</template></action>
+          <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>simplecheckout/review/item.phtml</template></action>
+          <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>simplecheckout/review/item.phtml</template></action>
+          <block type="simplecheckout/review_totals" name="simplecheckout.totals" as="totals" template="simplecheckout/review/totals.phtml"/>
+          <block type="checkout/onepage_payment_info" name="payment_info">
+            <action method="setInfoTemplate"><method></method><template></template></action>
+          </block>
+        </block>
+        <block type="core/template" name="additional_data" template="checkout/onepage/payment/info.phtml" />
+      </block>
+    </reference>
+  </simplecheckout_index_index>
+  
+  <checkout_main_success>
+    <update handle="checkout_onepage_success" />
+    <reference name="head">
+      <action method="addItem">
+        <type>skin_css</type>
+        <file>css/simplecheckout/simplecheckout.css</file>
+      </action>      
+    </reference>
+  </checkout_main_success>
+
+  
+  <simplecheckout_step_shipping>
+    <remove name="right"/>
+    <remove name="left"/>    
+    <block type="simplecheckout/shipping" name="root" output="toHtml" template="simplecheckout/shipping.phtml">
+      <action method="setStepTitle"><title>Shipping Address</title></action>
+    </block>
+  </simplecheckout_step_shipping>
+  
+  <simplecheckout_step_payment>
+    <remove name="right"/>
+    <remove name="left"/>    
+    <block type="simplecheckout/payment" name="root" output="toHtml" template="simplecheckout/payment.phtml">
+      <action method="setStepTitle"><title>Payment Information</title></action>
+      <block type="simplecheckout/payment_methods" name="simplepayment.methods" as="methods" template="simplecheckout/payment/methods.phtml" />
+      <block type="simplecheckout/payment_address" name="simplepayment.address" as="billing-address" template="simplecheckout/payment/address.phtml" />
+      <block class="simplecheckout/customerbalance" name="simplepayment.customerbalance" as="store_credit" template="simplecheckout/payment/customerbalance.phtml" />
+    </block>
+  </simplecheckout_step_payment>
+  
+  <simplecheckout_step_review>
+    <remove name="right"/>
+    <remove name="left"/>    
+    <block type="simplecheckout/review" name="root" output="toHtml" template="simplecheckout/review.phtml">
+      <action method="addItemRender"><type>default</type><block>checkout/cart_item_renderer</block><template>simplecheckout/review/item.phtml</template></action>
+      <action method="addItemRender"><type>bundle</type><block>bundle/checkout_cart_item_renderer</block><template>simplecheckout/review/item.phtml</template></action>
+      <action method="addItemRender"><type>grouped</type><block>checkout/cart_item_renderer_grouped</block><template>simplecheckout/review/item.phtml</template></action>
+      <action method="addItemRender"><type>configurable</type><block>checkout/cart_item_renderer_configurable</block><template>simplecheckout/review/item.phtml</template></action>
+      <block type="simplecheckout/review_totals" name="simplecheckout.totals" as="totals" template="simplecheckout/review/totals.phtml"/>
+      <block type="simplecheckout/review_totals" name="simplecheckout.shipping.totals" as="shipping-totals" template="simplecheckout/review/shipping-totals.phtml"/>
+      <block type="checkout/onepage_payment_info" name="payment_info">
+        <action method="setInfoTemplate"><method></method><template></template></action>
+      </block>
+    </block>
+  </simplecheckout_step_review>
+  
+  <simplecheckout_step_login>
+    <remove name="right"/>
+    <remove name="left"/>    
+    <block type="simplecheckout/login" name="root" output="toHtml" template="simplecheckout/login.phtml">
+      <block type="simplecheckout/login" name="step.login.registered" template="simplecheckout/login/registered.phtml">
+        <action method="setStepTitle"><title>Please Log In to Checkout</title></action>
+      </block>
+      <block type="simplecheckout/login" name="step.login.new" template="simplecheckout/login/new.phtml">
+        <action method="setStepTitle"><title>Enter your email address and choose a password</title></action>
+      </block>
+      <block type="simplecheckout/login" name="step.login.forgotpassword" template="simplecheckout/login/forgot.phtml">
+        <action method="setStepTitle"><title>Reset your password</title></action>
+      </block>
+    </block>
+  </simplecheckout_step_login>
+  
+  <simplecheckout_index_loginstep>
+    <reference name="root">
+      <action method="setTemplate">
+        <file>page/1column.phtml</file>
+      </action>
+    </reference> 
+    <reference name="head">
+      <action method="addItem">
+        <type>skin_css</type>
+        <file>css/simplecheckout/simplecheckout.css</file>
+      </action>
+      <action method="addItem">
+        <type>skin_js</type>
+        <file>js/simplecheckout/checkout.js</file>
+      </action>
+    </reference>
+    <reference name="content">
+      <block type="simplecheckout/login" name="login.container" template="simplecheckout/login.phtml">
+        <block type="simplecheckout/login" name="step.login.registered" template="simplecheckout/login/registered.phtml">
+          <action method="setStepTitle"><title>Please Log In to Checkout</title></action>
+        </block>
+        <block type="simplecheckout/login" name="step.login.new" template="simplecheckout/login/new.phtml">
+          <action method="setStepTitle"><title>Enter your email address and choose a password</title></action>
+        </block>
+      </block>
+    </reference>
+  </simplecheckout_index_loginstep>
+  
+  <checkout_f_index>
+    <update handle="simplecheckout_index_index" />
+  </checkout_f_index>
+  
+  <checkout_f_shipping>
+    <update handle="simplecheckout_index_index" />
+  </checkout_f_shipping>
+  
+  <checkout_r_index>
+    <update handle="simplecheckout_index_index" />
+  </checkout_r_index>
+  
+  <checkout_r_shipping>
+    <update handle="simplecheckout_index_index" />
+  </checkout_r_shipping>
+
+</layout>
+
