@@ -31,8 +31,7 @@
               <p class="author"><span class="caps"><?php echo $_product->getAuthor();?></span></p>
               <?php elseif ($_product->getRedactor() != null): ?>
               <p class="author"><span class="caps"><?php echo $_product->getRedactor();?></span> (<?php echo $this->__('ed.');?>)</p>
-              <?php endif;?>
-              
+              <?php endif;?>              
             </h1>
           </div>
           <?php if ($_product->getDescription()):?>

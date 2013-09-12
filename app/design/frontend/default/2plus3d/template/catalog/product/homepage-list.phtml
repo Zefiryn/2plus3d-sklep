@@ -12,27 +12,24 @@
 <?php if(!$_productCollection->count()): ?>
   <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>  
-  <ol class="products-list" id="products-list">
-  
-  <?php $_iterator = 0; ?>
-  <?php foreach ($_productCollection as $_product): ?>
-  
-    <?php if( $_iterator == 0 ): ?> <!--FIRST PRODUCT -->
-    <li class="item first<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
+  <ol class="products-collection products-list">
+    <?php $_product = $_productCollection->getFirstItem();?>
+    <!--FIRST PRODUCT -->
+    <li class="item">
       <div class="left">
         <?php // Product Image ?>
-        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(193,259); ?>" width="193" height="259" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
+        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image">
+          <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+        </a>
         <div class="add-to-box">
           <?php echo  $this->getAddToCartHtml($_product);?>
         </div>
       </div>
       
-      <div class="right">
-        <?php if ($_iterator == 1):?>
+      <div class="right">        
           <p class="category">
             <a href="<?php echo $this->helper('catalog')->getProductCategoryLink($_product);?>"><?php echo $this->helper('catalog')->getProductCategoryName($_product);?></a>
-          </p>          
-        <?php endif?>
+          </p>
         
         <div class="product-name">
           <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
@@ -40,31 +37,42 @@
             <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
           </a>
         </div>
+        <div class="product-info">
         <?php if ($_product->getShortDescription()):?>
           <div class="description">
             <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
           </div>
         <?php endif;?>
+        </div>
       </div>
     </li>
-    <!-- REST OF THE PRODUCTS -->
-    <?php else:?>
+  </ol>
+  <?php if ($_productCollection->count() > 1):?>
+  <!-- REST OF THE PRODUCTS -->
+  <ol class="products-collection products-grid">
+  <?php $_iterator = 0; ?>
+  <?php foreach ($_productCollection as $_product): ?>
+  
+    <?php if( $_iterator > 0 ): ?> 
     
-    <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
-      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(195,261); ?>" width="195" height="261" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" /></a>
+    <li class="item">
+      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image">
+        <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+      </a>
 
       <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>" class="homepage-product-name">
+      <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>" class="product-name">
         <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
       </a>
       <div class="add-to-box">
         <?php echo  $this->getAddToCartHtml($_product);?>
       </div>
-    </li>    
+    </li>
     
     <?php endif; ?>
     
     
-  <?php endforeach;?>
+  <?php $_iterator++;endforeach;?>
   </ol>
+  <?php endif;?>
 <?php endif;?>
