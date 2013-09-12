@@ -75,7 +75,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list li.item .right {float: none !important;overflow: hidden;}
 .products-list li.item .category a {color: #000000;  font-family: droid-sans, sans-serif;  font-size: 16px;  font-weight: 400;  letter-spacing: 1px;  line-height: 1.5;  padding: 0px 0px 20px;}
 .products-list li.item .product-name {line-height: normal;margin-bottom: 15px;}
-.products-list li.item .product-name a {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;}
+.products-list li.item .product-name a {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;color: #000;}
 .products-list li.item .description {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;}
 
 .products-grid {padding: 0px;margin: 0px !important;width: 100% !important;background: transparent;border: 0px;}
