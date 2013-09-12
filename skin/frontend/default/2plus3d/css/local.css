@@ -80,7 +80,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 
 .products-grid {padding: 0px;margin: 0px !important;width: 100% !important;background: transparent;border: 0px;}
 .products-grid li.item {padding: 0px;min-width: 195px;width: auto;margin-right: 30px;margin-bottom: 45px;}
-.products-grid li.item:nth-child(4n) {clear: left;}
+.products-grid li.item:nth-child(3n+4) {clear: left;}
 .products-grid li.item .product-name {text-align: center;display: block;margin-bottom: 5px;font-family: droid-sans, sans-serif;font-size: 14px;font-weight: bold;line-height: 16px;color: #000;}
 
 .products-collection li.item .product-image {float: none;overflow: hidden;display: block;width: 195px;height: auto;border: 1px solid #cdcdcd;}
