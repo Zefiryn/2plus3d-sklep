@@ -160,9 +160,10 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 
 
 /* CART */
-.cart .page-title h1 {font-family: lato, sans-serif;font-size: 20px;font-weight: bold;}
+.cart .page-title {margin: 0px;}
+.cart .page-title h1 {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;line-height: 24px;color: #000;margin: 10px 0px 45px;padding: 0px;}
 .data-table {border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
-.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;line-height: 15px;color: #000;padding: 0px;}
+.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;line-height: 15px;color: #000;padding: 0px 0px 3px 3px;}
 .data-table thead tr.last th {border-bottom: 2px solid #000 !important;padding-bottom: 5px;}
 .data-table thead .col-price {padding-right: 10px;}
 .data-table tfoot {border: 0px;}
@@ -171,8 +172,8 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .data-table tfoot td.no-border {border: 0px !important;}
 .data-table .odd {background: none;}
 .data-table .even {background: none;}
-.data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;vertical-align: middle;}
-.data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #7F7F7F;}
+.data-table tbody td, .data-table tbody tr.first td, .data-table tbody tr.last td   {border-right: 0px;border-bottom: 1px solid #000 !important;vertical-align: middle;padding: 5px;}
+.data-table tbody td .remove-item {font-size: 12px;text-transform: lowercase;color: #4f4f4f;}
 .data-table tbody td .product-name, .data-table tbody td .product-name a {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;line-height: 15px;color: #000;margin: 0px;}
 .data-table tbody td.col-price {padding-right: 0px;}
 .data-table input.qty {height: 25px;width: 40px !important;padding: 0px;text-align: center;}
@@ -183,16 +184,17 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .cart .button.btn-continue:hover {background: transparent;cursor: pointer;text-decoration: underline;color: #3E6E8C;}
 .cart .button.btn-empty {border: 0px;background: transparent;color: #4F4F4F;text-decoration: none;padding: 0px;font-family: droid-sans, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;text-transform: lowercase;}
 .cart .button.btn-empty:hover {background: transparent;cursor: pointer;text-decoration: underline;color: #4f4f4f;}
-.cart .button.btn-update {border: 0px;background: #999;text-decoration: none;padding: 0px;font-family: droid-sans, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;text-align: center;display: block;width:  150px;padding: 3px 0px;}
+.cart .button.btn-update {border: 0px;background: #999;text-decoration: none;font-family: droid-sans, sans-serif;font-size: 12px;font-weight: normal;line-height: 14px;text-align: center;display: block;width: 100%;padding: 3px 0px;margin: 0px auto;}
 .cart .button.btn-update:hover {background: #FCCA21;cursor: pointer;text-decoration: none;color: #4f4f4f;}
-.cart .button.btn-proceed-checkout {width: 150px;padding: 0px 0px 5px 0px;}
-.cart .button.btn-proceed-checkout span {width: 150px;background:#000;padding: 5px 0px 5px 0px;}
+.cart .button.btn-proceed-checkout {width: 100%;padding: 0px 0px 5px 0px;}
+.cart .button.btn-proceed-checkout span {background:#000;padding: 5px 0px 5px 0px;}
 .cart .button.btn-proceed-checkout:hover span {background: #FCCA21;}
 
-.cart .cart-collaterals {padding: 10px 0px 0px;}
-.cart .totals {float: right;width: auto;background: none;border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
+.cart .cart-collaterals {padding: 10px 0px 0px 5px;}
+.cart .totals {float: right;width: auto;min-width: 183px;background: none;border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
 .cart .totals table {border-bottom: 2px solid #000;margin-bottom: 30px;}
 .cart .totals tfoot td {padding: 0px 0px 6px 0px;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 19px;}
+.cart .totals tfoot td .price {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;}
 .cart .totals .checkout-types {font-size: 13px;padding: 15px 0px 5px 0px;text-align: right;}
 .cart .totals tfoot th strong, .cart .totals tfoot td strong {font-size: inherit;}
 
