@@ -11,7 +11,7 @@
 ?>
 <p class="product-image">
     <?php
-        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(195,265).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" width="195" height="265" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->keepFrame(false)->resize(195).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" width="195" height="265" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
         echo $_helper->productAttribute($_product, $_img, 'image');
     ?>
 </p>

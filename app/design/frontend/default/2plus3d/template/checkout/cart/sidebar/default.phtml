@@ -6,8 +6,9 @@
 <li class="item">
     <a href="<?php echo $this->getDeleteUrl() ?>" title="<?php echo $this->__('Remove This Item') ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>');" class="btn-remove"><?php echo $this->__('Remove This Item') ?></a>
     <p class="product-details">
-        <span class="product-name"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->htmlEscape($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></span>
-        <?php $_incl = $this->helper('checkout')->getSubtotalInclTax($_item); ?>
-        <span class="product-price"><?php echo $this->helper('core')->currency($_incl-$_item->getWeeeTaxRowDisposition(),true,false) ?></span>
+      <span class="item-qty"><?php echo $_item->getQty();?> &times;</span>
+      <span class="product-name"><?php if ($this->hasProductUrl()): ?><a href="<?php echo $this->getProductUrl() ?>"><?php endif; ?><?php echo $this->htmlEscape($this->getProductName()) ?><?php if ($this->hasProductUrl()): ?></a><?php endif; ?></span>
+      <?php $_incl = $this->helper('checkout')->getSubtotalInclTax($_item); ?>
+          <span class="product-price"><?php echo $this->helper('core')->currency($_incl-$_item->getWeeeTaxRowDisposition(),true,false) ?></span>
     </p>
 </li>
