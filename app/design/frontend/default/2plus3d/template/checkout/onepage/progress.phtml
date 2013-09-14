@@ -25,8 +25,6 @@
  */
 /* @var $this Mage_Checkout_Block_Onepage_Progress */
 $step = 1;
-$isCart = Mage::app()->getRequest()->getControllerName() == 'cart' ? true : false;
-$invoiceRequested = Mage::getSingleton('checkout/session')->getQuote()->getRequireInvoice() == DpTD_Checkout_Model_Quote_Attribute_InvoiceRequest::INVOICE_REQUEST_TRUE;
 ?>
 <div class="block block-progress opc-block-progress">
     <div class="block-title">
@@ -34,25 +32,11 @@ $invoiceRequested = Mage::getSingleton('checkout/session')->getQuote()->getRequi
     </div>
     <div class="block-content">
       <ol>
-
-        <?php /*if ($this->helper('customer')->isLoggedIn() || Mage::app()->getRequest()->isXmlHttpRequest() || $this->isStepComplete('billing')):?>
-        <li class="complete" id="step-login">
-          <span class="step-counter"><?php echo $step++;?></span>
-          <?php echo $this->__('Checkout Method') ?> <span class="separator">|</span>
-            <a href="#login" onclick="checkout.gotoSection('login'); return false;"><?php echo $this->__('Change') ?></a>
-        </li>
-        <?php else:?>
-        <li id="step-login">
-          <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Checkout Method') ?>
-        </li>
-        <?php endif;*/?>
-        
-        <?php if ($this->getCheckout()->getStepData('billing', 'is_show') || $isCart): ?>
-          <?php if ($this->isStepComplete('billing') && !$isCart): ?>
-          <li class="complete" id="step-billing">
-            <?php $label = $invoiceRequested == 0 ? 'Shipping Address' : 'Billing Address';?>
+        <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+          <?php if ($this->isStepComplete('billing')): ?>
+          <li class="complete" id="step-billing">            
             <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__($label) ?> <span class="separator">|</span>
+            <?php echo $this->__('Billing Address') ?> <span class="separator">|</span>
             <a href="#billing" onclick="checkout.gotoSection('billing'); return false;"><?php echo $this->__('Change') ?></a>
             <div class="step-summary">
               <address><?php echo $this->getBilling()->format('html') ?></address>
@@ -60,13 +44,13 @@ $invoiceRequested = Mage::getSingleton('checkout/session')->getQuote()->getRequi
           </li >
           <?php else: ?>
           <li id="step-billing">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Shipping Address') ?>
+            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Billing Information') ?>
           </li>
           <?php endif; ?>
         <?php endif; ?>
 
-        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show') && $invoiceRequested == 1): ?>
-          <?php if ($this->isStepComplete('shipping') && !$isCart): ?>
+        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+          <?php if ($this->isStepComplete('shipping')): ?>
           <li class="complete" id="step-shipping">
             <span class="step-counter"><?php echo $step++;?></span>
             <?php echo $this->__('Shipping Address') ?> <span class="separator">|</span>
@@ -75,48 +59,14 @@ $invoiceRequested = Mage::getSingleton('checkout/session')->getQuote()->getRequi
               <address><?php echo $this->getShipping()->format('html') ?></address>
             </div>
           </li>
-          <?php elseif ($this->isStepComplete('billing')): ?>
+          <?php else: ?>
           <li id="step-shipping">
             <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Shipping Address') ?>
           </li>          
           <?php endif; ?>
         <?php endif; ?>
 
-        <?php /*if ($this->getCheckout()->getStepData('shipping_method', 'is_show') || $isCart): ?>
-          <?php if ($this->isStepComplete('shipping_method') && !$isCart): ?>
-          <li class="complete" id="step-shipping_method">
-            <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__('Shipping Method') ?> <span class="separator">|</span>
-            <a href="#shipping_method" onclick="checkout.gotoSection('shipping_method'); return false;"><?php echo $this->__('Change') ?></a>
-            <div class="step-summary">
-              <?php if ($this->getShippingMethod()): ?>
-                <?php echo $this->__($this->escapeHtml($this->getShippingDescription())) ?>
-
-                <?php $_excl = $this->getShippingPriceExclTax(); ?>
-                <?php $_incl = $this->getShippingPriceInclTax(); ?>
-                <?php if ($this->helper('tax')->displayShippingPriceIncludingTax()): ?>
-                  <?php echo $_incl; ?>
-                <?php else: ?>
-                  <?php echo $_excl; ?>
-                <?php endif; ?>
-                <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
-                  (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
-                <?php endif; ?>
-
-              <?php else: ?>
-                <?php echo $this->__('Shipping method has not been selected yet') ?>
-              <?php endif; ?>
-            </div>
-          </li>
-          <?php else: ?>
-          <li id="step-shipping_method">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Shipping Method') ?>
-          </li>
-          <?php endif; ?>
-        <?php endif;*/?>
-        
-
-        <?php if ($this->getCheckout()->getStepData('payment', 'is_show') || $isCart): ?>
+        <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
           <?php if ($this->isStepComplete('payment') && !$isCart): ?>
           <li class="complete" id="step-payment">
             <span class="step-counter"><?php echo $step++;?></span>

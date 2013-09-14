@@ -214,8 +214,7 @@ Checkout.prototype = {
     //this.accordion.openPrevSection(true);
     var currentStep = $$('.opc li.section.active')[0];
     var step = currentStep.readAttribute('id').replace('opc-','');
-    back = (step == 'payment' && this.showShippingAddress == true) ? 1 : 2;
-    var go = this.steps[this.steps.indexOf(step)-back];
+    var go = this.steps[this.steps.indexOf(step)-1];
     this.gotoSection(go);
   },
       
@@ -401,21 +400,23 @@ Billing.prototype = {
   },
   
   showInvoiceFields: function() {
+    $('invoice-fields').show();
     $$('#invoice-fields label').invoke('addClassName', 'required');
     $$('#invoice-fields input').invoke('addClassName', 'required-entry');
     $$('.shipping_address_settings').invoke('setStyle',{'display': 'block'});
     $('billing:use_for_shipping_yes').checked = false;
-    $('billing:use_for_shipping_no').checked = true;
+    $('billing:use_for_shipping_no').checked = true;    
   },
   
-  hideInvoiceFields: function() {
+  hideInvoiceFields: function() {    
     $$('#invoice-fields label').invoke('removeClassName', 'required');
     $$('#invoice-fields input').invoke('removeClassName', 'required-entry');
     $$('.shipping_address_settings').invoke('setStyle',{'display': 'none'});
-    $('billing:use_for_shipping_yes').checked = true;
-    $('billing:use_for_shipping_no').checked = false;
+    $('billing:use_for_shipping_yes').checked = false;
+    $('billing:use_for_shipping_no').checked = true;
     $('billing:company').value = null;
-    $('billing:taxvat').value = null;
+    $('billing:vat_id').value = null;
+    $('invoice-fields').hide();
   }
 }
 

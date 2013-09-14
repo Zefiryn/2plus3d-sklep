@@ -29,6 +29,7 @@ input.input-text:focus,select:focus,textarea:focus { background-color:#fff;borde
 a:link, a:visited, a:active {text-decoration: none;color: #3E6E8C;font-family: droid-sans, sans-serif;font-size: 13px;}
 a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #000;padding: 0px 18px;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;position: relative;}
+button.button.btn-cart-sold-out {cursor: initial;}
 button.button:hover, a.button:hover {background: #FCCA21;color: #000;}
 button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
 button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;padding: 0px;}
@@ -163,7 +164,7 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .cart .page-title {margin: 0px;}
 .cart .page-title h1 {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;line-height: 24px;color: #000;margin: 10px 0px 45px;padding: 0px;}
 .data-table {border: 0px;font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', sans-serif;}
-.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;line-height: 15px;color: #000;padding: 0px 0px 3px 3px;}
+.data-table thead th {background: none;border: 0px;border-bottom: 2px solid #000;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: bold;line-height: 15px;color: #000;padding: 0px 0px 5px 5px;}
 .data-table thead tr.last th {border-bottom: 2px solid #000 !important;padding-bottom: 5px;}
 .data-table thead .col-price {padding-right: 10px;}
 .data-table tfoot {border: 0px;}
@@ -200,14 +201,15 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 
 
 .fieldset {border: 0px;background: none;padding: 20px;margin: 0px;}
-.form-list li.control {margin: 20px 0px 20px 120px;}
+.form-list li.control {margin: 20px 0px 30px 120px;}
 .form-list li.control.no-indent {margin: 20px 0px 20px 0px;}
 .form-list .field {width: auto;margin: 5px 0px;}
-.form-list label {color: #7F7F7F;display: block !important;float: left !important;text-transform: lowercase;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;min-height: 20px;line-height: 36px;min-width: 105px;text-align: right;padding-right: 15px;}
+.form-list div.field, .form-list li.wide {margin: 0px 0px 15px 0px;}
+.form-list label {color: #CCCCCC;display: block !important;float: left !important;text-transform: lowercase;font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;min-height: 20px;line-height: 36px;min-width: 105px;text-align: right;padding-right: 15px;}
 .form-list label[for="billing-address-select"]{color: #000;margin-bottom: 15px;}
 .form-list label.uppercase {text-transform: uppercase;}
 .form-list label.required em {display: none;}
-.form-list label.required {color:  #000;}
+.form-list label.required {color: #4F4F4F;}
 .form-list li.control label {width: auto;margin-right: 10px;font-family: droid-sans, sans-serif; font-size: 13px; font-weight: normal;color: #000;text-transform: initial;height: 15px;line-height: 18px;}
 .form-list li.control input.radio, .form-list li.control input.checkbox {margin-top: 3px;float: left;}
 .form-list .input-box {float: left;clear: none;width: 560px;}
@@ -255,8 +257,10 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .opc .active .step-title { background: #fff; border: 0px; padding-bottom:5px; color: #000; cursor:default; }
 .opc .active .step-title h2 { font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;height: 24px;letter-spacing: 1px;line-height: 24px;}
 
-.opc .step { border: 0px; background: #fff; padding: 15px 10px 15px 0px; position:relative; width: auto;}
-.opc .step fieldset {width: 100%;}
+.opc .step { border: 0px; background: #fff; padding: 30px 0px 15px 20px; position:relative; width: auto;}
+.opc .step fieldset {width: 100%;overflow: hidden;margin-bottom: 45px;}
+.opc .step fieldset legend {display: initial;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;line-height: 24px;color: #000;text-indent: 120px;}
+#billing-new-address-form fieldset:last-of-type {margin-bottom: 30px;}
 
 #opc-login .form-list label {text-align: left;}
 #opc-login .form-list .input-box {width: 330px;}
@@ -267,8 +271,7 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 #opc-login #remember-me-box .input-box {margin-left: 0px;width: auto;}
 #opc-login #remember-me-box label {width: auto;}
 
-#opc-billing #billing-new-address-form .control {margin-bottom: 0px;}
-#opc-billing .shipping_address_settings {display: none;}
+#opc-billing .shipping_address_settings {display: none;margin: 0px 0px 10px 120px;}
 #opc-billing #remember-me-box {margin: 0px 0px 0px 120px;}
 #opc-billing #remember-me-box .input-box {margin-left: 0px;width: auto;}
 #opc-billing #remember-me-box label {width: auto;}
@@ -276,7 +279,7 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 #opc-shipping_method {width: 400px;}
 #opc-shipping_method #co-shipping-method-form h3 {font-family: droid-sans, sans-serif;font-size: 13px;font-weight: normal;height: 15px;color: #4F4F4F;line-height: 15px;}
 
-#billing-buttons-container, #shipping-buttons-container {width: 470px;}
+#billing-buttons-container, #shipping-buttons-container {width: 470px;padding-top: 0px;}
 #billing-buttons-container button.button {float: right}
 
 #opc-payment {width: 450px;}
