@@ -22,7 +22,7 @@
 
       <div class="product-shop">
           <p class="category">
-            <?php echo $this->helper('catalog')->getProductCategoryName($_product);?>
+            <a href="<?php echo $this->helper('catalog')->getProductCategoryLink($_product);?>"><?php echo $this->helper('catalog')->getProductCategoryName($_product);?></a>
           </p>
           <div class="product-name">
             <h1>

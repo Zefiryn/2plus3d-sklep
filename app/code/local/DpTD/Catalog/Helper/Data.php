@@ -1,6 +1,8 @@
 <?php
 class DpTD_Catalog_Helper_Data extends Mage_Catalog_Helper_Data
 {
+  protected $_categories;
+  
   public function getFormatedDate($date) {
     return Mage::helper('site')->ago($date);
   }
@@ -14,16 +16,19 @@ class DpTD_Catalog_Helper_Data extends Mage_Catalog_Helper_Data
   }
   
   protected function _getProductCategory($product) {
-    $magazineCat = Mage::getModel('catalog/category')->load('kwartalnik', 'url_key');
-    $bookCat = Mage::getModel('catalog/category')->load('ksiazki', 'url_key');
     
-    foreach($product->getCategoryIds() as $categoryId) {
-      if ($categoryId == $magazineCat->getId()) {
-        return $magazineCat;
+    if (!isset($this->_categories[$product->getId()])) {
+      if ($product->getCategory()) {
+        $this->_categories[$product->getId()] = $product->getCategory();
       }
-      elseif ($categoryId == $bookCat->getId()){
-        return $bookCat;
+      else {
+        $productCat = Mage::getModel('catalog/category');
+        foreach($product->getCategoryCollection() as $cat) {
+          $productCat = $cat->getChildrenCount() == 0 || $cat->getLevel() < $productCat->getLevel() ? $cat : $productCat;
+        }
+        $this->_categories[$product->getId()] = Mage::getModel('catalog/category')->load($productCat->getId());
       }
-    }
+    }    
+    return $this->_categories[$product->getId()];
   }
 }

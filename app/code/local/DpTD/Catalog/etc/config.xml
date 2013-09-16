@@ -2,7 +2,7 @@
 <config>
   <modules>
     <DpTD_Catalog>
-      <version>0.1.3</version>
+      <version>0.1.4</version>
     </DpTD_Catalog>
   </modules>
   <global>    

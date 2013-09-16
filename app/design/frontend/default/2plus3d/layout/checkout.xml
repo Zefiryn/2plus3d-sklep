@@ -59,7 +59,8 @@
       </action>
     </reference>
     <reference name="right">
-      <action method="unsetChildren" />      
+      <remove name="cart_sidebar" />
+      <remove name="categories-sidebar" />
     </reference>
     <reference name="content">
       <block type="checkout/cart" name="checkout.cart">
