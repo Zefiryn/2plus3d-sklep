@@ -402,18 +402,12 @@ Billing.prototype = {
   showInvoiceFields: function() {
     $('invoice-fields').show();
     $$('#invoice-fields label').invoke('addClassName', 'required');
-    $$('#invoice-fields input').invoke('addClassName', 'required-entry');
-    $$('.shipping_address_settings').invoke('setStyle',{'display': 'block'});
-    $('billing:use_for_shipping_yes').checked = false;
-    $('billing:use_for_shipping_no').checked = true;    
+    $$('#invoice-fields input').invoke('addClassName', 'required-entry');    
   },
   
   hideInvoiceFields: function() {    
     $$('#invoice-fields label').invoke('removeClassName', 'required');
     $$('#invoice-fields input').invoke('removeClassName', 'required-entry');
-    $$('.shipping_address_settings').invoke('setStyle',{'display': 'none'});
-    $('billing:use_for_shipping_yes').checked = false;
-    $('billing:use_for_shipping_no').checked = true;
     $('billing:company').value = null;
     $('billing:vat_id').value = null;
     $('invoice-fields').hide();
