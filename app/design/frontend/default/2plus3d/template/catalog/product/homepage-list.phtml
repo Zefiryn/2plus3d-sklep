@@ -28,7 +28,7 @@
       
       <div class="right">        
           <p class="category">
-            <a href="<?php echo $this->helper('catalog')->getProductCategoryLink($_product);?>"><?php echo $this->helper('catalog')->getProductCategoryName($_product);?></a>
+            <a href="<?php echo $this->getCategory()->getUrlPath();?>"><?php echo $this->getCategory()->getName() ;?></a>
           </p>
         
         <div class="product-name">

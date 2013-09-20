@@ -31,7 +31,7 @@ a:hover {text-decoration: underline;}
 button.button, a.button {text-align: center;color: #FFFFFF;font-family: lato, sans-serif;font-weight: 900;background: #000;padding: 0px 18px;-moz-border-radius: 2px; -webkit-border-radius: 2px; -khtml-border-radius: 2px; border-radius: 2px;position: relative;}
 button.button.btn-cart-sold-out {cursor: initial;}
 button.button:hover, a.button:hover {background: #FCCA21;color: #000;}
-button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 14px;font-weight: 900;}
+button.button span, a.button span {height: 25px;line-height: 25px;padding:5px 0px;margin: 0px;background: none;border: 0px;font-family: lato, sans-serif;font-size: 12px;font-weight: 900;letter-spacing: 1px;}
 button.button span span, a.button span span {font-family:  droid-sans-mono, sans-serif;font-weight: normal;padding: 0px;}
 button.button:hover span span, a.button:hover span span {color: #000;}
 
@@ -77,7 +77,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-list li.item .right {float: none !important;overflow: hidden;}
 .products-list li.item .category a {color: #000000;  font-family: droid-sans, sans-serif;  font-size: 16px;    letter-spacing: 1px;  line-height: 1.5;  padding: 0px 0px 20px;font-weight: bold;}
 .products-list li.item .product-name {line-height: normal;margin-bottom: 15px;}
-.products-list li.item .product-name a {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;color: #000;}
+.products-list li.item .product-name * {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;color: #000;}
 .products-list li.item .description {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;}
 
 .products-grid {padding: 0px;margin: 0px !important;width: 100% !important;background: transparent;border: 0px;}
@@ -105,7 +105,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 a.btn-cart-sold-out:hover span span {color: #fff;}
 
 .category-title {}
-.category-title h1 {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 24px;color: #000;}
+.category-title h1 {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 24px;color: #000;letter-spacing: 1px;}
 .category-description {font-family: droid-serif, serif;font-size: 14px;font-weight: normal;line-height: 21px;color: #000;margin: 0px 0px 35px 0px;}
 /* PRODUCT VIEW*/
 .catalog-product-view .col-main {border: 0px;}

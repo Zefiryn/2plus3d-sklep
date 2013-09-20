@@ -2,7 +2,7 @@
 <config>
   <modules>
     <DpTD_Catalog>
-      <version>0.1.4</version>
+      <version>0.1.5</version>
     </DpTD_Catalog>
   </modules>
   <global>    
@@ -10,7 +10,7 @@
       <catalog>
         <rewrite>
           <category_block>DpTD_Catalog_Block_Category_Block</category_block>
-	  <listing>DpTD_Catalog_Block_Listing</listing>
+          <listing>DpTD_Catalog_Block_Listing</listing>
         </rewrite>
       </catalog>
     </blocks>

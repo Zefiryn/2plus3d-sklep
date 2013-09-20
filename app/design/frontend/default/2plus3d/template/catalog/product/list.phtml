@@ -9,6 +9,7 @@
     $_productCollection=$this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
     $_mode = $this->getForceMode() ? $this->getForceMode() : $this->getMode();
+    $_category = Mage::registry('current_category') ? Mage::registry('current_category') : null;
 ?>
 <?php if(!$_productCollection->count()): ?>
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
@@ -24,9 +25,15 @@
         
         <?php // Product Image ?>
         <div class="left">
+          <?php if ($_category && $_category->getEnableProductLinks()):?>
           <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
             <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
           </a>
+          <?php else: ?>
+          <span class="product-image">
+            <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+          </span>
+          <?php endif;?>
           
           <?php // Add to cart button?>
           <div class="add-to-box">
@@ -51,9 +58,15 @@
           <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
           <?php $author = $_product->getAuthor() != null ? $_product->getAuthor() : $_product->getRedactor();  ?>
           <h2 class="product-name">
+            <?php if ($_category && $_category->getEnableProductLinks()):?>
             <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>">
               <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
             </a>
+            <?php else:?>
+            <span>
+              <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+            </span>
+            <?php endif;?>
           </h2>
           <?php // Product description ?>
           <div class="product-info">            
@@ -76,14 +89,27 @@
     <ol class="products-collection products-grid">
       <?php foreach ($_productCollection as $_product): ?>
       <li class="item">
+        <?php if ($_category && $_category->getEnableProductLinks()):?>
         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'image'), null, true) ?>" class="product-image">
           <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
         </a>
+        <?php else: ?>
+        <span class="product-image">
+          <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->keepFrame(false)->resize(195); ?>" width="195" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+        </span>
+        <?php endif;?>
 
         <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+        <?php if ($_category && $_category->getEnableProductLinks()):?>
         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>" class="product-name">
           <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
         </a>
+        <?php else: ?>
+        <span class="product-name">
+          <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?>
+        </span>
+        <?php endif;?>
+        
         <?php if ($this->getShowPublishDate()):?>
         <p class="publish-date">
           <?php echo $_product->getPublishDate();?>

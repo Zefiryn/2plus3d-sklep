@@ -57,6 +57,10 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
     
     $this->_category = $category;
   }
+  
+  public function getCategory() {
+    return $this->_category != null ? $this->_category : Mage::getModel('catalog/category');
+  }
 
   public function setCollectionType($type) {
     $this->_collectionType = $type;
