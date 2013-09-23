@@ -12,6 +12,10 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
   const _categoryKey = 'url_key';
 
   protected $_filters = array();
+  
+  /**
+   * @var Mage_Catalog_Model_Category
+   */
   protected $_category;
   protected $_collectionType;
   protected $_mode = 'grid';
@@ -102,13 +106,11 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
     if ($this->_productCollection == null) {
       $mode = $this->_collectionType != null ? $this->_collectionType : $this->_getCollectionType();
 
+      $collection = Mage::getModel('catalog/product')->getCollection();
       if ($mode == self::_modeCategory) {
-        $collection = $this->_category->getProductCollection();
+        $collection = Mage::getModel('catalog/product')->getCollection()->addCategoryFilter($this->_category);
       }
-      elseif ($mode == self::_modeProducts) {
-        $collection = Mage::getModel('catalog/product')->getCollection();
-      }
-      else {
+      elseif ($mode != self::_modeProducts) {        
         throw new Mage_Core_Exception('No listing mode specified');
       }
 
@@ -117,8 +119,7 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
       //set items count
       $defaultElems = $this->getMode() != 'grid' ? Mage::getStoreConfig('catalog/frontend/list_per_page') : Mage::getStoreConfig('catalog/frontend/grid_per_page');
       $elems = $this->_listCount != null ? $this->_listCount : $defaultElems;
-      $collection->setCurPage(1);
-      $collection->setPageSize($elems);
+      $collection->getSelect()->limit($elems);
 
       //set order
       if ($this->_listOrder != null) {
@@ -130,7 +131,7 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
         }
       }
       
-      $this->_productCollection = $collection;
+      $this->_productCollection = $collection->load();
     }
 
     return $this->_productCollection;
