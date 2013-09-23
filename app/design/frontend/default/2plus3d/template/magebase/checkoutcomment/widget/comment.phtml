@@ -16,7 +16,7 @@
  */
 ?>
 <label for="<?php echo $this->getFieldId('customer_notes')?>"><?php echo $this->__('Customer Comments') ?></label>
+<p class="info"><?php echo $this->__('Here you can provide additional data regarding shipping and transportation');?></p>
 <div class="input-box">
-    <textarea id="<?php echo $this->getFieldId('customer_notes')?>" name="<?php echo $this->getFieldName('customer_notes')?>" class="input-text" <?php echo $this->getFieldParams() ?>><?php echo $this->htmlEscape($this->getComment()) ?></textarea>
-    <p class="info">W poniższym polu można przekazać dodatkowe informacje przydatne do realizacji zamówienia</p>
+    <textarea id="<?php echo $this->getFieldId('customer_notes')?>" name="<?php echo $this->getFieldName('customer_notes')?>" class="input-text" <?php echo $this->getFieldParams() ?>><?php echo $this->htmlEscape($this->getComment()) ?></textarea>    
 </div>
