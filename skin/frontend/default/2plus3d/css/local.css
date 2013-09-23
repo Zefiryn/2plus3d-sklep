@@ -117,7 +117,7 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .product-view .product-img-box .shipping-cost-info a {font-family: inherit;font-size: inherit;}
 
 .product-view .product-shop {width: 485px;border-top: 2px solid #000;}
-.product-view .product-shop .category a {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 24px;padding-top: 12px;color: #000;margin: 0px;display: block;}
+.product-view .product-shop .category a {font-family: droid-sans, sans-serif;font-size: 16px;font-weight: bold;line-height: 24px;padding-top: 12px;color: #000;margin: 0px;display: block;letter-spacing: 1px;}
 .product-view .product-shop .product-name {margin: 20px 0px;}
 .product-view .product-shop .product-name h1 {font-family: droid-serif, serif;font-size: 24px;font-weight: normal;line-height: 31px;color: #000;}
 .product-view .product-shop .product-name h1 .author {margin-top: 20px;font-family: droid-serif, serif;font-size: 14px;}
