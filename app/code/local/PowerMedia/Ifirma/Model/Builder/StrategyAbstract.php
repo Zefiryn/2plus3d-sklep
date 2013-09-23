@@ -57,7 +57,8 @@ abstract class PowerMedia_Ifirma_Model_Builder_StrategyAbstract {
 	protected function createContractorObject(){ 
 		$contractor = new ifirma\InvoiceContractor();
 		
-		$contractor->{ifirma\InvoiceContractor::KEY_NAZWA} = $this->getOrder()->getBillingAddress()->getName();
+    $contractor_name = $this->getOrder()->getBillingAddress()->getCompany() ? $this->getOrder()->getBillingAddress()->getCompany() : $this->getOrder()->getBillingAddress()->getName();
+		$contractor->{ifirma\InvoiceContractor::KEY_NAZWA} = $contractor_name;
 		
 		$contractor->{ifirma\InvoiceContractor::KEY_KOD_POCZTOWY} = $this->getContractorFormatedPostCode();
 		$contractor->{ifirma\InvoiceContractor::KEY_MIEJSCOWOSC} = $this->getOrder()->getBillingAddress()->getCity();
