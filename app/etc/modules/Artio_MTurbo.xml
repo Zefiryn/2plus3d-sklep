@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Artio_MTurbo>
-            <active>true</active>
+            <active>false</active>
             <codePool>local</codePool>
         </Artio_MTurbo>
     </modules>
