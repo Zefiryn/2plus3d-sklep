@@ -12,7 +12,7 @@ class DpTD_Catalog_Helper_Data extends Mage_Catalog_Helper_Data
   }
   
   public function getProductCategoryLink($product) {
-    return $this->_getProductCategory($product)->getUrlPath();
+    return $this->_getProductCategory($product)->getUrl();
   }
   
   protected function _getProductCategory($product) {
