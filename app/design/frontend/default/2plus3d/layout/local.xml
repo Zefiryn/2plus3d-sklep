@@ -153,6 +153,11 @@
     <reference name="product.info.media">
       <action method="setTemplate"><template>catalog/product/view/media.phtml</template></action>
     </reference>
+    <reference name="right">
+      <block type="cms/block" name="subscription-info" after="cart_sidebar">
+        <action method="setBlockId"><id>prenumerata</id></action>
+      </block>
+    </reference>
   </catalog_product_view>
   
   <sales_billing_agreement_index>
