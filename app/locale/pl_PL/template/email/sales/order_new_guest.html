@@ -60,9 +60,7 @@ body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;
                         <tr>
                             <td valign="top" style="font-size:12px; padding:7px 9px 9px 9px; border-left:1px solid #EAEAEA; border-bottom:1px solid #EAEAEA; border-right:1px solid #EAEAEA;">
                             {{var order.getBillingAddress().format('html')}}
-                            {{depend order.getRequireInvoice()}}
-                            <br />Proszę w wystawienie faktury VAT
-                            {{/depend}}
+                            {{block type="dptd_checkout/invoice" }}
                             </td>
                             <td>&nbsp;</td>
                             <td valign="top" style="font-size:12px; padding:7px 9px 9px 9px; border-left:1px solid #EAEAEA; border-bottom:1px solid #EAEAEA; border-right:1px solid #EAEAEA;">

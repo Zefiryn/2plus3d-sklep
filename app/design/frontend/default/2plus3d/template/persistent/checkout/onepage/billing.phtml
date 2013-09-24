@@ -79,13 +79,14 @@
             
           </li>
               
-          <li class="fields" style="display: none;">
+          <li class="fields">
             <div class="field">
               <label for="billing:country_id" class="required"><em>*</em><?php echo $this->__('Country') ?>:</label>
               <div class="input-box">
                 <?php echo $this->getCountryHtmlSelect('billing') ?>
               </div>
-            </div>            
+              <p class="restriction"><?php echo $this->__('Currently we only accept orders from Poland');?></p>
+            </div>
           </li>
           
           <li class="control">

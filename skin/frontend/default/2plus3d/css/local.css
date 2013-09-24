@@ -83,7 +83,7 @@ button.button:hover span span, a.button:hover span span {color: #000;}
 .products-grid {padding: 0px;margin: 0px !important;width: 100% !important;background: transparent;border: 0px;}
 .products-grid li.item {padding: 0px;min-width: 195px;width: auto;margin-right: 30px;margin-bottom: 45px;}
 .products-grid li.item:nth-child(3n+4) {clear: left;}
-.products-grid li.item .product-name {text-align: center;display: block;margin-bottom: 5px;font-family: droid-sans, sans-serif;font-size: 14px;font-weight: bold;line-height: 16px;color: #000;}
+.products-grid li.item .product-name {text-align: center;display: block;margin-bottom: 5px;font-family: droid-sans, sans-serif;font-size: 14px;font-weight: bold;line-height: 16px;color: #000;width: 197px;}
 .products-grid li.item .publish-date {font-family: droid-sans, sans-serif;font-size: 12px;font-style: normal;font-weight: normal;line-height: 14px;color: #000;text-align: center;padding-top: 7px;margin-bottom: 0px;}
 
 .products-collection li.item .product-image {float: none;overflow: hidden;display: block;width: 195px;height: auto;border: 1px solid #cdcdcd;}
@@ -224,8 +224,9 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .form-list li.wide input.input-text {}
 .col2-right-layout .form-list li.wide input.input-text,
 .col2-left-layout .form-list li.wide input.input-text {width: 335px;float: left;clear: none;}
-.form-list select {border: 1px solid #ccc;background: #fff;height: 36px;width: 350px;font-size: 13px;padding-left: 10px;}
+.form-list select {border: 1px solid #ccc;background: #fff;height: 36px;width: 350px;font-size: 13px;padding-left: 10px;float: left;}
 .form-list li.wide select {width: 475px;}
+.form-list .restriction {clear: both;padding: 5px 0px 0px 120px;color: #4F4F4F;}
 
 .buttons-set {border: 0px;color: #000;margin: 0px;padding: 0px;text-align: left;}
 .buttons-set .back-link {color: #000;}

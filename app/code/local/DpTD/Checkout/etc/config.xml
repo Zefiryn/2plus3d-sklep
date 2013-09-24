@@ -6,7 +6,10 @@
     </DpTD_Checkout>
   </modules>
   <global>    
-    <blocks>      
+    <blocks> 
+      <dptd_checkout>
+        <class>DpTD_Checkout_Block</class>
+      </dptd_checkout>
     </blocks>
     <helpers>
       <dptd_checkout>
