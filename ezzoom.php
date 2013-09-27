@@ -80,7 +80,7 @@ class Ezapps_Zoom_Handler
 
 	}
 
-	public function getVars() {
+	public static function getVars() {
 		return array(
  			'ZOOM_CLIENT_MATCH_DATA'	=> self::$ZOOM_CLIENT_DATA,
  			'ZOOM_ROOT'			=> self::$ZOOM_ROOT,
@@ -237,7 +237,7 @@ class Ezapps_Zoom_Handler
 
 	}
 
-	private function paramsToFile($params, $uri) {
+	private static function paramsToFile($params, $uri) {
 
 		if (count($params) > 0) {
 
