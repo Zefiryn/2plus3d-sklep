@@ -32,61 +32,28 @@ $step = 1;
     </div>
     <div class="block-content">
       <ol>
-        <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
-          <?php if ($this->isStepComplete('billing')): ?>
-          <li class="complete" id="step-billing">            
-            <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__('Billing Address') ?> <span class="separator">|</span>
-            <a href="#billing" onclick="checkout.gotoSection('billing'); return false;"><?php echo $this->__('Change') ?></a>
-            <div class="step-summary">
-              <address><?php echo $this->getBilling()->format('html') ?></address>
-            <div>
-          </li >
-          <?php else: ?>
-          <li id="step-billing">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Billing Information') ?>
-          </li>
-          <?php endif; ?>
-        <?php endif; ?>
+            <?php if ($this->getCheckout()->getStepData('billing', 'is_show')): ?>
+            <li id="billing-progress-opcheckout">
+                <?php echo $this->getChildHtml('billing.progress') ?>
+            </li>
+            <?php endif; ?>
 
-        <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
-          <?php if ($this->isStepComplete('shipping')): ?>
-          <li class="complete" id="step-shipping">
-            <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__('Shipping Address') ?> <span class="separator">|</span>
-            <a href="#payment" onclick="checkout.gotoSection('shipping');return false;"><?php echo $this->__('Change') ?></a>
-            <div class="step-summary">
-              <address><?php echo $this->getShipping()->format('html') ?></address>
-            </div>
-          </li>
-          <?php else: ?>
-          <li id="step-shipping">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Shipping Address') ?>
-          </li>          
-          <?php endif; ?>
-        <?php endif; ?>
-
-        <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
-          <?php if ($this->isStepComplete('payment') && !$isCart): ?>
-          <li class="complete" id="step-payment">
-            <span class="step-counter"><?php echo $step++;?></span>
-            <?php echo $this->__('Payment Method') ?> <span class="separator">|</span>
-            <a href="#payment" onclick="checkout.gotoSection('payment'); return false;"><?php echo $this->__('Change') ?></a>
-            <div class="step-summary">
-              <?php echo $this->getPaymentHtml() ?>
-            </div>
-          </li>
-          <?php else: ?>
-          <li id="step-payment">
-            <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Payment Method') ?>
-          </li>
-          <?php endif; ?>
-        <?php endif; ?>
-
-        <li id="step-review">
-          <span class="step-counter"><?php echo $step++;?></span> <?php echo $this->__('Order Review') ?>
-        </li>
-      </ol>
+            <?php if ($this->getCheckout()->getStepData('shipping', 'is_show')): ?>
+            <li id="shipping-progress-opcheckout">
+                <?php echo $this->getChildHtml('shipping.progress') ?>
+            </li>
+            <?php endif; ?>
+            
+            <?php if ($this->getCheckout()->getStepData('payment', 'is_show')): ?>
+            <li id="payment-progress-opcheckout">
+                <?php echo $this->getChildHtml('payment.progress') ?>
+            </li>
+            <?php endif; ?>
+            
+            <li id="review-progress-opcheckout">
+              <?php echo $this->__('Order Review') ?>
+            </li>
+        </ol>
     </div>
 </div>
 

@@ -183,4 +183,10 @@
       <action method="setDefaultDirection"><dir>desc</dir></action>
     </reference>
   </catalog_category_default>
+  
+  <checkout_onepage_index>
+     <reference name="head">
+      <action method="addItem"><type>skin_js</type><name>js/validators.js</name></action>
+    </reference>
+  </checkout_onepage_index>
 </layout>

@@ -314,11 +314,11 @@ a.btn-cart-sold-out:hover span span {color: #fff;}
 .block-progress .block-title { background:none; border:0; padding: 11px 0px 0px; margin:0 0 5px;font-family: droid-sans, sans-serif;font-size: 16px;font-weight: normal;letter-spacing: 1px;line-height: 24px;}
 .block-progress .block-title strong {font-size: inherit; color:inherit;font-weight: normal;}
 .block-progress .block-content { background: none; margin-top: 12px;}
+.block-progress ol {counter-reset: progress-steps;}
 .block-progress ol li {list-style-type: none;margin-bottom: 10px;font-family: droid-sans, sans-serif; font-size: 13px;}
-.block-progress ol li .step-counter {background: #ccc;width: 26px; height: 26px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;-khtml-border-radius: 2px;display: inline-block;color: #fff;font-family: droid-sans, sans-serif; font-size: 14px; font-weight: bold;text-align: center;line-height: 26px;margin-right: 10px;}
-.block-progress ol li.complete {}
-.block-progress ol li.complete .step-counter {background: #000;}
-.block-progress ol li.active .step-counter {background: #fcca21;}
+.block-progress ol li:before {content: counter(progress-steps);counter-increment: progress-steps;background: #ccc;width: 26px; height: 26px;border-radius: 2px;-moz-border-radius: 2px;-webkit-border-radius: 2px;-khtml-border-radius: 2px;display: inline-block;color: #fff;font-family: droid-sans, sans-serif; font-size: 14px; font-weight: bold;text-align: center;line-height: 26px;margin-right: 10px;}
+.block-progress ol li.completed:before {background: #000;}
+.block-progress ol li.active:before {background: #fcca21;}
 .block-progress ol li .step-summary {padding-left: 40px;}
 .block-progress ol li .step-summary, .block-progress ol li .step-summary address {font-family: droid-sans, sans-serif; font-size: 12px; font-weight: normal;line-height: 16px;color: #4F4F4F;}
 
