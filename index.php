@@ -1,4 +1,5 @@
 <?php
+include('ezzoom.php');
 /**
  * Magento
  *

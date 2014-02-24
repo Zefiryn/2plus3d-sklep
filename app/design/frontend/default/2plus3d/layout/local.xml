@@ -189,4 +189,12 @@
       <action method="addItem"><type>skin_js</type><name>js/validators.js</name></action>
     </reference>
   </checkout_onepage_index>
+  
+  <checkout_cart_index>
+    <refernce name="checkout.cart">
+      <remove name="checkout.cart.coupon" />
+      <remove name="checkout.cart.shipping" />
+      <remove name="checkout.cart.crosssell" />
+    </refernce>
+  </checkout_cart_index>
 </layout>
