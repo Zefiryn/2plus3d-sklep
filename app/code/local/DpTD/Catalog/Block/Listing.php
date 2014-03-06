@@ -92,14 +92,17 @@ class DpTD_Catalog_Block_Listing extends Mage_Catalog_Block_Product_List {
   }
   
   public function getAddToCartHtml($_product) {
-    return $this->getAddToCartBlock()
-                ->setTemplate('catalog/product/list/addtobox.phtml')
-                ->setProductId($_product->getId())
-                ->setProduct($_product)->toHtml();
+    Mage::unregister('product');
+    Mage::register('product', $_product);
+    $block = $this->getAddToCartBlock($_product);
+    return $block->setTemplate('catalog/product/list/addtobox.phtml')
+                  ->setProductId($_product->getId())
+                  ->setProduct($_product)
+                  ->toHtml();
   }
   
-  public function getAddToCartBlock() {
-    return $this->getLayout()->createBlock('catalog/product_list','product-list-addtocart');
+  public function getAddToCartBlock($_product) {
+    return $this->getLayout()->createBlock('catalog/cart','product-list-addtocart-'.$_product->getId());
   }
   
   protected function _getProductCollection() {

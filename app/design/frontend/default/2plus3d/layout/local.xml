@@ -80,7 +80,7 @@
           <action method="setCollectionType"><type>CATEGORY</type></action>
           <action method="setCategory"><id>ksiazki</id><type>url_key</type></action>
 <!--          <action method="setListCount"><count>1</count></action>-->
-          <action method="setMode"><mode>list</mode></action>	  
+          <action method="setMode"><mode>list</mode></action>	            
         </block>
       </block>
       <block type="core/template" name="homepage.magazine" template="catalog/html/homepage-list.phtml">
@@ -90,7 +90,7 @@
           <action method="setCategory"><id>kwartalnik</id><type>url_key</type></action>
 <!--          <action method="setListCount"><count>4</count></action>-->
           <action method="setListOrder"><order>sku DESC</order></action>
-          <action method="setMode"><mode>list</mode></action>   
+          <action method="setMode"><mode>list</mode></action>
         </block>
       </block>
     </reference>

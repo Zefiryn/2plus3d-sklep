@@ -11,6 +11,7 @@
         <rewrite>
           <category_block>DpTD_Catalog_Block_Category_Block</category_block>
           <listing>DpTD_Catalog_Block_Listing</listing>
+          <cart>DpTD_Catalog_Block_Cart</cart>
         </rewrite>
       </catalog>
     </blocks>
