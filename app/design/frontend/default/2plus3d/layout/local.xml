@@ -75,7 +75,7 @@
     <remove name="cms.wrapper" />
     <reference name="content">
       <block type="core/template" name="homepage.books" template="catalog/html/homepage-list.phtml">
-        <block type="catalog/listing" name="homepage.books.list" as="product_list" template="catalog/product/homepage-list.phtml">  
+        <block type="catalog/listing" name="homepage.books.list" as="product_list" template="catalog/product/homepage-list-books.phtml">
           <action method="showToolbar"><val>0</val></action>
           <action method="setCollectionType"><type>CATEGORY</type></action>
           <action method="setCategory"><id>ksiazki</id><type>url_key</type></action>
@@ -84,7 +84,7 @@
         </block>
       </block>
       <block type="core/template" name="homepage.magazine" template="catalog/html/homepage-list.phtml">
-        <block type="catalog/listing" name="homepage.magazine.list" as="product_list" template="catalog/product/homepage-list.phtml">  
+        <block type="catalog/listing" name="homepage.magazine.list" as="product_list" template="catalog/product/homepage-list-magazines.phtml">  
           <action method="showToolbar"><val>0</val></action>
           <action method="setCollectionType"><type>CATEGORY</type></action>
           <action method="setCategory"><id>kwartalnik</id><type>url_key</type></action>
