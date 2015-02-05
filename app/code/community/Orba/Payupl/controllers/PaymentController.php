@@ -15,7 +15,6 @@ class Orba_Payupl_PaymentController extends Mage_Core_Controller_Front_Action {
         $this->_order->sendNewOrderEmail();
         $this->loadLayout();
         $this->getLayout()->getBlock('payupl_child')->setOrder($this->_order);
-        //var_dump($this->getLayout()->getBlock('payupl_child'));
         $this->renderLayout();
     }
     
@@ -63,7 +62,7 @@ class Orba_Payupl_PaymentController extends Mage_Core_Controller_Front_Action {
         $this->loadLayout();
         try {
             $data = $this->getRequest()->getPost();
-            if (Mage::getModel('payupl/payment')->processPaymentStateUpdate($data, new Varien_Http_Adapter_Curl())) {
+            if (Mage::getModel('payupl/payment')->processPaymentStateUpdate($data)) {
                 $this->getLayout()->getBlock('payupl_child')->setMessage('OK');
             } else {
                 $error = true;
