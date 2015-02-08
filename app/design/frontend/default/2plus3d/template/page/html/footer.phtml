@@ -3,37 +3,38 @@
  * @var DpTD_Site_Block_Html_Footer $this
  */
 ?>
-<?php $_helper = $this->helper('site');?>
+<?php $_helper = $this->helper('site'); ?>
 <div class="footer-container">
-  <div class="footer">
-    <div class="left">
-      <ul id="footerMenu" class="menu">
-        <?php foreach ($this->getFooterMenu() as $data):?>
-          <?php $mItem = $data['element'];$smItems = isset($data['sublevel']) ? $data['sublevel'] : null;?>
-          <li id="menuItem_<?php $mItem->getId();?>" class="menuItem">
-            <h3>
-              <?php if ($url = $_helper->menuItemUrl(array('item' => $mItem))):?>
-                <a class="link" href="<?php echo $url;?>"><?php echo $mItem->getTitle();?></a>
-              <?php else:?>
-                <?php echo $mItem->getTitle();?>
-              <?php endif;?>
-            </h3>
-            <?php if (count($smItems) > 0):?>            
-              <?php echo $this->getLayout()->getBlock('site.children')->setCollection($smItems)->setMenuItem($mItem)->toHtml();?>            
-            <?php endif;?>            
-          </li>
-        <?php endforeach;?>
-      </ul>
+    <div class="footer">
+        <div class="left">
+            <ul id="footerMenu" class="menu">
+                <?php foreach($this->getFooterMenu() as $data): ?>
+                    <?php $mItem = $data['element'];
+                    $smItems = isset($data['sublevel']) ? $data['sublevel'] : null; ?>
+                    <li id="menuItem_<?php $mItem->getId(); ?>" class="menuItem">
+                        <h3>
+                            <?php if($url = $_helper->menuItemUrl(array('item' => $mItem))): ?>
+                                <a class="link" href="<?php echo $url; ?>"><?php echo $mItem->getTitle(); ?></a>
+                            <?php else: ?>
+                                <?php echo $mItem->getTitle(); ?>
+                            <?php endif; ?>
+                        </h3>
+                        <?php if(count($smItems) > 0): ?>
+                            <?php echo $this->getLayout()->getBlock('site.children')->setCollection($smItems)->setMenuItem($mItem)->toHtml(); ?>
+                        <?php endif; ?>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+        <div class="payu">
+            <p>Obsługa płatności</p>
+            <a href="http://payu.pl" title="PayU" class="payu-logo"></a>
+        </div>
+        <div class="copyrights">
+            <p>
+                © 2001-2012 2+3D Spółka z o.o. Wszelkie prawa zastrzeżone.
+                <span class="grey">Projekt: Wojtek Kubiena Wykonanie: <a href="http://zefiryn.jewula.net/">Zefiryn</a> Logo: Jacek Mrowczyk, Kuba Sowiński</span>
+            </p>
+        </div>
     </div>
-    <div class="payu">
-      <p>Obsługa płatności</p>
-      <a href="http://payu.pl" title="PayU" class="payu-logo"></a>
-    </div>
-    <div class="copyrights">
-      <p>
-        © 2001-2012 2+3D Spółka z o.o. Wszelkie prawa zastrzeżone.
-        <span class="grey">Projekt: Wojtek Kubiena Wykonanie: <a href="http://zefiryn.jewula.net/">Zefiryn</a> Logo: Jacek Mrowczyk, Kuba Sowiński</span>
-      </p>
-    </div>
-  </div>
 </div>

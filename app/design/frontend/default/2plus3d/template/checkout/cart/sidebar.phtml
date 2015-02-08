@@ -6,28 +6,31 @@
  */
 
 ?>
-<?php if ($this->getIsNeedToDisplaySideBar()):?>
-<div class="block block-cart">
-    <?php $_cartQty = $this->getSummaryCount() ?>
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Cart') ?></span></strong>
+<?php if($this->getIsNeedToDisplaySideBar()): ?>
+    <div class="block block-cart">
+        <?php $_cartQty = $this->getSummaryCount() ?>
+        <div class="block-title">
+            <strong><span><?php echo $this->__('Cart') ?></span></strong>
+        </div>
+        <div class="block-content">
+            <?php $_items = $this->getRecentItems() ?>
+            <?php if(count($_items)): ?>
+                <ol id="cart-sidebar" class="mini-products-list">
+                    <?php foreach($_items as $_item): ?>
+                        <?php echo $this->getItemHtml($_item) ?>
+                    <?php endforeach; ?>
+                </ol>
+                <p class="grand-total">
+                    <span class="label"><?php echo $this->__('Grand Total'); ?>
+                        :</span> <?php echo Mage::helper('core')->currency(Mage::helper('checkout')->getQuote()->getGrandTotal(), true, false); ?>
+                </p>
+                <button type="button" title="<?php echo $this->__('Go to Cart') ?>" class="button"
+                        onclick="window.location='<?php echo $this->helper('checkout/cart')->getCartUrl() ?>';">
+                    <span><span><?php echo $this->__('Payment') ?></span></span></button>
+                <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
+            <?php else: ?>
+                <p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>
+            <?php endif ?>
+        </div>
     </div>
-    <div class="block-content">
-    <?php $_items = $this->getRecentItems() ?>
-    <?php if(count($_items)): ?>
-        <ol id="cart-sidebar" class="mini-products-list">
-        <?php foreach($_items as $_item): ?>
-            <?php echo $this->getItemHtml($_item) ?>
-        <?php endforeach; ?>
-        </ol>
-        <p class="grand-total">
-          <span class="label"><?php echo $this->__('Grand Total');?>:</span> <?php echo Mage::helper('core')->currency(Mage::helper('checkout')->getQuote()->getGrandTotal(),true,false); ?>
-        </p>
-        <button type="button" title="<?php echo $this->__('Go to Cart') ?>" class="button" onclick="window.location='<?php echo $this->helper('checkout/cart')->getCartUrl() ?>';"><span><span><?php echo $this->__('Payment') ?></span></span></button>
-        <script type="text/javascript">decorateList('cart-sidebar', 'none-recursive')</script>
-    <?php else: ?>
-        <p class="empty"><?php echo $this->__('You have no items in your shopping cart.') ?></p>
-    <?php endif ?>
-    </div>
-</div>
-<?php endif;?>
+<?php endif; ?>
