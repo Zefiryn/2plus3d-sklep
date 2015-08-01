@@ -84,6 +84,7 @@ class Mage_Shell_Compiler extends Mage_Shell_Abstract
      */
     public function run()
     {
+        $_SESSION = array();
         if ($this->getArg('info')) {
             $processes = $this->_parseIndexerString('all');
             foreach ($processes as $process) {
@@ -163,9 +164,12 @@ class Mage_Shell_Compiler extends Mage_Shell_Abstract
                 foreach ($processes as $process) {
                     /* @var $process Mage_Index_Model_Process */
                     try {
+                        $startTime = microtime(true);
                         $process->reindexEverything();
+                        $resultTime = microtime(true) - $startTime;
                         Mage::dispatchEvent($process->getIndexerCode() . '_shell_reindex_after');
-                        echo $process->getIndexer()->getName() . " index was rebuilt successfully\n";
+                        echo $process->getIndexer()->getName()
+                            . " index was rebuilt successfully in " . gmdate('H:i:s', $resultTime) . "\n";
                     } catch (Mage_Core_Exception $e) {
                         echo $e->getMessage() . "\n";
                     } catch (Exception $e) {

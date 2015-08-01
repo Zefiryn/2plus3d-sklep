@@ -1,6 +1,6 @@
 var/*
 media/catalog/*
-app/etc/local.xml
+app/etc/local.xml*
 *.*~
 .htaccess
 downloader/.cache/
@@ -17,3 +17,7 @@ server.sh
 *.ignore.*
 includes/*
 .idea/
+dev/
+install.php
+app/design/install/
+skin/install
