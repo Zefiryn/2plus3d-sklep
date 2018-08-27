@@ -16,7 +16,7 @@ class Orba_Payupl_Block_Form extends Mage_Payment_Block_Form
     {
         $this->setTemplate('payupl/form.phtml');
         $this->setMethodTitle('');
-        $this->setMethodLabelAfterHtml('<img src="'.Mage::getDesign()->getSkinUrl('images/payupl/logo.jpg').'" height="20" alt="Payu.pl"/> '.Mage::helper('payupl')->__('Credit Card or E-transfer'));
+        $this->setMethodLabelAfterHtml('<img src="'.Mage::getDesign()->getSkinUrl('images/payupl/logo.png').'" alt="Payu.pl"/> '.Mage::helper('payupl')->__('Credit Card or E-transfer'));
         
         return parent::_construct();
     }

@@ -12,4 +12,11 @@
             <block type="core/template" name="payupl_child" template="payupl/online.phtml" />
         </reference>
     </payupl_payment_online>
+    <checkout_onepage_index>
+        <reference name="head">
+            <action method="addCss">
+                <stylesheet>css/payupl.css</stylesheet>
+            </action>
+        </reference>
+    </checkout_onepage_index>
 </layout>

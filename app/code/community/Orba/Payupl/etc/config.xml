@@ -2,10 +2,10 @@
 <config>
     <modules>
        <Orba_Payupl>
-          <version>0.3.1</version>
+          <version>1.0.1</version>
        </Orba_Payupl>
     </modules>
-     <frontend>
+    <frontend>
         <routers>
             <payupl>
                 <use>standard</use>
@@ -47,6 +47,7 @@
             <payupl_setup>
                 <setup>
                     <module>Orba_Payupl</module>
+                    <class>Orba_Payupl_Model_Resource_Setup</class>
                 </setup>
                 <connection>
                     <use>core_setup</use>

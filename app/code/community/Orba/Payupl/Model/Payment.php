@@ -55,7 +55,7 @@ class Orba_Payupl_Model_Payment extends Mage_Payment_Model_Method_Abstract {
         return Mage::getModel('payupl/config');
     }
 
-    private function getRedirectSig($data) {
+    protected function getRedirectSig($data) {
         $md5Key = $this->getConfig()->getMD5Key1();
         $sig = md5(
                 $data['pos_id'] .
@@ -63,6 +63,7 @@ class Orba_Payupl_Model_Payment extends Mage_Payment_Model_Method_Abstract {
                 $data['pos_auth_key'] .
                 $data['amount'] .
                 $data['desc'] .
+                $data['desc2'] .
                 $data['order_id'] .
                 $data['first_name'] .
                 $data['last_name'] .
@@ -89,6 +90,7 @@ class Orba_Payupl_Model_Payment extends Mage_Payment_Model_Method_Abstract {
             "session_id" => $this->getSession()->getEncryptedSessionId() . '-' . $order_id,
             "amount" => $this->getOrderTotalInPolishCents($order),
             "desc" => Mage::helper('payupl')->__("Order no %s", $increment_order_id),
+            "desc2" => 'Orba_Payupl',
             "order_id" => $increment_order_id,
             "first_name" => $billing->getFirstname(),
             "last_name" => $billing->getLastname(),
