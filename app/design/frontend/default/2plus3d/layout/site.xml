@@ -3,10 +3,10 @@
   <default>
     <reference name="head">
       <action method="addItem"><type>skin_css</type><name>css/menu.css</name></action>
-      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/carousel.js</name><params/></action>
-      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/indicator.js</name><params/></action>
-      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/slides.js</name><params/></action>
-      <action method="addExternalItem"><type>external_js</type><name>http://2plus3d.pl/scripts/location_hash.js</name><params/></action>
+      <action method="addExternalItem"><type>external_js</type><name>//2plus3d.pl/scripts/carousel.js</name><params/></action>
+      <action method="addExternalItem"><type>external_js</type><name>//2plus3d.pl/scripts/indicator.js</name><params/></action>
+      <action method="addExternalItem"><type>external_js</type><name>//2plus3d.pl/scripts/slides.js</name><params/></action>
+      <action method="addExternalItem"><type>external_js</type><name>//2plus3d.pl/scripts/location_hash.js</name><params/></action>
       </reference>
     <reference name="header">
       <remove name="top.menu" />
